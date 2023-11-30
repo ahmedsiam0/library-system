@@ -1,6 +1,6 @@
 # Library System
 
-## Coding Style
+## Java Style Guide
 
 Any code should follow [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html) as much as possible.
 
