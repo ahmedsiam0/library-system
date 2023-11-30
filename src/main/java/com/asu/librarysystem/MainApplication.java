@@ -21,6 +21,7 @@ public class MainApplication /* extends Application */ {
     public static void main(String[] args) {
         //launch();
         
+        // Order class testing
         Book b = new Book();
         Order o = new Order(b, 6);
         System.out.println("Book Price: " + b.getPrice());
