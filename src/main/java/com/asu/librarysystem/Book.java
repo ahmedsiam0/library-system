@@ -1,38 +1,40 @@
 package com.asu.librarysystem;
 
 public class Book {
-    private int book_ID;
-    private String book_Title;
+    private static int idCounter=0;
+    private final int id;
+    private String title;
     private String author;
-    private int publication_Year;
+    private int publicationYear;
     private boolean status;
     private int price;
-    private int book_Rating;
+    private int rating;
 
-    public Book(int book_ID, String book_Title, String author, int publication_Year, boolean status, int price, int book_Rating) {
-        this.book_ID = book_ID;
-        this.book_Title = book_Title;
+    public Book(String title, String author, int publicationYear, boolean status, int price, int rating) {
+        idCounter++;
+        id=idCounter;
+        this.title = title;
         this.author = author;
-        this.publication_Year = publication_Year;
+        this.publicationYear = publicationYear;
         this.status = status;
         this.price = price;
-        this.book_Rating = book_Rating;
+        this.rating = rating;
     }
 
-    public int getBook_ID() {
-        return book_ID;
+    public int getId() {
+        return id;
     }
 
-    public String getBook_Title() {
-        return book_Title;
+    public String getTitle() {
+        return title;
     }
 
     public String getAuthor() {
         return author;
     }
 
-    public int getPublication_Year() {
-        return publication_Year;
+    public int getPublicationYear() {
+        return publicationYear;
     }
 
     public boolean isStatus() {
@@ -43,7 +45,8 @@ public class Book {
         return price;
     }
 
-    public int getBook_Rating() {
-        return book_Rating;
+    public int getRating() {
+        return rating;
     }
+
 }

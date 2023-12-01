@@ -22,7 +22,7 @@ public class MainApplication /* extends Application */ {
         //launch();
         
         // Order class testing
-        Book b = new Book();
+        Book b = new Book("book1","author1",2023,true,200,4);
         Order o = new Order(b, 6);
         System.out.println("Book Price: " + b.getPrice());
         System.out.println("Order Price: " + o.getPrice());
