@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="added borrower class, added transaction id, fixed some bugs">
+    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="some optimizations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" afterDir="false" />
     </list>
@@ -78,12 +78,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701535289141</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="some optimizations">
+      <option name="closed" value="true" />
+      <created>1701535846955</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701535846955</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge pull request #7 from ahmed-khaled-1/patch-1&#10;&#10;Transaction" />
     <MESSAGE value="added borrower class, added transaction id, fixed some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="added borrower class, added transaction id, fixed some bugs" />
+    <MESSAGE value="some optimizations" />
+    <option name="LAST_COMMIT_MESSAGE" value="some optimizations" />
   </component>
 </project>

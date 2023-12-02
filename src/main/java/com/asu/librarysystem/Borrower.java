@@ -10,10 +10,11 @@ public class Borrower extends Account{
         borrowerTransactions = new ArrayList<>();
     }
 
-    public void addTransaction (int bookId ,int borrowerId ,int borrowDate ,int returnDate)
+    public void updateTransaction (int bookId ,int borrowerId ,int borrowDate ,int returnDate)
     {
         borrowerTransactions.add(new Transaction(bookId ,borrowerId ,borrowDate ,returnDate));
     }
+
     public int searchTransactions (int transactionId)
     {
         for (int i = 0; i < borrowerTransactions.size(); i++) {
@@ -24,6 +25,7 @@ public class Borrower extends Account{
         }
         return -1;
     }
+
     public int finesIfLate (int borrowerId)
     {
         if (borrowerTransactions.get(borrowerId).getReturnDate() > (java.time.LocalDate.now().getYear()*10000+java.time.LocalDate.now().getMonthValue()*100+java.time.LocalDate.now().getDayOfMonth()))
