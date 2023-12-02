@@ -1,8 +1,6 @@
 package com.asu.librarysystem;
 
 import java.util.ArrayList;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Borrower extends Account{
     private ArrayList<Transaction> borrowerTransactions;
@@ -16,15 +14,12 @@ public class Borrower extends Account{
     {
         borrowerTransactions.add(new Transaction(bookId ,borrowerId ,borrowDate ,returnDate));
     }
-    public int searchTransactions (int borrowerId,int transactionId)
+    public int searchTransactions (int transactionId)
     {
         for (int i = 0; i < borrowerTransactions.size(); i++) {
-            if (borrowerTransactions.get(i).getTransactionId() == transactionId)
+            if (borrowerTransactions.get(i).getTransactionId() == transactionId && this.user_id == borrowerTransactions.get(i).getBorrowerId())
             {
-                if (this.user_id == borrowerId)
-                {
-                    return borrowerTransactions.get(i).getBorrowerId();
-                }
+                return borrowerTransactions.get(i).getBorrowerId();
             }
         }
         return -1;
