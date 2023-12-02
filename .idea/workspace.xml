@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="some optimizations">
+    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="Added Admin class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +24,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "HosTheRockJohnson"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HosTheRockJohnson&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -86,13 +87,22 @@
       <option name="project" value="LOCAL" />
       <updated>1701535846955</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Admin class">
+      <option name="closed" value="true" />
+      <created>1701536672093</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701536672093</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge pull request #7 from ahmed-khaled-1/patch-1&#10;&#10;Transaction" />
     <MESSAGE value="added borrower class, added transaction id, fixed some bugs" />
     <MESSAGE value="some optimizations" />
-    <option name="LAST_COMMIT_MESSAGE" value="some optimizations" />
+    <MESSAGE value="Added Admin class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Admin class" />
   </component>
 </project>

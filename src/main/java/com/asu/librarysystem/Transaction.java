@@ -15,8 +15,7 @@ public class Transaction
         this.borrowerId=borrowerId;
         this.borrowDate=borrowDate;
         this.returnDate=returnDate;
-        this.transactionId = transactionCount;
-        transactionCount ++;
+        this.transactionId = transactionCount++;
     }
 
     public int getTransactionId() { return transactionId; }

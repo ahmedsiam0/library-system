@@ -10,11 +10,15 @@ public class Borrower extends Account{
         borrowerTransactions = new ArrayList<>();
     }
 
-    public void updateTransaction (int bookId ,int borrowerId ,int borrowDate ,int returnDate)
+    public void addTransaction (int bookId ,int borrowerId ,int borrowDate ,int returnDate)
     {
         borrowerTransactions.add(new Transaction(bookId ,borrowerId ,borrowDate ,returnDate));
     }
 
+    public void deleteTransaction (int transactionId)
+    {
+        borrowerTransactions.remove(transactionId);
+    }
     public int searchTransactions (int transactionId)
     {
         for (int i = 0; i < borrowerTransactions.size(); i++) {
