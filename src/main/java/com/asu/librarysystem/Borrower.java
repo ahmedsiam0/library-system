@@ -19,15 +19,14 @@ public class Borrower extends Account{
     {
         borrowerTransactions.remove(transactionId);
     }
-    public int searchTransactions (int transactionId)
+    public Transaction searchTransaction (int transactionId)
     {
-        for (int i = 0; i < borrowerTransactions.size(); i++) {
-            if (borrowerTransactions.get(i).getTransactionId() == transactionId && this.user_id == borrowerTransactions.get(i).getBorrowerId())
-            {
-                return borrowerTransactions.get(i).getBorrowerId();
+        for (Transaction borrowerTransaction : borrowerTransactions) {
+            if (borrowerTransaction.getTransactionId() == transactionId && this.user_id == borrowerTransaction.getBorrowerId()) {
+                return borrowerTransaction;
             }
         }
-        return -1;
+        return null;
     }
 
     public int finesIfLate (int borrowerId)
