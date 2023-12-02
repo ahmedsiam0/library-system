@@ -20,14 +20,9 @@ public class Borrower extends Account{
         borrowerTransactions.remove(transactionId);
     }
 
-    public Transaction searchTransaction (int transactionId)
+    public Transaction getTransaction (int transactionId)
     {
-        for (Transaction borrowerTransaction : borrowerTransactions) {
-            if (borrowerTransaction.getTransactionId() == transactionId && this.user_id == borrowerTransaction.getBorrowerId()) {
-                return borrowerTransaction;
-            }
-        }
-        return null;
+        return borrowerTransactions.get(transactionId);
     }
 
     public int finesIfLate (int borrowerId)
