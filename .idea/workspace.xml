@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="Added Admin class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HosTheRockJohnson&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="4b170fae-7a53-4d68-a7d4-1a589dda4637" />
+        <option name="url" value="https://github.com/HosTheRockJohnson/library-system.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,6 +71,38 @@
       <option name="presentableId" value="Default" />
       <updated>1701290060458</updated>
     </task>
+    <task id="LOCAL-00001" summary="added borrower class, added transaction id, fixed some bugs">
+      <option name="closed" value="true" />
+      <created>1701535289141</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701535289141</updated>
+    </task>
+    <task id="LOCAL-00002" summary="some optimizations">
+      <option name="closed" value="true" />
+      <created>1701535846955</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701535846955</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Admin class">
+      <option name="closed" value="true" />
+      <created>1701536672093</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701536672093</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge pull request #7 from ahmed-khaled-1/patch-1&#10;&#10;Transaction" />
+    <MESSAGE value="added borrower class, added transaction id, fixed some bugs" />
+    <MESSAGE value="some optimizations" />
+    <MESSAGE value="Added Admin class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Admin class" />
   </component>
 </project>

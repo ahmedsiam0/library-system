@@ -25,7 +25,7 @@ public class Customer extends Account{
         System.out.println("Title = ");
         System.out.println("Author = ");
         System.out.println("Release Date = ");
-        System.out.println("Availabilitiy = ");
+        System.out.println("Availability = ");
         System.out.println("Price = ");
         System.out.println("Rating = ");
     }

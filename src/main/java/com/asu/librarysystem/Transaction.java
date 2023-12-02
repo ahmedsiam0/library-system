@@ -1,6 +1,9 @@
-public class Transaction 
-{
+package com.asu.librarysystem;
 
+public class Transaction
+{
+    private static int transactionCount = 0;
+    private int transactionId;
     private int bookId;
     private int borrowerId;
     private int borrowDate;
@@ -12,9 +15,12 @@ public class Transaction
         this.borrowerId=borrowerId;
         this.borrowDate=borrowDate;
         this.returnDate=returnDate;
+        this.transactionId = transactionCount++;
     }
 
-    public int getBookId() 
+    public int getTransactionId() { return transactionId; }
+
+    public int getBookId()
     {
         return bookId;
     }
