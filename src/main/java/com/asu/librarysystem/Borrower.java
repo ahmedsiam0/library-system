@@ -12,7 +12,7 @@ public class Borrower extends Account{
 
     public void addTransaction (int bookId ,int borrowDate ,int returnDate)
     {
-        borrowerTransactions.add(new Transaction(bookId ,user_id ,borrowDate ,returnDate));
+        borrowerTransactions.add(new Transaction(bookId ,this.user_id ,borrowDate ,returnDate));
     }
 
     public void deleteTransaction (int transactionId)
