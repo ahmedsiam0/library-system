@@ -20,7 +20,7 @@ public class Borrower extends Account{
         borrowerTransactions.remove(transactionId);
     }
 
-    public Transaction getTransaction (int transactionId)
+    public Transaction searchTransaction (int transactionId)
     {
         return borrowerTransactions.get(transactionId);
     }
