@@ -10,20 +10,30 @@ public class Borrower extends Account{
         super(borrowerId, borrower_name, Password, Phone_Number);
         borrowerTransactions = new ArrayList<>();
     }
-
     public void addTransaction (Book book ,int borrowDate ,int returnDate)
     {
         borrowerTransactions.add(new Transaction(book.getId() ,this.user_id ,borrowDate ,returnDate));
     }
 
-    public void deleteTransaction (int transactionId)
-    {
-        borrowerTransactions.remove(transactionId);
+    public void deleteTransaction (int transactionId) {
+        try {
+            borrowerTransactions.remove(transactionId);
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            System.out.println("cant delete because the index is out of bound");
+        }
     }
 
-    public Transaction searchTransaction (int transactionId)
-    {
-        return borrowerTransactions.get(transactionId);
+    public Transaction searchTransaction (int transactionId) {
+        try {
+            return borrowerTransactions.get(transactionId);
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            System.out.println("cant search because the index is out of bound");
+            return null;
+        }
     }
 
     public double finesIfLate ()

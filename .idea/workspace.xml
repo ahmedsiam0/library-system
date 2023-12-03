@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency, exception handling in borrower class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" afterDir="false" />
+    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +20,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -145,7 +142,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701555622814</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency">
+      <option name="closed" value="true" />
+      <created>1701584005264</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701584005264</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency">
+      <option name="closed" value="true" />
+      <created>1701611695053</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701611695053</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -155,6 +168,7 @@
     <MESSAGE value="Added Admin class" />
     <MESSAGE value="fixed some potential bugs, decreased redundancy in the code" />
     <MESSAGE value="fixed some potential bugs, decreased redundancy in the code, better efficiency" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some potential bugs, decreased redundancy in the code, better efficiency" />
+    <MESSAGE value="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency" />
   </component>
 </project>
