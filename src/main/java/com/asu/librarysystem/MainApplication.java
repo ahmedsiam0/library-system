@@ -32,10 +32,10 @@ public class MainApplication /* extends Application */ {
         b1.addTransaction(book2,20230519,20231003);
         b2.addTransaction(book3,20220815,20231130);
         b2.addTransaction(book1,20220815,20231130);
-        b1.deleteTransaction(1);
+        b1.deleteTransaction(4);
         System.out.println("Book Price: " + book1.getPrice());
         System.out.println("Order Price: " + o.getPrice());
         System.out.println(b1.finesIfLate());
-        System.out.println(b2.searchTransaction(0).getBookId());
+        b2.searchTransaction(4);
     }
 }
