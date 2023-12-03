@@ -1,32 +1,26 @@
 package com.asu.librarysystem;
 
 public class Order {
-
-    static int idCounter = 0;
+    
+    static private int idCounter = 0;
+    final private int id;
     private Book book;
     private int quantity;
 
-    private int id;
-
     public Order(Book book, int quantity) {
+        id = ++idCounter;
         this.book = book;
         this.quantity = quantity;
     }
 
     // Placeholder
     public Order(int bookId, int quantity){
-        id = idCounter++;
+        id = ++idCounter;
         this.quantity = quantity;
     }
 
-    public int getId() { return id; }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public int getId() {
+        return id; 
     }
 
     public Book getBook() {
@@ -40,6 +34,12 @@ public class Order {
     public int getPrice() {
         return book.getPrice() * quantity;
     }
+    
+    public void setBook(Book book) {
+        this.book = book;
+    }
 
-
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
