@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" afterDir="false" />
-    </list>
+    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
