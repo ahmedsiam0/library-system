@@ -39,8 +39,10 @@ public class Transaction
     {
         return returnDate;
     }
-    public int getFines()
-    {
-        return (returnDate-borrowDate)*10;
+    public double getFines() {
+        if (returnDate < java.time.LocalDate.now().getYear()*10000+java.time.LocalDate.now().getMonthValue()*100+java.time.LocalDate.now().getDayOfMonth()) {
+            return (double) (java.time.LocalDate.now().getYear()*10000+java.time.LocalDate.now().getMonthValue()*100+java.time.LocalDate.now().getDayOfMonth() - returnDate);
+        }
+        return -1;
     }
 }

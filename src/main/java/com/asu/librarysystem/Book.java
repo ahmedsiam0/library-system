@@ -11,8 +11,7 @@ public class Book {
     private int rating;
 
     public Book(String title, String author, int publicationYear, boolean status, int price, int rating) {
-        idCounter++;
-        id=idCounter;
+        id=idCounter++;
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
