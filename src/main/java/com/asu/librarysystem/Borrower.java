@@ -3,6 +3,7 @@ package com.asu.librarysystem;
 import java.util.ArrayList;
 
 public class Borrower extends Account{
+    private double borrowerFines = 0;
     private ArrayList<Transaction> borrowerTransactions;
     public Borrower(int borrowerId, String borrower_name, String Password, int Phone_Number)
     {
@@ -10,9 +11,9 @@ public class Borrower extends Account{
         borrowerTransactions = new ArrayList<>();
     }
 
-    public void addTransaction (int bookId ,int borrowDate ,int returnDate)
+    public void addTransaction (Book book ,int borrowDate ,int returnDate)
     {
-        borrowerTransactions.add(new Transaction(bookId ,this.user_id ,borrowDate ,returnDate));
+        borrowerTransactions.add(new Transaction(book.getId() ,this.user_id ,borrowDate ,returnDate));
     }
 
     public void deleteTransaction (int transactionId)
@@ -25,12 +26,13 @@ public class Borrower extends Account{
         return borrowerTransactions.get(transactionId);
     }
 
-    public int finesIfLate (int borrowerId)
+    public double finesIfLate ()
     {
-        if (borrowerTransactions.get(borrowerId).getReturnDate() > (java.time.LocalDate.now().getYear()*10000+java.time.LocalDate.now().getMonthValue()*100+java.time.LocalDate.now().getDayOfMonth()))
-        {
-            return borrowerTransactions.get(borrowerId).getFines();
+        for (Transaction borrowerTransaction : borrowerTransactions) {
+            if (borrowerTransaction.getBorrowerId() == this.user_id && borrowerTransaction.getFines() >= 0) {
+                borrowerFines += borrowerTransaction.getFines();
+            }
         }
-        return -1;
+        return borrowerFines;
     }
 }
