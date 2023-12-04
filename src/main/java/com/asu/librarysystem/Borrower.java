@@ -18,15 +18,16 @@ public class Borrower extends Account
         borrowerTransactions.add(new Transaction(book.getId() ,getId() ,borrowDate ,returnDate));
     }
      
-    public void deleteTransaction (int transactionId)
-    {
-        //try {
+     public boolean deleteTransaction (int transactionId) {
+        try {
             borrowerTransactions.remove(transactionId);
-       // }
-       // catch (IndexOutOfBoundsException e)
-       // {
-       //    System.out.println("cant delete because the index is out of bound");
-       // }
+            return true;
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            //System.out.println("cant delete because the index is out of bound");
+            return false;
+        }
     }
     
     public int searchTransactions (int transactionId)
