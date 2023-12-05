@@ -9,16 +9,19 @@ public class Transaction
     private int borrowDate;
     private int returnDate;
 
-    Transaction(int bookId ,int borrowerId ,int borrowDate ,int returnDate)
+    public Transaction(int bookId ,int borrowerId ,int borrowDate ,int returnDate)
     {
         this.bookId=bookId;
         this.borrowerId=borrowerId;
         this.borrowDate=borrowDate;
         this.returnDate=returnDate;
-        this.transactionId = transactionCount++;
+        this.transactionId = ++transactionCount;
     }
 
-    public int getTransactionId() { return transactionId; }
+    public int getTransactionId() 
+    { 
+        return transactionId; 
+    }
 
     public int getBookId()
     {

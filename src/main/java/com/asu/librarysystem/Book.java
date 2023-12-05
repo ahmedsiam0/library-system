@@ -1,7 +1,7 @@
 package com.asu.librarysystem;
 
 public class Book {
-    private static int idCounter=0;
+    private static int idCounter = 0;
     private final int id;
     private String title;
     private String author;
@@ -11,7 +11,7 @@ public class Book {
     private int rating;
 
     public Book(String title, String author, int publicationYear, boolean status, int price, int rating) {
-        id=idCounter++;
+        this.id = ++idCounter;
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
@@ -48,4 +48,23 @@ public class Book {
         return rating;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPublicationYear(int publicationYear) {
+        this.publicationYear = publicationYear;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 }

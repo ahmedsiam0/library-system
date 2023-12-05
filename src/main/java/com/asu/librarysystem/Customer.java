@@ -7,8 +7,8 @@ public class Customer extends Account{
 
     // shopping cart
 
-    Customer(int user_id, String user_name, String Password, int Phone_Number){
-        super(user_id, user_name, Password, Phone_Number);
+    Customer(String userName, String password, String phoneNumber){
+        super( userName, password, phoneNumber);
         orders = new ArrayList<Order>();
     }
 
