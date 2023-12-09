@@ -1,4 +1,7 @@
 package com.asu.librarysystem;
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 public class Book {
     private static int idCounter = 0;
@@ -9,8 +12,9 @@ public class Book {
     private boolean status;
     private int price;
     private int rating;
+    private File cover;
 
-    public Book(String title, String author, int publicationYear, boolean status, int price, int rating) {
+    public Book(String title, String author, int publicationYear, boolean status, int price, int rating, String coverPath) {
         this.id = ++idCounter;
         this.title = title;
         this.author = author;
@@ -18,6 +22,7 @@ public class Book {
         this.status = status;
         this.price = price;
         this.rating = rating;
+        setCover(coverPath);
     }
 
     public int getId() {
@@ -66,5 +71,25 @@ public class Book {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public void setCover(String path) {
+        File newCover = new File(path);
+
+        if (!newCover.exists()) {
+            System.out.println("Can't find file with path: " + path);
+        }
+        cover = new File("data/covers/" + id + ".jpg");
+        try {
+            if (!newCover.toPath().equals(cover.toPath()))
+                Files.copy(newCover.toPath(), cover.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception e) {
+            System.out.println("Faild to copy this file: " + path);
+            System.out.println("Book title: " + title);
+            System.out.println("Book id: " + id);
+        }
+    }
+    public String getCoverPath() {
+        return cover.getAbsolutePath();
     }
 }

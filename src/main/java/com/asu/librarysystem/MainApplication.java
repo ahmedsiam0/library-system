@@ -45,5 +45,9 @@ public class MainApplication /* extends Application */ {
         b.remove(3);
 
         System.out.println(b.get(2));
+
+        Book book = new Book("The Old Man And The Sea", "Ernest Hemingway", 1952, true, 200, 0, "book-covers/the_old_man_and_the_sea.jpg");
+        System.out.println(book.getCoverPath());
+
     }
 }
