@@ -60,8 +60,13 @@ public class ReviewHandler {
         return bookReviews;
     }
 
+    /**
+     * returns an ArrayList of 6 elements (first one with index 0 is always 0)
+     * that contains number of reviewers that gave a specific rating (from 1 to 5)
+     * where the index is the rating and the value is the number of reviewers who gave this rating.
+     */
     public ArrayList<Integer> getBookRatings(int bookId) {
-        return bookRatings.get(bookId);
+        return (new ArrayList<Integer>(bookRatings.get(bookId)));
     }
 
     public String getReviewText(int reviewerId, int bookId) {
