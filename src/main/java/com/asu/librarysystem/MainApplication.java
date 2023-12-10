@@ -46,8 +46,21 @@ public class MainApplication /* extends Application */ {
 
         System.out.println(b.get(2));
 
+        // Testing Cover
         Book book = new Book("The Old Man And The Sea", "Ernest Hemingway", 1952, true, 200, 0, "book-covers/the_old_man_and_the_sea.jpg");
         System.out.println(book.getCoverPath());
 
+        // Testing ReviewHandler
+        ReviewHandler reviewHandler = new ReviewHandler();
+        reviewHandler.addReview(1, 1, 1, "Nice Book");
+        reviewHandler.addReview(2, 1, 1, "");
+        reviewHandler.addReview(3, 1, 1, "");
+        reviewHandler.addReview(4, 1, 1, "");
+        reviewHandler.addReview(5, 1, 1, "Bad Book");
+        reviewHandler.deleteReview(3, 1);
+        ArrayList<Integer> ratings = reviewHandler.getBookRatings(1);
+        System.out.println(ratings.get(1));
+        System.out.println(reviewHandler.getReviewText(1, 1));
+        System.out.println(reviewHandler.getReviewText(5, 1));
     }
 }
