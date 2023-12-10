@@ -9,6 +9,7 @@ public class Library
     protected static ArrayList<Borrower> borrowers = new ArrayList();
     private static Account activeAccount;
     private static Admin admin ;
+    private ReviewHandler reviewHandler;
 
     //########################## Start for book #########################//
     public static void addBook(Book book) {
@@ -256,5 +257,9 @@ public static void signUp(Account account) {
             return false;
         }
         return false;
+    }
+
+    ReviewHandler getReviewHandler() {
+        return reviewHandler;
     }
 }
