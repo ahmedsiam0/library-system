@@ -1,26 +1,27 @@
 package com.asu.librarysystem;
-/*
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-*/
+
 import java.util.ArrayList;
-public class MainApplication /* extends Application */ {
-    /*
+public class MainApplication  extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("AdminMain.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("AdminMain");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
-    */
+
     public static void main(String[] args) {
-        //launch();
+        launch();
         
         // Order class testing
 //        Book book1 = new Book("book1","author1",2023,true,200,4);
@@ -47,7 +48,7 @@ public class MainApplication /* extends Application */ {
         System.out.println(b.get(2));
 
         // Testing Cover
-        Book book = new Book("The Old Man And The Sea", "Ernest Hemingway", 1952, true, 200, 0, "book-covers/the_old_man_and_the_sea.jpg");
+        Book book = new Book("The Old Man And The Sea", "Ernest Hemingway", 1952, true, 200, 0, 8,"book-covers/the_old_man_and_the_sea.jpg");
         System.out.println(book.getCoverPath());
 
         // Testing ReviewHandler

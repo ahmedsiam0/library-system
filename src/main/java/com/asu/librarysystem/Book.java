@@ -12,9 +12,10 @@ public class Book {
     private boolean status;
     private int price;
     private int rating;
+    private int quantity;
     private File cover;
 
-    public Book(String title, String author, int publicationYear, boolean status, int price, int rating, String coverPath) {
+    public Book(String title, String author, int publicationYear, boolean status, int price, int rating,int quantity, String coverPath){
         this.id = ++idCounter;
         this.title = title;
         this.author = author;
@@ -22,6 +23,7 @@ public class Book {
         this.status = status;
         this.price = price;
         this.rating = rating;
+        this.quantity=quantity;
         setCover(coverPath);
     }
 
@@ -51,6 +53,14 @@ public class Book {
 
     public int getRating() {
         return rating;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public void setTitle(String title) {
