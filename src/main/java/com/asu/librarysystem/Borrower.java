@@ -2,49 +2,44 @@ package com.asu.librarysystem;
 
 import java.util.ArrayList;
 
-public class Borrower extends Account
-{
+public class Borrower extends Account{
     private double borrowerFines = 0;
     private ArrayList<Transaction> borrowerTransactions;
-    
-    public Borrower( String borrowerName, String password, String PhoneNumber)
+    public Borrower( String borrower_name, String Password, String Phone_Number)
     {
-        super( borrowerName, password, PhoneNumber);
+        super( borrower_name, Password, Phone_Number);
         borrowerTransactions = new ArrayList<>();
     }
-
-     public void addTransaction (Book book ,int borrowDate ,int returnDate)
+    public void addTransaction (Book book ,int borrowDate ,int returnDate)
     {
         borrowerTransactions.add(new Transaction(book.getId() ,getId() ,borrowDate ,returnDate));
     }
-     
-     public boolean deleteTransaction (int transactionId) {
+
+    public void deleteTransaction (int transactionId) {
         try {
             borrowerTransactions.remove(transactionId);
-            return true;
         }
         catch (IndexOutOfBoundsException e)
         {
-            //System.out.println("cant delete because the index is out of bound");
-            return false;
+            System.out.println("cant delete because the index is out of bound");
         }
     }
-    
-    public int searchTransactions (int transactionId)
-    {
-        for (int i = 0; i < borrowerTransactions.size(); i++) {
-            if (borrowerTransactions.get(i).getTransactionId() == transactionId)
-            {
-                return borrowerTransactions.get(i).getBorrowerId();
-            }
+
+    public Transaction searchTransaction (int transactionId) {
+        try {
+            return borrowerTransactions.get(transactionId);
         }
-        return -1;
+        catch (IndexOutOfBoundsException e)
+        {
+            System.out.println("cant search because the index is out of bound");
+            return null;
+        }
     }
 
     public double finesIfLate ()
     {
         for (Transaction borrowerTransaction : borrowerTransactions) {
-            if (borrowerTransaction.getBorrowerId() == this.getId() && borrowerTransaction.getFines() >= 0) {
+            if (borrowerTransaction.getBorrowerId() == getId() && borrowerTransaction.getFines() >= 0) {
                 borrowerFines += borrowerTransaction.getFines();
             }
         }
