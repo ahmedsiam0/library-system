@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -12,20 +13,21 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.CRUDBooks">
    <children>
-      <ImageView fx:id="coverImageView" fitHeight="236.0" fitWidth="200.0" layoutX="170.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="coverImageView" fitHeight="236.0" fitWidth="200.0" layoutX="170.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../book-covers/the_old_man_and_the_sea.jpg" />
+         </image></ImageView>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToManagingAdminMain" text="Back!" />
       <Text layoutX="74.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title :" />
       <TextField fx:id="titleField" layoutX="112.0" layoutY="259.0" prefHeight="26.0" prefWidth="334.0" />
       <Text layoutX="65.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author:" />
       <TextField fx:id="authorNameField" layoutX="112.0" layoutY="300.0" prefHeight="26.0" prefWidth="334.0" />
-      <TextField fx:id="publicationyearField" layoutX="112.0" layoutY="332.0" prefHeight="26.0" prefWidth="334.0" />
-      <TextField fx:id="priceField" layoutX="112.0" layoutY="368.0" prefHeight="26.0" prefWidth="334.0" />
-      <TextField fx:id="coverPathField" layoutX="112.0" layoutY="407.0" prefHeight="26.0" prefWidth="334.0" />
-      <TextField fx:id="ratingField" layoutX="112.0" layoutY="442.0" prefHeight="26.0" prefWidth="334.0" />
-      <Text layoutX="13.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="publication year :" />
-      <Text layoutX="74.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price :" />
-      <Text layoutX="42.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cover Path :" />
-      <Text layoutX="64.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating :" />
+      <TextField fx:id="publicationYearField" layoutX="112.0" layoutY="347.0" prefHeight="26.0" prefWidth="334.0" />
+      <TextField fx:id="priceField" layoutX="112.0" layoutY="390.0" prefHeight="26.0" prefWidth="334.0" />
+      <TextField fx:id="coverPathField" layoutX="112.0" layoutY="429.0" prefHeight="26.0" prefWidth="334.0" />
+      <Text layoutX="13.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="publication year :" />
+      <Text layoutX="72.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price :" />
+      <Text layoutX="42.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cover Path :" />
       <Button layoutX="39.0" layoutY="565.0" mnemonicParsing="false" onAction="#AddBook" prefHeight="50.0" prefWidth="130.0" text="Add !">
          <font>
             <Font size="18.0" />
@@ -47,15 +49,14 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <TableView fx:id="bookTable" layoutX="462.0" layoutY="5.0" prefHeight="706.0" prefWidth="810.0">
+      <TableView fx:id="booksTable" layoutX="462.0" layoutY="5.0" prefHeight="706.0" prefWidth="810.0">
         <columns>
-          <TableColumn fx:id="titleColumn" prefWidth="221.59994506835938" text="Book Title" />
-          <TableColumn fx:id="authorNameColumn" prefWidth="219.20001220703125" text="Author Name" />
-            <TableColumn fx:id="publicationYearColumn" prefWidth="110.4000244140625" text="Publication Year" />
-            <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="47.2000732421875" text="Price" />
-            <TableColumn fx:id="ratingColumn" prefWidth="55.2000732421875" text="Rating" />
-            <TableColumn fx:id="statusColumn" prefWidth="75.2000732421875" text="Availability" />
-            <TableColumn fx:id="quantityColumn" prefWidth="95.9998779296875" text="Quantity" />
+          <TableColumn fx:id="titleColumn" prefWidth="244.79995727539062" text="Book Title" />
+          <TableColumn fx:id="authorNameColumn" prefWidth="243.20001220703125" text="Author Name" />
+            <TableColumn fx:id="publicationYearColumn" prefWidth="117.60009765625" text="Publication Year" />
+            <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="57.60003662109375" text="Price" />
+            <TableColumn fx:id="ratingColumn" prefWidth="65.60009765625" text="Rating" />
+            <TableColumn fx:id="quantityColumn" prefWidth="81.5999755859375" text="Quantity" />
         </columns>
       </TableView>
       <TextField fx:id="quantityField" layoutX="112.0" layoutY="478.0" prefHeight="26.0" prefWidth="334.0" />
