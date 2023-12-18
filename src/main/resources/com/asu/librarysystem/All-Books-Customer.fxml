@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.MyBooksBorrowerController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.AllBooksCustomerController">
     <top>
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" styleClass="color1" stylesheets="@../../../css/styles.css" BorderPane.alignment="CENTER">
             <children>
@@ -25,11 +25,11 @@
                     <font>
                         <Font size="36.0" />
                     </font></Label>
-                <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="48.0" prefWidth="6.0" styleClass="color3" stylesheets="@../../../css/styles.css" />
+                <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="48.0" prefWidth="6.0" styleClass="color1" stylesheets="@../../../css/styles.css" />
                 <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="35.0" prefWidth="290.0" style="-fx-background-radius: 50;">
                     <children>
-                        <TextField prefHeight="31.0" prefWidth="229.0" promptText="searsh" style="-fx-background-radius: 50;" styleClass="color4" stylesheets="@../../../../../css/styles.css" />
-                        <Button mnemonicParsing="false" styleClass="color1" stylesheets="@../../../css/styles.css">
+                        <TextField fx:id="searshText" onAction="#searshBook" onKeyTyped="#searshBook" prefHeight="31.0" prefWidth="229.0" promptText="searsh" style="-fx-background-radius: 50;" styleClass="color4" stylesheets="@../../../../../css/styles.css" />
+                        <Button mnemonicParsing="false" onAction="#searshBook" styleClass="color1" stylesheets="@../../../css/styles.css">
                             <graphic>
                                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -44,7 +44,7 @@
                     </children>
                 </HBox>
                 <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="48.0" prefWidth="6.0" styleClass="color3" stylesheets="@../../../css/styles.css" />
+                <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="48.0" prefWidth="6.0" styleClass="color1" stylesheets="@../../../css/styles.css" />
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <Label fx:id="userName" prefHeight="60.0" prefWidth="137.0" text="user name" textFill="#00adb5">
@@ -66,11 +66,11 @@
         </HBox>
     </top>
     <center>
-        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="color3" stylesheets="@../../../css/styles.css" BorderPane.alignment="CENTER">
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="color2" stylesheets="@../../../css/styles.css" BorderPane.alignment="CENTER">
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="1240.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#backButton" styleClass="color3" stylesheets="@../../../css/styles.css">
+                        <Button mnemonicParsing="false" onAction="#backButton" style="-fx-background-radius: 10;" styleClass="color3" stylesheets="@../../../css/styles.css">
                             <graphic>
                                 <ImageView fitHeight="35.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -86,7 +86,7 @@
                             </cursor>
                         </Button>
                         <Pane opacity="0.0" prefHeight="100.0" prefWidth="469.0" visible="false" />
-                        <Label fx:id="name11" alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="126.0" text="All Books" textFill="#222831">
+                        <Label fx:id="name11" alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="126.0" text="All Books" textFill="#eeeeee">
                             <font>
                                 <Font size="25.0" />
                             </font>
