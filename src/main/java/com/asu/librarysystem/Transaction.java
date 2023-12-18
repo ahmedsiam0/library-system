@@ -1,24 +1,43 @@
 package com.asu.librarysystem;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Year;
+import java.time.temporal.ChronoUnit;
+
 public class Transaction
 {
     private static int transactionCount = 0;
     private int transactionId;
     private int bookId;
+    private String bookName;
     private int borrowerId;
-    private int borrowDate;
-    private int returnDate;
+    private LocalDate borrowDate;
+    private LocalDate returnDate;
 
-    public Transaction(int bookId ,int borrowerId ,int borrowDate ,int returnDate)
+    public Transaction(int bookId ,int borrowerId ,LocalDate borrowDate ,LocalDate returnDate)
     {
         this.bookId=bookId;
         this.borrowerId=borrowerId;
         this.borrowDate=borrowDate;
         this.returnDate=returnDate;
+        this.bookName = Library.searchBookById(bookId).getTitle();
         this.transactionId = ++transactionCount;
     }
 
-    public int getTransactionId() 
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+
+    public static int getTransactionCount() {
+        return transactionCount;
+    }
+
+    public int getTransactionId()
     { 
         return transactionId; 
     }
@@ -33,18 +52,18 @@ public class Transaction
         return borrowerId;
     }
 
-    public int getBorrowDate() 
+    public LocalDate getBorrowDate()
     {
         return borrowDate;
     }
 
-    public int getReturnDate() 
+    public LocalDate getReturnDate()
     {
         return returnDate;
     }
     public double getFines() {
-        if (returnDate < java.time.LocalDate.now().getYear()*10000+java.time.LocalDate.now().getMonthValue()*100+java.time.LocalDate.now().getDayOfMonth()) {
-            return (double) (java.time.LocalDate.now().getYear()*10000+java.time.LocalDate.now().getMonthValue()*100+java.time.LocalDate.now().getDayOfMonth() - returnDate);
+        if (LocalDate.now().isAfter(returnDate)) {
+            return ((double) ChronoUnit.DAYS.between(returnDate,LocalDate.now())) * 5;
         }
         return -1;
     }

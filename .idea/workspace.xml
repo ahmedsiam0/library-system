@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="added exception handling">
+      <change afterPath="$PROJECT_DIR$/data/covers/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/covers/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/BorrowerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/Borrower.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/BorrowerTransactions.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/covers/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/Borrower.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/Borrrower.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,17 +57,21 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2YriMpRLbAb6y6MCexWWGf4GDL1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Legion/IdeaProjects/library-system/src/main/java/com/asu/librarysystem&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Legion/Downloads/openjfx-21.0.1_windows-x64_bin-sdk/javafx-sdk-21.0.1/lib&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -71,6 +82,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Legion\IdeaProjects\library-system\src\main\resources\com\asu\librarysystem" />
+      <recent name="C:\Users\Legion\IdeaProjects\library-system\src\main\java\com\asu\librarysystem" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -178,10 +190,35 @@
       <option name="project" value="LOCAL" />
       <updated>1701611989962</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added exception handling">
+      <option name="closed" value="true" />
+      <created>1702515084239</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702515084239</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added exception handling">
+      <option name="closed" value="true" />
+      <created>1702515115496</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702515115496</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added exception handling">
+      <option name="closed" value="true" />
+      <created>1702516696366</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702516696366</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Merge pull request #7 from ahmed-khaled-1/patch-1&#10;&#10;Transaction" />
     <MESSAGE value="added borrower class, added transaction id, fixed some bugs" />
     <MESSAGE value="some optimizations" />

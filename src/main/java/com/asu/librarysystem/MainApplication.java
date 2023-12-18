@@ -8,21 +8,43 @@ import javafx.scene.Scene;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javafx.scene.paint.*;
 public class MainApplication  extends Application {
 
     public static void main(String[] args) {
+        Book book = new Book("The river", "Hossam", 2020, true,50, 5, "");
+        Book book1 = new Book("The Sea", "Hossam", 2021, true, 120,5,"");
+        Book book3 = new Book("The Land", "Hossam", 2021, true, 120,5,"");
+        Library.addBook(book);
+        Library.addBook(book1);
+        Library.addBook(book3);
+        Borrower borrower = new Borrower("Hossam","Ahmed","010");
+        Borrower borrower2 = new Borrower("Moez","Ahmed","010");
+        Borrower borrower3 = new Borrower("Hazem","Ahmed", "01060609587");
+        borrower.addTransaction(book);
+        borrower.addTransaction(book3);
+        borrower.addTransaction(book1);
+        borrower2.addTransaction(book);
+        borrower2.addTransaction(book1);
+        borrower.addTransaction(book3);
+        BorrowerController.setCurrentBorrower(borrower2);
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         try{
-            Parent root =FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Borrower.fxml")));
+            Parent root =FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
             Scene scene = new Scene(root);
+            primaryStage.setHeight(720);
+            primaryStage.setWidth(1280);
+            primaryStage.setResizable(false);
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e){

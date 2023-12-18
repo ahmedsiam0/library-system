@@ -1,6 +1,7 @@
 package com.asu.librarysystem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Library 
 {
@@ -87,6 +88,15 @@ public class Library
             if (titleInArray.equals(title.toLowerCase())) {
                 return books.get(i);
             }
+        }
+        return null;
+    }
+
+    public static Book searchBookById(int id)
+    {
+        for (int i = 0; i < books.size(); i++) {
+            if(books.get(i).getId() == id)
+                return books.get(i);
         }
         return null;
     }
