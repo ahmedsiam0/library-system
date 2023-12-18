@@ -15,25 +15,40 @@ public class CustomerController {
     private Parent customerViewNodes;
 
     public void switchToShopping(ActionEvent event)throws IOException {
-        customerViewNodes= FXMLLoader.load(MainApplication.class.getResource("Shopping.fxml"));
-        customerStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        customerScene =new Scene(customerViewNodes);
-        customerStage.setScene(customerScene);
-        customerStage.show();
+        try {
+            customerViewNodes= FXMLLoader.load(MainApplication.class.getResource("Shopping.fxml"));
+            customerStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            customerScene =new Scene(customerViewNodes);
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }catch (Exception switchingScenesException){
+            System.out.println(switchingScenesException.getMessage());
+        }
+
     }
     public void switchToMyBooks(ActionEvent event)throws IOException {
-        customerViewNodes = FXMLLoader.load(MainApplication.class.getResource("MyBooks.fxml"));
-        customerStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        customerScene = new Scene(customerViewNodes);
-        customerStage.setScene(customerScene);
-        customerStage.show();
+        try {
+            customerViewNodes = FXMLLoader.load(MainApplication.class.getResource("MyBooks.fxml"));
+            customerStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            customerScene = new Scene(customerViewNodes);
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }catch (Exception switchingScenesException){
+            System.out.println(switchingScenesException.getMessage());
+        }
+
     }
     public void switchToManagingCustomerProfile(ActionEvent event)throws IOException {
-        customerViewNodes= FXMLLoader.load(MainApplication.class.getResource("ManagingCustomerProfile.fxml"));
-        customerStage= (Stage)((Node)event.getSource()).getScene().getWindow();
-        customerScene =new Scene(customerViewNodes);
-        customerStage.setScene(customerScene);
-        customerStage.show();
+        try {
+            customerViewNodes= FXMLLoader.load(MainApplication.class.getResource("ManagingCustomerProfile.fxml"));
+            customerStage= (Stage)((Node)event.getSource()).getScene().getWindow();
+            customerScene =new Scene(customerViewNodes);
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }catch (Exception switchingScenesException){
+            System.out.println(switchingScenesException.getMessage());
+        }
+
     }
 
 }

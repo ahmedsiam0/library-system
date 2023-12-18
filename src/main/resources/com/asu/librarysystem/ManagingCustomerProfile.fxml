@@ -7,58 +7,58 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.ManagingCustomerProfile">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.ManagingCustomerProfile">
    <children>
-      <Label fx:id="label" layoutX="591.0" layoutY="55.0" text="profile">
+      <Label fx:id="label" layoutX="590.0" layoutY="55.0" text="profile" textFill="#00adb5">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Text layoutX="373.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name :">
+      <Text fill="#00adb5" layoutX="366.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name :">
          <font>
             <Font name="Georgia" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="352.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="phone Number :">
+      <Text fill="#00adb5" layoutX="351.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="phone Number :">
          <font>
             <Font name="Georgia" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="acountNameTextField" layoutX="511.0" layoutY="281.0" prefHeight="26.0" prefWidth="226.0" />
-      <TextField fx:id="phoneNumberTextField" layoutX="511.0" layoutY="347.0" prefHeight="26.0" prefWidth="226.0" />
-      <Text layoutX="403.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password :">
+      <TextField fx:id="acountNameTextField" layoutX="514.0" layoutY="240.0" prefHeight="26.0" prefWidth="226.0" />
+      <TextField fx:id="phoneNumberTextField" layoutX="514.0" layoutY="320.0" prefHeight="26.0" prefWidth="226.0" />
+      <Text fill="#00adb5" layoutX="403.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password :">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="PasswordTextField" layoutX="511.0" layoutY="417.0" prefHeight="26.0" prefWidth="226.0" />
-      <TextField fx:id="confiremingPasswordTextField" layoutX="511.0" layoutY="489.0" prefHeight="26.0" prefWidth="226.0" />
-      <Text layoutX="325.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password :">
+      <TextField fx:id="PasswordTextField" layoutX="514.0" layoutY="400.0" prefHeight="26.0" prefWidth="226.0" />
+      <TextField fx:id="confiremingPasswordTextField" layoutX="514.0" layoutY="480.0" prefHeight="26.0" prefWidth="226.0" />
+      <Text fill="#00adb5" layoutX="330.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password :">
          <font>
             <Font name="Georgia" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="583.0" layoutY="619.0" mnemonicParsing="false" onAction="#editProfile" prefHeight="44.0" prefWidth="79.0" text="Edit!" />
-      <Text layoutX="422.0" layoutY="569.0" strokeType="OUTSIDE" strokeWidth="0.0" text="please enter the new password and confirm it!">
+      <Button layoutX="587.0" layoutY="651.0" mnemonicParsing="false" onAction="#editProfile" prefHeight="44.0" prefWidth="79.0" text="Edit!" textFill="#00adb5" />
+      <Text fill="#00adb5" layoutX="444.0" layoutY="566.0" strokeType="OUTSIDE" strokeWidth="0.0" text="please enter the new password and confirm it!">
          <font>
             <Font name="Georgia" size="18.0" />
          </font>
       </Text>
-      <Text fx:id="userNameText" layoutX="606.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="acountNameText" fill="#00adb5" layoutX="572.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font name="Georgia" size="18.0" />
          </font>
       </Text>
-      <Text fx:id="phoneNumberText" layoutX="605.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="phoneNumberText" fill="#00adb5" layoutX="572.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font name="Georgia" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="505.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" text="the password mustn't be null!">
+      <Text fill="#00adb5" layoutX="510.0" layoutY="612.0" strokeType="OUTSIDE" strokeWidth="0.0" text="the password mustn't be null!">
          <font>
             <Font name="Georgia" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="25.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToManagingCustomerMain" text="Back" />
+      <Button layoutX="25.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToManagingCustomerMain" style="-fx-background-color: #F4EEE0;" text="Back" textFill="#00adb5" />
    </children>
 </AnchorPane>

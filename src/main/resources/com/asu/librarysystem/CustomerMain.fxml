@@ -6,21 +6,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.CustomerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.CustomerController">
    <children>
-      <Label layoutX="544.0" layoutY="90.0" text="welcome Customer!">
+      <Label layoutX="544.0" layoutY="90.0" text="welcome Customer!" textFill="#00adb5">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
       <VBox layoutX="184.0" layoutY="188.0" prefHeight="322.0" prefWidth="401.0" spacing="220.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#switchToMyBooks" prefHeight="53.0" prefWidth="402.0" text="my books">
+            <Button style="-fx-background-color: #F4EEE0;" mnemonicParsing="false" onAction="#switchToMyBooks" prefHeight="53.0" prefWidth="402.0" text="my books" textFill="#00adb5">
                <font>
                   <Font name="Georgia" size="22.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#switchToShopping" prefHeight="53.0" prefWidth="402.0" text="shopping">
+            <Button style="-fx-background-color: #F4EEE0;" mnemonicParsing="false" onAction="#switchToShopping" prefHeight="53.0" prefWidth="402.0" text="shopping" textFill="#00adb5">
                <font>
                   <Font name="Georgia" size="22.0" />
                </font>
@@ -29,12 +29,12 @@
       </VBox>
       <VBox layoutX="700.0" layoutY="188.0" prefHeight="322.0" prefWidth="401.0" spacing="220.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#switchToManagingCustomerProfile" prefHeight="53.0" prefWidth="402.0" text="managing profile">
+            <Button style="-fx-background-color: #F4EEE0;" mnemonicParsing="false" onAction="#switchToManagingCustomerProfile" prefHeight="53.0" prefWidth="402.0" text="managing profile" textFill="#00adb5">
                <font>
                   <Font name="Georgia" size="22.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="53.0" prefWidth="402.0" text="logout">
+            <Button style="-fx-background-color: #F4EEE0;" mnemonicParsing="false" prefHeight="53.0" prefWidth="402.0" text="logout" textFill="#00adb5">
                <font>
                   <Font name="Georgia" size="22.0" />
                </font>
