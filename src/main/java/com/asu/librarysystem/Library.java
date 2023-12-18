@@ -9,7 +9,7 @@ public class Library
     protected static ArrayList<Borrower> borrowers = new ArrayList();
     private static Account activeAccount;
     private static Admin admin ;
-    private ReviewHandler reviewHandler;
+    private static ReviewHandler reviewHandler = new ReviewHandler();
 
     //########################## Start for book #########################//
     public static void addBook(Book book) {
@@ -259,7 +259,11 @@ public static void signUp(Account account) {
         return false;
     }
 
-    ReviewHandler getReviewHandler() {
+    public static ReviewHandler getReviewHandler() {
         return reviewHandler;
+    }
+
+    public static Account getActiveAccount() {
+        return activeAccount;
     }
 }

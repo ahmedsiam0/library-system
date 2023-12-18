@@ -5,7 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/1_star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/2_stars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/3_stars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/4_stars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/5_stars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/fiveStarsRate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/fourStarsRate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/oneStarRate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/threeStarsRate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/twoStarsRate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Status_icons/addToCartButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Status_icons/notifyMeButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Status_icons/outOfStock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/user-profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Categories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/book-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/covers/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/covers/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -37,6 +64,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-win.jar!/javafx/fxml/FXMLLoader.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -53,9 +83,10 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/Repos/java repo/Library-System Project/library-system&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programming/Repos/library-system&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
@@ -170,5 +201,16 @@
     <MESSAGE value="fixed some potential bugs, decreased redundancy in the code, better efficiency" />
     <MESSAGE value="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainController.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

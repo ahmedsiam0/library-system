@@ -1,66 +1,38 @@
 package com.asu.librarysystem;
-/*
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-*/
+
 import java.util.ArrayList;
-public class MainApplication /* extends Application */ {
-    /*
+
+public class MainApplication extends Application {
+    public static ArrayList<Book> books  = new ArrayList<Book>();
+
+    public static Stage st;
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
         stage.setScene(scene);
+        st = stage;
         stage.show();
     }
-    */
+
     public static void main(String[] args) {
-        //launch();
-        
-        // Order class testing
-//        Book book1 = new Book("book1","author1",2023,true,200,4);
-//        Book book2 = new Book("book2","author1",2023,true,200,4);
-//        Book book3 = new Book("book3","author1",2023,true,200,4);
-//        Order o = new Order(book1, 6);
-//        Borrower b1 = new Borrower("hossam","hos", "1999999999");
-//        Borrower b2 = new Borrower("hossam","hos", "1060606060");
-//        b1.addTransaction(book1,20230519,20231103);
-//        b1.addTransaction(book2,20230519,20231003);
-//        b2.addTransaction(book3,20220815,20231130);
-//        b2.addTransaction(book1,20220815,20231130);
-//        b1.deleteTransaction(4);
-//        System.out.println("Book Price: " + book1.getPrice());
-//        System.out.println("Order Price: " + o.getPrice());
-//        System.out.println(b1.finesIfLate());
-        ArrayList b = new ArrayList();
-        b.add(1);
-        b.add(2);
-        b.add(888);
-        b.add(4);
-        b.remove(3);
+        Book book1 = new Book("Jane Eyre", "Charlotte Bronte", 1847, true, 8
+                , 1, "Orphaned Jane is sent to work as a governess for brooding Mr. Rochester's daughter, Adele. Love begins to grow between Jane and her moody employer, but his mysterious first wife threatens to ruin their chance at happiness."
+                , "D:\\Programming\\Repos\\library-system\\book-covers\\jane_eyre.jpg", new Categories[]{Categories.HORROR, Categories.DRAMA});
 
-        System.out.println(b.get(2));
+        books.add(book1);
+        Library.addBorrower(new Borrower("arsany", "123", "01277535814"));
+        Library.logInByUserName("arsany", "123");
 
-        // Testing Cover
-        Book book = new Book("The Old Man And The Sea", "Ernest Hemingway", 1952, true, 200, 0, "book-covers/the_old_man_and_the_sea.jpg");
-        System.out.println(book.getCoverPath());
-
-        // Testing ReviewHandler
-        ReviewHandler reviewHandler = new ReviewHandler();
-        reviewHandler.addReview(1, 1, 1, "Nice Book");
-        reviewHandler.addReview(2, 1, 1, "");
-        reviewHandler.addReview(3, 1, 1, "");
-        reviewHandler.addReview(4, 1, 1, "");
-        reviewHandler.addReview(5, 1, 1, "Bad Book");
-        reviewHandler.deleteReview(3, 1);
-        ArrayList<Integer> ratings = reviewHandler.getBookRatings(1);
-        System.out.println(ratings.get(1));
-        System.out.println(reviewHandler.getReviewText(1, 1));
-        System.out.println(reviewHandler.getReviewText(5, 1));
+        launch();
     }
 }
