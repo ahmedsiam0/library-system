@@ -12,7 +12,7 @@ public class MainApplication  extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("AdminMain.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("CRUDBooks.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("AdminMain");
         stage.setResizable(false);
@@ -48,7 +48,7 @@ public class MainApplication  extends Application {
         System.out.println(b.get(2));
 
         // Testing Cover
-        Book book = new Book("The Old Man And The Sea", "Ernest Hemingway", 1952, true, 200, 0, 8,"book-covers/the_old_man_and_the_sea.jpg");
+        Book book = new Book("The Old Man And The Sea", "Ernest Hemingway", 1952, 200, 0, 8,"book-covers/the_old_man_and_the_sea.jpg");
         System.out.println(book.getCoverPath());
 
         // Testing ReviewHandler

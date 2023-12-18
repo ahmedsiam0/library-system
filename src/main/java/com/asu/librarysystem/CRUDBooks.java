@@ -27,7 +27,7 @@ public class CRUDBooks implements Initializable {
     @FXML
     private Parent adminViewNodes;
     @FXML
-    private TableView<Book> bookTable;
+    private TableView<Book> booksTable;
     @FXML
     private TableColumn<Book, String> titleColumn;
     @FXML
@@ -41,17 +41,13 @@ public class CRUDBooks implements Initializable {
     @FXML
     private TableColumn<Book, Integer> quantityColumn;
     @FXML
-    private TableColumn<Book, Boolean> statusColumn;
-    @FXML
     private TextField titleField;
     @FXML
     private TextField  authorNameField;
     @FXML
-    private TextField  publicationyearField;
+    private TextField  publicationYearField;
     @FXML
     private TextField  priceField;
-    @FXML
-    private TextField  ratingField;
     @FXML
     private TextField  coverPathField;
     @FXML
@@ -64,102 +60,103 @@ public class CRUDBooks implements Initializable {
     private Image coverImage ;
     @FXML
     private ObservableList<Book> bookList = FXCollections.observableArrayList(
-        new Book("Atomic Habits","James Clear",2018,true,25,5,7,"data/covers/2.png")
+        new Book("Atomic Habits","James Clear",2018,25,5,7,"data/covers/2.png")
     );
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Initializing columns
+
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         authorNameColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
         publicationYearColumn.setCellValueFactory(new PropertyValueFactory<>("publicationYear"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
         ratingColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("rating"));
 
-        bookTable.setItems(bookList);
+        booksTable.setItems(bookList);
 
     }
     private void clearFields() {
         titleField.clear();
         authorNameField.clear();
-        publicationyearField.clear();
+        publicationYearField.clear();
         priceField.clear();
-        ratingField.clear();
         quantityField.clear();
         statusCheckBox.setSelected(false);
         coverPathField.clear();
-
     }
     @FXML
     private void AddBook() {
-        // Get input from fields
-        String title = titleField.getText();
-        String author = authorNameField.getText();
-        int year = Integer.parseInt(publicationyearField.getText());
-        int price = Integer.parseInt(priceField.getText());
-        int rating = Integer.parseInt(ratingField.getText());
-        int quantity = Integer.parseInt(quantityField.getText());
-        boolean status = statusCheckBox.isSelected();
-        String coverPath = coverPathField.getText();
+        try {
+            String title = titleField.getText();
+            String author = authorNameField.getText();
+            int year = Integer.parseInt(publicationYearField.getText());
+            int price = Integer.parseInt(priceField.getText());
+            int quantity = Integer.parseInt(quantityField.getText());
+            String coverPath = coverPathField.getText();
 
-        coverImage = new Image(getClass().getResourceAsStream(coverPath));
-        coverImageView.setImage(coverImage);
+            coverImage = new Image(coverPath);
+            coverImageView.setImage(coverImage);
 
-        Book newBook = new Book(title, author, year, status, price, rating, quantity,coverPath);
+            Book newBook = new Book(title, author, year, price, 0, quantity,coverPath);
 
-        bookList.add(newBook);
+            bookList.add(newBook);
 
-        // Clear input fields
-        clearFields();
+            clearFields();
+
+        }catch (Exception addingBookException){
+            System.out.println(addingBookException.getCause());
+        }
+
     }
 
     private Book selectedBook;
     @FXML
     private void showBookDetails() {
 
-        selectedBook = bookTable.getSelectionModel().getSelectedItem();
+        selectedBook = booksTable.getSelectionModel().getSelectedItem();
 
         if (selectedBook != null) {
 
             titleField.setText(selectedBook.getTitle());
             authorNameField.setText(selectedBook.getAuthor());
-            publicationyearField.setText(String.valueOf(selectedBook.getPublicationYear()));
+            publicationYearField.setText(String.valueOf(selectedBook.getPublicationYear()));
             priceField.setText(String.valueOf(selectedBook.getPrice()));
-            ratingField.setText(String.valueOf(selectedBook.getRating()));
             quantityField.setText(String.valueOf(selectedBook.getQuantity()));
-            statusCheckBox.setSelected(selectedBook.isStatus());
+            statusCheckBox.setSelected(selectedBook.isAvailable());
             coverPathField.setText(selectedBook.getCoverPath());
 
-            coverImage = new Image(getClass().getResourceAsStream(coverPathField.getText()));
+            coverImage = new Image(coverPathField.getText());
             coverImageView.setImage(coverImage);
         }
     }
     @FXML
     private void UpdateBook() {
+        try {
+            selectedBook = booksTable.getSelectionModel().getSelectedItem();
+            if (selectedBook != null) {
+                // Update selected book with input values
+                selectedBook.setTitle(titleField.getText());
+                selectedBook.setAuthor(authorNameField.getText());
+                selectedBook.setPublicationYear(Integer.parseInt(publicationYearField.getText()));
+                selectedBook.setPrice(Integer.parseInt(priceField.getText()));
+                selectedBook.setQuantity(Integer.parseInt(quantityField.getText()));
+                selectedBook.setCover(coverPathField.getText());
+                coverImage = new Image(coverPathField.getText());
+                coverImageView.setImage(coverImage);
 
-        selectedBook = bookTable.getSelectionModel().getSelectedItem();
-        if (selectedBook != null) {
-            // Update selected book with input values
-            selectedBook.setTitle(titleField.getText());
-            selectedBook.setAuthor(authorNameField.getText());
-            selectedBook.setPublicationYear(Integer.parseInt(publicationyearField.getText()));
-            selectedBook.setPrice(Integer.parseInt(priceField.getText()));
-            selectedBook.setQuantity(Integer.parseInt(quantityField.getText()));
-            selectedBook.setStatus(statusCheckBox.isSelected());
-            selectedBook.setCover(coverPathField.getText());
-            coverImage = new Image(getClass().getResourceAsStream(coverPathField.getText()));
-            coverImageView.setImage(coverImage);
-
-            // Refresh TableView
-            // I made a similar CRUD as a practice and Update wasn't working and chat GPT and it recommended this statement
-            bookTable.refresh();
+                // Refresh TableView
+                // I made a similar CRUD as a practice and Update wasn't working and chat GPT and it recommended this statement
+                booksTable.refresh();
+            }
+        }catch (Exception updatingException){
+            System.out.println(updatingException.getCause());
         }
+
     }
     @FXML
     private void DeleteBook() {
 
-        selectedBook = bookTable.getSelectionModel().getSelectedItem();
+        selectedBook = booksTable.getSelectionModel().getSelectedItem();
 
         if (selectedBook != null) {
 
@@ -178,8 +175,8 @@ public class CRUDBooks implements Initializable {
             adminStage.setScene(adminScene);
             adminStage.show();
 
-        }catch (Exception e){
-            System.out.println(e.getMessage());
+        }catch (Exception switchingScenesException){
+            System.out.println(switchingScenesException.getCause());
         }
     }
 }

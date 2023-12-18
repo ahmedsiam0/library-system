@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency">
-      <change afterPath="$PROJECT_DIR$/data/covers/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/CRUDBooks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/ManagingCustomerProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/AdminMain.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/CRUDBooks.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/CustomerMain.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/ManagingCustomerProfile.fxml" afterDir="false" />
+    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="finished the skeleton of the scenes but i can't switch to CRUD when i run + added qunatity field to Books">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/covers/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/covers/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/covers/2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/CRUDBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/CRUDBooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/AdminMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/AdminMain.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/CRUDBooks.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/CRUDBooks.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +46,8 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="4b170fae-7a53-4d68-a7d4-1a589dda4637" />
-        <option name="url" value="https://github.com/HosTheRockJohnson/library-system.git" />
+        <option name="accountId" value="b4fd41cd-63fc-4bd8-84fa-7fa52482814c" />
+        <option name="url" value="https://github.com/ahmedsiam0/library-system.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -78,30 +73,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "GUI__elements",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/PROJECTS/CRUDtableview",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GUI__elements&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PROJECTS/CRUDtableview&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-8336523bb0d9-657b72ed" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -200,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701611695053</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="finished the skeleton of the scenes but i can't switch to CRUD when i run + added qunatity field to Books">
+      <option name="closed" value="true" />
+      <created>1702510638848</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1702510638848</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -211,6 +210,7 @@
     <MESSAGE value="fixed some potential bugs, decreased redundancy in the code" />
     <MESSAGE value="fixed some potential bugs, decreased redundancy in the code, better efficiency" />
     <MESSAGE value="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency" />
+    <MESSAGE value="finished the skeleton of the scenes but i can't switch to CRUD when i run + added qunatity field to Books" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished the skeleton of the scenes but i can't switch to CRUD when i run + added qunatity field to Books" />
   </component>
 </project>

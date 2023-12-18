@@ -15,7 +15,7 @@
       </Label>
       <VBox layoutX="75.0" layoutY="150.0" prefHeight="370.0" prefWidth="507.0" spacing="125.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#switchToManagingBooks" prefHeight="100.0" prefWidth="570.0" text="managing books">
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToManagingBooks" text="managing books">
                <font>
                   <Font size="18.0" />
                </font></Button>

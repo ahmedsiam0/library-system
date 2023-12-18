@@ -9,18 +9,16 @@ public class Book {
     private String title;
     private String author;
     private int publicationYear;
-    private boolean status;
     private int price;
     private int rating;
     private int quantity;
     private File cover;
 
-    public Book(String title, String author, int publicationYear, boolean status, int price, int rating,int quantity, String coverPath){
+    public Book(String title, String author, int publicationYear, int price, int rating,int quantity, String coverPath){
         this.id = ++idCounter;
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
-        this.status = status;
         this.price = price;
         this.rating = rating;
         this.quantity=quantity;
@@ -43,8 +41,13 @@ public class Book {
         return publicationYear;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isAvailable() {
+        if (quantity>0) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public int getPrice() {
@@ -73,10 +76,6 @@ public class Book {
 
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
     }
 
     public void setPrice(int price) {

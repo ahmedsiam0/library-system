@@ -53,14 +53,6 @@ public class Library
         return false;
     }
 
-    public static boolean updateStatus(int id, boolean newStatus) {
-        int index = getIndexBook(id);
-        if (index != -1) {
-            books.get(index).setStatus(newStatus);
-            return true;
-        }
-        return false;
-    }
 
     public static boolean updatePrice(int id, int newPrice) {
         int index = getIndexBook(id);
