@@ -15,16 +15,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ManagingCustomerProfile implements Initializable {
+public class ManagingAdminProfile implements Initializable{
     private Stage customerStage;
     private Scene customerScene;
     private Parent customerViewNodes;
 
     @FXML
-    public void switchToManagingCustomerMain(ActionEvent event)throws IOException {
-
+    public void switchToManagingAdminMain(ActionEvent event)throws IOException {
         try {
-            customerViewNodes= FXMLLoader.load(MainApplication.class.getResource("CustomerMain.fxml"));
+            customerViewNodes= FXMLLoader.load(MainApplication.class.getResource("AdminMain.fxml"));
             customerStage= (Stage)((Node)event.getSource()).getScene().getWindow();
             customerScene =new Scene(customerViewNodes);
             customerStage.setScene(customerScene);
@@ -34,7 +33,7 @@ public class ManagingCustomerProfile implements Initializable {
         }
     }
 
-    Account customer = new Customer("ahmed khaled","12345678","01026428077");
+    Account admin = new Admin("ahmed khaled","12345678","01026428077");
 
     @FXML
     private TextField acountNameTextField;
@@ -53,9 +52,9 @@ public class ManagingCustomerProfile implements Initializable {
     private void editProfile(){
 
         if(PasswordTextField.getText().equals(confiremingPasswordTextField.getText()) && !(PasswordTextField.getText().isEmpty())){
-            customer.setPassword(PasswordTextField.getText());
-            customer.setUserName(acountNameTextField.getText());
-            customer.setPhoneNumber(phoneNumberTextField.getText());
+            admin.setPassword(PasswordTextField.getText());
+            admin.setUserName(acountNameTextField.getText());
+            admin.setPhoneNumber(phoneNumberTextField.getText());
 
             acountNameText.setText(acountNameTextField.getText());
             phoneNumberText.setText(phoneNumberTextField.getText());
@@ -66,9 +65,9 @@ public class ManagingCustomerProfile implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        acountNameText.setText(customer.getUserName());
-        phoneNumberText.setText(customer.getPhoneNumber());
-        acountNameTextField.setText(customer.getUserName());
-        phoneNumberTextField.setText(customer.getPhoneNumber());
+        acountNameText.setText(admin.getUserName());
+        phoneNumberText.setText(admin.getPhoneNumber());
+        acountNameTextField.setText(admin.getUserName());
+        phoneNumberTextField.setText(admin.getPhoneNumber());
     }
 }

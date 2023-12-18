@@ -13,11 +13,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.io.File;
 
 public class CRUDBooks implements Initializable {
     @FXML
@@ -36,8 +35,6 @@ public class CRUDBooks implements Initializable {
     private TableColumn<Book, Integer> publicationYearColumn;
     @FXML
     private TableColumn<Book, Integer> priceColumn;
-    @FXML
-    private TableColumn<Book, Integer> ratingColumn;
     @FXML
     private TableColumn<Book, Integer> quantityColumn;
     @FXML
@@ -66,8 +63,7 @@ public class CRUDBooks implements Initializable {
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         authorNameColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
         publicationYearColumn.setCellValueFactory(new PropertyValueFactory<>("publicationYear"));
-        priceColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        ratingColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
         booksTable.setItems(bookList);
@@ -144,7 +140,7 @@ public class CRUDBooks implements Initializable {
                 coverImageView.setImage(coverImage);
 
                 // Refresh TableView
-                // I made a similar CRUD as a practice and Update wasn't working and chat GPT and it recommended this statement
+                // I made a similar CRUD as a practice and Update wasn't working and I asked chatGPT it recommended this statement
                 booksTable.refresh();
             }
         }catch (Exception updatingException){

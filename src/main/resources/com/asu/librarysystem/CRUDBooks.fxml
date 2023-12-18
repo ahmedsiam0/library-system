@@ -11,55 +11,57 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.CRUDBooks">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.CRUDBooks">
    <children>
       <ImageView fx:id="coverImageView" fitHeight="236.0" fitWidth="200.0" layoutX="170.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../book-covers/the_old_man_and_the_sea.jpg" />
          </image></ImageView>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToManagingAdminMain" text="Back!" />
-      <Text layoutX="74.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title :" />
-      <TextField fx:id="titleField" layoutX="112.0" layoutY="259.0" prefHeight="26.0" prefWidth="334.0" />
-      <Text layoutX="65.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author:" />
-      <TextField fx:id="authorNameField" layoutX="112.0" layoutY="300.0" prefHeight="26.0" prefWidth="334.0" />
-      <TextField fx:id="publicationYearField" layoutX="112.0" layoutY="347.0" prefHeight="26.0" prefWidth="334.0" />
-      <TextField fx:id="priceField" layoutX="112.0" layoutY="390.0" prefHeight="26.0" prefWidth="334.0" />
-      <TextField fx:id="coverPathField" layoutX="112.0" layoutY="429.0" prefHeight="26.0" prefWidth="334.0" />
-      <Text layoutX="13.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="publication year :" />
-      <Text layoutX="72.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price :" />
-      <Text layoutX="42.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cover Path :" />
-      <Button layoutX="39.0" layoutY="565.0" mnemonicParsing="false" onAction="#AddBook" prefHeight="50.0" prefWidth="130.0" text="Add !">
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToManagingAdminMain" style="-fx-background-color: #F4EEE0;" text="Back!" textFill="#00adb5" />
+      <Text fill="#00adb5" layoutX="74.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title :" />
+      <TextField fx:id="titleField" layoutX="112.0" layoutY="260.0" prefHeight="26.0" prefWidth="334.0" />
+      <Text fill="#00adb5" layoutX="65.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author:" />
+      <TextField fx:id="authorNameField" layoutX="112.0" layoutY="305.0" prefHeight="26.0" prefWidth="334.0" />
+      <TextField fx:id="publicationYearField" layoutX="112.0" layoutY="350.0" prefHeight="26.0" prefWidth="334.0" />
+      <TextField fx:id="priceField" layoutX="112.0" layoutY="395.0" prefHeight="26.0" prefWidth="334.0" />
+      <TextField fx:id="coverPathField" layoutX="112.0" layoutY="440.0" prefHeight="26.0" prefWidth="334.0" />
+      <Text fill="#00adb5" layoutX="13.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="publication year :" />
+      <Text fill="#00adb5" layoutX="69.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price :" />
+      <Text fill="#00adb5" layoutX="36.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cover Path :" />
+      <Button layoutX="39.0" layoutY="565.0" mnemonicParsing="false" onAction="#AddBook" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #F4EEE0;" text="Add !" textFill="#00adb5">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button layoutX="253.0" layoutY="565.0" mnemonicParsing="false" onAction="#UpdateBook" prefHeight="50.0" prefWidth="130.0" text="Update !">
+      <Button layoutX="253.0" layoutY="565.0" mnemonicParsing="false" onAction="#UpdateBook" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #F4EEE0;" text="Update !" textFill="#00adb5">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button layoutX="40.0" layoutY="635.0" mnemonicParsing="false" onAction="#DeleteBook" prefHeight="50.0" prefWidth="130.0" text="Delete !">
+      <Button layoutX="40.0" layoutY="635.0" mnemonicParsing="false" onAction="#DeleteBook" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #F4EEE0;" text="Delete !" textFill="#00adb5">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <CheckBox fx:id="statusCheckBox" layoutX="112.0" layoutY="515.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="130.0" text="Available?">
+      <CheckBox fx:id="statusCheckBox" layoutX="112.0" layoutY="525.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="130.0" text="Available?" textFill="#00adb5">
          <font>
             <Font size="18.0" />
          </font></CheckBox>
-      <Button layoutX="253.0" layoutY="635.0" mnemonicParsing="false" onAction="#showBookDetails" prefHeight="50.0" prefWidth="130.0" text="display !">
+      <Button layoutX="253.0" layoutY="635.0" mnemonicParsing="false" onAction="#showBookDetails" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #F4EEE0;" text="display !" textFill="#00adb5">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
       <TableView fx:id="booksTable" layoutX="462.0" layoutY="5.0" prefHeight="706.0" prefWidth="810.0">
         <columns>
-          <TableColumn fx:id="titleColumn" prefWidth="244.79995727539062" text="Book Title" />
-          <TableColumn fx:id="authorNameColumn" prefWidth="243.20001220703125" text="Author Name" />
-            <TableColumn fx:id="publicationYearColumn" prefWidth="117.60009765625" text="Publication Year" />
-            <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="57.60003662109375" text="Price" />
-            <TableColumn fx:id="ratingColumn" prefWidth="65.60009765625" text="Rating" />
-            <TableColumn fx:id="quantityColumn" prefWidth="81.5999755859375" text="Quantity" />
+          <TableColumn fx:id="titleColumn" prefWidth="288.7999572753906" text="Book Title" />
+          <TableColumn fx:id="authorNameColumn" prefWidth="290.4000244140625" text="Author Name" />
+            <TableColumn fx:id="publicationYearColumn" prefWidth="106.39996337890625" text="Publication Year" />
+            <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="51.9998779296875" text="Price" />
+            <TableColumn fx:id="quantityColumn" prefWidth="74.39990234375" text="Quantity" />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
-      <TextField fx:id="quantityField" layoutX="112.0" layoutY="478.0" prefHeight="26.0" prefWidth="334.0" />
-      <Text layoutX="58.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity :" />
+      <TextField fx:id="quantityField" layoutX="112.0" layoutY="485.0" prefHeight="26.0" prefWidth="334.0" />
+      <Text fill="#00adb5" layoutX="48.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity :" />
    </children>
 </AnchorPane>
