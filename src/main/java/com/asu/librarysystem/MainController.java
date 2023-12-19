@@ -22,18 +22,34 @@ public class MainController {
     private Parent root;
 
     public void pressed(ActionEvent event) {
+
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("book-view.fxml"));
+//            Parent root = loader.load();
+//
+//            BookController bookc = loader.getController();
+//            bookc.setScene(MainApplication.books.get(0));
+//
+//            Scene newScene = new Scene(root);
+//            MainApplication.st.setScene(newScene);
+//            MainApplication.st.show();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("book-view.fxml"));
-            Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("All-Books.fxml"));
+            root = loader.load();
 
-            BookController bookc = loader.getController();
-            bookc.setScene(MainApplication.books.get(0));
-
-            Scene newScene = new Scene(root);
-            MainApplication.st.setScene(newScene);
-            MainApplication.st.show();
+            AllBooksController sceneController = loader.getController();
+            sceneController.startAllBooksController();
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene= new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

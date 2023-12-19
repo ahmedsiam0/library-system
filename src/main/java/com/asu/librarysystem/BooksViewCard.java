@@ -34,27 +34,45 @@ public class BooksViewCard {
         for (int i = 1; i <= 5; i++){
             total += reviews.get(i);
         }
+
         if (total == 0){
             return "0";
         }
 
-        int allRatings = reviews.get(1) * 1 + reviews.get(2) * 2 + reviews.get(3) * 3 + reviews.get(4) * 4
+        double allRatings = reviews.get(1) + reviews.get(2) * 2 + reviews.get(3) * 3 + reviews.get(4) * 4
                 + reviews.get(5) * 5;
 
-        double score = allRatings
-                / (double) (total * 5);
+        double score = allRatings / (double) (total * 5);
 
         score = score * 5;
-        DecimalFormat formatting = new DecimalFormat("0.##");
 
-        return formatting.format(score);
+
+        return String.format("%.1f", score);
     }
+//    public String calculateScore(ArrayList<Integer> reviews){
+//        int total = 0;
+//        for (int i = 1; i <= 5; i++){
+//            total += reviews.get(i);
+//        }
+//        if (total == 0){
+//            return "0";
+//        }
+//
+//        int allRatings = reviews.get(1) * 1 + reviews.get(2) * 2 + reviews.get(3) * 3 + reviews.get(4) * 4
+//                + reviews.get(5) * 5;
+//
+//        double score = allRatings
+//                / (double) (total * 5);
+//
+//        score = score * 5;
+//        DecimalFormat formatting = new DecimalFormat("0.##");
+//
+//        return formatting.format(score);
+//    }
 
 
     public void setData(Book book){
-//        ArrayList<Integer> ratings = Library.getReviewHandler().getBookRatings(book.getId());
         InputStream fileLocation;
-
         try {
             fileLocation = new FileInputStream(book.getCoverPath());
             Image cover = new Image(fileLocation);
@@ -64,24 +82,39 @@ public class BooksViewCard {
         }
         bookName.setText(book.getTitle());
         authorName.setText(book.getAuthor());
-//        bookRate.setText(calculateScore(ratings));
+//        String score=calculateScore(Library.getReviewHandler().getBookRatings(book.getId()));
+//        bookRate.setText(score);
     }
 
     public void showDetailsOfBook(ActionEvent event){
         Book book= searchBookByTitle(bookName.getText());
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("book-view.fxml"));
-            Parent root = loader.load();
 
-            BookController bookc = loader.getController();
-            assert book != null;
-            bookc.setScene(book);
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("book-view.fxml"));
+//            Parent root = loader.load();
+//
+//            BookController sceneController = loader.getController();
+//            sceneController.setScene(book);
+//            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//            Scene scene= new Scene(root);
+//            stage.setScene(scene);
+//            stage.show();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
-            Scene newScene = new Scene(root);
-            MainApplication.st.setScene(newScene);
-            MainApplication.st.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("book-view.fxml"));
+//            Parent root = loader.load();
+//
+//            BookController bookc = loader.getController();
+//            bookc.setScene(book);
+//
+//            Scene newScene = new Scene(root);
+//            MainApplication.st.setScene(newScene);
+//            MainApplication.st.show();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }
