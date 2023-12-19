@@ -16,9 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.asu.librarysystem.Library.*;
-
-public class AllBooksCustomerController {
+public class MyBooksController {
     @FXML
     private Label userName;
     @FXML
@@ -27,18 +25,28 @@ public class AllBooksCustomerController {
     private TextField searshText;
 
 
-    public void startAllBooksCustomerController(Customer customer){
-        displayUserName(customer);
-        putsBooks(customer);
+    public void startMyBooksController(){
+        displayUserName();
+        putsBooks();
     }
-    public void displayUserName(Customer customer){
-        userName.setText(customer.getUserName());
+    private void displayUserName(){
+        Account account = Library.getActiveAccount();
+        if (account instanceof Customer) {
+            Customer customer =(Customer) account;
+            userName.setText(customer.getUserName());
+        }
+        else if(account instanceof Borrower){
+            Borrower borrower =(Borrower) account;
+            userName.setText(borrower.getUserName());
+        }
     }
+
 
     public void backButton(ActionEvent event){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("name.fxml"));
             Parent root = loader.load();
+
 //            clsssName objName = loader.getController();
 //            objName.method;
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -52,18 +60,27 @@ public class AllBooksCustomerController {
 
     private FXMLLoader fxmlLoader;
     private VBox CardOfBook;
-    public void putsBooks(Customer customer){
+    public void putsBooks(){
         int colm=0;
         int row=1;
+        Account account = Library.getActiveAccount();
+        ArrayList<Book> booksArrayList = null;
+        if (account instanceof Customer) {
+            Customer customer =(Customer) account;
+            booksArrayList=customer.arrayOFOrderBooks();
+        }
+        else if(account instanceof Borrower){
+            Borrower borrower =(Borrower) account;
+            booksArrayList=borrower.arrayOFTransactionBooks();
+        }
 
-        ArrayList<Book>bookArrayList=copyElementOfArrayList();
         try {
-            for(int i=0;i<bookArrayList.size();i++){
+            for(int i=0;i<booksArrayList.size();i++){
                 fxmlLoader=new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("Book-View-Card.fxml"));
                 CardOfBook=fxmlLoader.load();
                 BooksViewCard booksCard= fxmlLoader.getController();
-                booksCard.setData(bookArrayList.get(i));
+                booksCard.setData(booksArrayList.get(i));
                 if(colm==6){
                     colm=0;
                     row++;
@@ -79,12 +96,29 @@ public class AllBooksCustomerController {
 
     }
 
+
+
     private ArrayList<Book> arrayReadyToSearch(String word){
         if(word.equals("")){
             word=" ";
         }
-        ArrayList<Book>foundBooks=searchBookByTitleInArray(word);
-        ArrayList<Book>foundBooks2=searchBookByAuthorInArray(word);
+        Account account = Library.getActiveAccount();
+        ArrayList<Book>foundBooks = null;
+        ArrayList<Book>foundBooks2 = null;
+        if (account instanceof Customer) {
+            Customer customer =(Customer) account;
+            ArrayList<Book> orderBooksArrayList=customer.arrayOFOrderBooks();
+            foundBooks=Library.searchInArrayListBookByTitle(word,orderBooksArrayList);
+            foundBooks2=Library.searchInArrayListBookByAuthor(word,orderBooksArrayList);
+        }
+        else if(account instanceof Borrower){
+            Borrower borrower =(Borrower) account;
+            ArrayList<Book> transactionBooksArrayList=borrower.arrayOFTransactionBooks();
+            foundBooks=Library.searchInArrayListBookByTitle(word,transactionBooksArrayList);
+            foundBooks2=Library.searchInArrayListBookByAuthor(word,transactionBooksArrayList);
+        }
+        //Customer customer=whoUserNow();
+
         foundBooks.addAll(foundBooks2);
         for (int i = 0; i < foundBooks.size(); i++) {
             for (int j = i + 1; j < foundBooks.size(); j++) {
@@ -118,7 +152,7 @@ public class AllBooksCustomerController {
                 BooksViewCard booksCard= fxmlLoader.getController();
                 booksCard.setData(foundBooks.get(i));
                 if(colm==6){
-                   colm=0;
+                    colm=0;
                     row++;
                 }
                 bookContenerCustomer.add(CardOfBook,colm++,row);

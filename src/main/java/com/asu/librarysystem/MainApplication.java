@@ -2,7 +2,9 @@ package com.asu.librarysystem;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,14 +19,16 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        Image icon =new Image("E:\\ibrahem\\oop\\project2\\library-system\\src\\main\\resources\\icon\\icons8-library-64.png");
+        stage.getIcons().add(icon);
 
-
+        stage.setTitle("library");
         stage.setScene(scene);
-        st = stage;
         stage.show();
+
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
@@ -59,12 +63,28 @@ public class MainApplication extends Application {
         Library.addBook(book8);
         Library.addBook(book9);
         Library.addBook(book10);
+        Customer customer=new Customer("Ibrahem","123","111");
+        Library.addCustomer(customer);
+        Borrower borrower = new Borrower("Ibrahem","111","111");
+        Library.addBorrower(borrower);
+        Library.logInByUserName("Ibrahem","111");
+
+        customer.addOrder(book1.getId(),2);
+        customer.addOrder(book2.getId(),2);
+        customer.addOrder(book3.getId(),1);
+        customer.addOrder(book5.getId(),2);
+        customer.addOrder(book7.getId(),2);
+
+        borrower.addTransaction(book3,2020,2022);
+        borrower.addTransaction(book5,2020,2022);
+        borrower.addTransaction(book9,2020,2022);
 
 
 
         books.add(book100);
-        Library.addBorrower(new Borrower("arsany", "123", "01277535814"));
-        Library.logInByUserName("arsany", "123");
+//        Library.addBorrower(new Borrower("arsany", "123", "01277535814"));
+//        Library.logInByUserName("arsany", "123");
+
 
         launch();
 
