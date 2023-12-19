@@ -2,6 +2,8 @@ package com.asu.librarysystem;
 
 import java.util.ArrayList;
 
+import static com.asu.librarysystem.Library.searchBookById;
+
 public class Customer extends Account{
     private ArrayList<Order> orders;
 
@@ -52,5 +54,16 @@ public class Customer extends Account{
         } else {
             System.out.println("Can't find order");
         }
+    }
+
+    public ArrayList<Order> copyElementOfArrayList(){
+        return orders;
+    }
+    public  ArrayList<Book> arrayOFOrderBooks(){
+        ArrayList<Book> orderBooksArrayList=new ArrayList<Book>();
+        for(int i=0;i<orders.size();i++) {
+            orderBooksArrayList.add(searchBookById(orders.get(i).getBookId()));
+        }
+        return orderBooksArrayList;
     }
 }

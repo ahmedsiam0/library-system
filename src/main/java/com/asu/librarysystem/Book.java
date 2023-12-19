@@ -16,12 +16,12 @@ public class Book {
     private int quantity;
     private String descreption;
     private File cover;
-    private ArrayList<Categories> categories;
+    private ArrayList<Category> categories;
 
 
 
     public Book(String title, String author, int publicationYear, boolean status, int price, int quantity
-            , String descreption, String coverPath, Categories[] categories) {
+            , String descreption, String coverPath, Category[] categories) {
         this.id = ++idCounter;
         this.title = title;
         this.author = author;
@@ -33,7 +33,7 @@ public class Book {
 
         setCover(coverPath);
 
-        this.categories = new ArrayList<Categories>(Arrays.asList(categories));
+        this.categories = new ArrayList<Category>(Arrays.asList(categories));
     }
 
     public int getId() {
@@ -106,6 +106,10 @@ public class Book {
     }
     public String getCoverPath() {
         return cover.getAbsolutePath();
+    }
+
+    public ArrayList<Category> getCategories(){
+        return this.categories;
     }
 
 

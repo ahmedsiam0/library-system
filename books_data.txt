@@ -1,0 +1,10 @@
+1,Harry Potter and the Prisoner of Azkaban,J. K. Rowling,2023,true,200,4,E:\ibrahem\oop\progect1\library-system\data\covers\1.jpg
+2,Harry Potter and the Chamber of Secrets,J. K. Rowling,2020,true,200,3,E:\ibrahem\oop\progect1\library-system\data\covers\2.jpg
+3,The Alchemist ,Paulo Coelho ,2021,true,200,2,E:\ibrahem\oop\progect1\library-system\data\covers\3.jpg
+4,A Tale of Two Cities,Charles Dickens,2023,true,200,4,E:\ibrahem\oop\progect1\library-system\data\covers\4.jpg
+5,The Little Prince ,Antoine de Saint-Exupéry,2020,true,200,3,E:\ibrahem\oop\progect1\library-system\data\covers\5.jpg
+6,Harry Potter and the Philosopher's Stone,J. K. Rowling,2021,true,200,2,E:\ibrahem\oop\progect1\library-system\data\covers\6.jpg
+7,And Then There Were None,Agatha Christie,2023,true,200,4,E:\ibrahem\oop\progect1\library-system\data\covers\7.jpg
+8,The Hobbit,J. R. R. Tolkien,2020,true,200,3,E:\ibrahem\oop\progect1\library-system\data\covers\8.jpg
+9,She: A History of Adventure,H. Rider Haggard,2021,true,200,2,E:\ibrahem\oop\progect1\library-system\data\covers\9.jpg
+10,The Da Vinci Code,Dan Brown,2021,true,200,2,E:\ibrahem\oop\progect1\library-system\data\covers\10.jpg

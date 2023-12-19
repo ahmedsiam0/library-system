@@ -1,30 +1,27 @@
 package com.asu.librarysystem;
 
+import static com.asu.librarysystem.Library.searchBookById;
+
 public class Order {
     
     static private int idCounter = 0;
     final private int id;
-    private Book book;
+    private int bookId;
     private int quantity;
 
-    public Order(Book book, int quantity) {
+    public Order(int bookId, int quantity) {
         id = ++idCounter;
-        this.book = book;
+        this.bookId = bookId;
         this.quantity = quantity;
     }
 
-    // Placeholder
-    public Order(int bookId, int quantity){
-        id = ++idCounter;
-        this.quantity = quantity;
-    }
 
     public int getId() {
         return id; 
     }
 
-    public Book getBook() {
-        return book;
+    public int getBookId() {
+        return bookId;
     }
 
     public int getQuantity() {
@@ -32,11 +29,11 @@ public class Order {
     }
 
     public int getPrice() {
-        return book.getPrice() * quantity;
+        return searchBookById(bookId).getPrice() * quantity;
     }
     
-    public void setBook(Book book) {
-        this.book = book;
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
     }
 
     public void setQuantity(int quantity) {

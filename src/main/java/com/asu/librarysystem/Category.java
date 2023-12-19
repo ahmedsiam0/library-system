@@ -1,6 +1,6 @@
 package com.asu.librarysystem;
 
-public enum Categories {
+public enum Category {
     HORROR,
     DRAMA,
     NOVEL,

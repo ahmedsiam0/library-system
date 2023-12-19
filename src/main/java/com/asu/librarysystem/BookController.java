@@ -4,7 +4,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.AccessibleRole;
 import javafx.scene.Cursor;
@@ -13,12 +15,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
@@ -46,6 +50,8 @@ public class BookController implements Initializable {
     VBox commentSection;
     @FXML
     HBox propertiesButtons;
+    @FXML
+    GridPane recommendations;
 
     private Book currentBook;
 
@@ -56,7 +62,7 @@ public class BookController implements Initializable {
         ratingOptions.setItems(optionsList);
     }
 
-    public void setScene(Book book) throws FileNotFoundException {
+    public void setScene(Book book) throws IOException {
         currentBook = book;
         setCover(book.getCoverPath());
 
@@ -79,6 +85,8 @@ public class BookController implements Initializable {
         threeStarsIcon.setImage(new Image(stream3));
         fourStarsIcon.setImage(new Image(stream4));
         fiveStarsIcon.setImage(new Image(stream5));
+
+        showRecommendations();
 
 
         TextFormatter<String> formatter = new TextFormatter<>(change -> {
@@ -207,6 +215,41 @@ public class BookController implements Initializable {
 
 
         return String.format("%.1f", score);
+    }
+
+
+    private void showRecommendations() throws IOException {
+        ArrayList<Book> availableBooks = Library.copyElementOfArrayList();
+        int counter = 0;
+        for (Book book : availableBooks){
+            if (counter == 6) break;
+
+            if (findingCommonCategories(book)){
+                FXMLLoader fxmlLoader=new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("Book-View-Card.fxml"));
+
+                VBox CardOfBook=fxmlLoader.load();
+
+                BooksViewCard recommendedBook = fxmlLoader.getController();
+                recommendedBook.setData(book);
+
+                recommendations.add(CardOfBook, counter,0);
+                GridPane.setMargin(CardOfBook,new Insets(10));
+                counter++;
+            }
+        }
+    }
+
+    private boolean findingCommonCategories(Book book){
+        for (Category category : book.getCategories()) {
+            for (Category category2 : currentBook.getCategories()) {
+                if (category == category2) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
 
