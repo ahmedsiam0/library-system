@@ -8,7 +8,7 @@ public class Library
     protected static ArrayList<Customer> customers = new ArrayList();
     protected static ArrayList<Borrower> borrowers = new ArrayList();
     private static Account activeAccount;
-    private static Admin admin ;
+    private static Admin admin = new Admin("Ahmad" , "1234" ,"01030243591") ;
     private ReviewHandler reviewHandler;
 
     //########################## Start for book #########################//
@@ -151,7 +151,14 @@ public class Library
         }
         return null;
     }
-
+    public static Borrower searchBorrwerByID(int id) {
+        for (Borrower b : borrowers) {
+            if (b.getId()==id) {
+                return b;
+            }
+        }
+        return null;
+    }
     public static boolean removeBorrower(Borrower borrower) {
         int index = getBorrowerIndex(borrower.getId());
         if (index != -1) {
@@ -184,6 +191,14 @@ public class Library
     public static Customer searchCustomerByUserName(String userName) {
         for (Customer b : customers) {
             if (b.getUserName().equals(userName)) {
+                return b;
+            }
+        }
+        return null;
+    }
+    public static Customer searchCustomerByID(int id) {
+        for (Customer b : customers) {
+            if (b.getId()==id) {
                 return b;
             }
         }
@@ -234,8 +249,9 @@ public static void signUp(Account account) {
       else{
           return false;
       }
-        return false;
+        return false;//Delete
     }
+
     public static boolean logInByphoneNumber(String phoneNumber, String password){
         if (searchBorrwerByPhoneNumber(phoneNumber)!=null){
             if(searchBorrwerByPhoneNumber(phoneNumber).getPassword().equals(password)){
@@ -259,7 +275,15 @@ public static void signUp(Account account) {
         return false;
     }
 
+    public static Account getActiveAccount() {
+        return activeAccount;
+    }
+
     ReviewHandler getReviewHandler() {
         return reviewHandler;
     }
+    public static ArrayList<Borrower> copyElementOfArrayList() {
+        return borrowers;
+    }
+
 }
