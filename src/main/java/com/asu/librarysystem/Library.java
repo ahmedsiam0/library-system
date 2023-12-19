@@ -9,8 +9,8 @@ public class Library {
     protected static ArrayList<Customer> customers = new ArrayList();
     protected static ArrayList<Borrower> borrowers = new ArrayList();
     private static Account activeAccount;
-    private static Admin admin;
-    private static ReviewHandler reviewHandler;
+    private static Admin admin ;
+    private static ReviewHandler reviewHandler = new ReviewHandler();
 
     //########################## Start for book #########################//
     public static void addBook(Book book) {
@@ -327,6 +327,12 @@ public class Library {
         return reviewHandler;
     }
 
+
+    public static Account getActiveAccount() {
+        return activeAccount;
+    }
+
+
     public static ArrayList<Book> copyElementOfArrayList() {
         return books;
     }
@@ -383,7 +389,7 @@ public class Library {
         try {
             FileOutputStream write1=new FileOutputStream("books_data.txt");
             for (Book obj : books) {
-                write1.write((obj.getId()+","+obj.getTitle()+","+obj.getAuthor()+","+obj.getPublicationYear()+","+obj.isStatus()+","+obj.getPrice()+","+obj.getRating()+","+obj.getCoverPath()+"\n").getBytes());
+                write1.write((obj.getId()+","+obj.getTitle()+","+obj.getAuthor()+","+obj.getPublicationYear()+","+obj.isStatus()+","+obj.getPrice()+","+obj.getCoverPath()+"\n").getBytes());
             }
             write1.close();
         } catch (FileNotFoundException e) {
@@ -450,85 +456,86 @@ public class Library {
         }
     }
 
-    public static void readLibrary() {
-        Scanner scanner1 = null;
-        try {
-            scanner1 = new Scanner(new FileInputStream("books_data.txt"));
-        } catch (FileNotFoundException e) {
-            System.out.println("can't read");
-        }
-
-        while (scanner1.hasNextLine()) {
-            String line1 = scanner1.nextLine();
-            String[] parts1 = line1.split(",");
-            Book book=new Book(parts1[1],parts1[2],Integer.valueOf(parts1[3]),Boolean.valueOf(parts1[4]),Integer.valueOf(parts1[5]),Integer.valueOf(parts1[6]),parts1[7]);
-            addBook(book);
-        }
-        scanner1.close();
-
-        Scanner scanner2 = null;
-        try {
-            scanner2 = new Scanner(new FileInputStream("customers_data.txt"));
-        } catch (FileNotFoundException e) {
-            System.out.println("can't read");
-        }
-
-        while (scanner2.hasNextLine()) {
-            String line2 = scanner2.nextLine();
-            String[] parts2 = line2.split(",");
-            Customer customer=new Customer(parts2[1],parts2[2],parts2[3]);
-            addCustomer(customer);
-        }
-        scanner2.close();
-
-        Scanner scanner3 = null;
-        try {
-            scanner3 = new Scanner(new FileInputStream("borrowers_data.txt"));
-        } catch (FileNotFoundException e) {
-            System.out.println("can't read");
-        }
-
-        while (scanner3.hasNextLine()) {
-            String line3 = scanner3.nextLine();
-            String[] parts3 = line3.split(",");
-            Borrower borrower = new Borrower(parts3[1],parts3[2],parts3[3]);
-            addBorrower(borrower);
-        }
-        scanner3.close();
-
-        for(Borrower borrower : borrowers) {
-            Scanner scanner = null;
-            try {
-                scanner = new Scanner(new FileInputStream("transaction_data_"+borrower.getUserName()+".txt"));
-            } catch (FileNotFoundException e) {
-                System.out.println("can't read");
-            }
-
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] parts = line.split(",");
-                Transaction transaction = new Transaction(searchBookByTitle(parts[1]).getId(), borrower.getId(), Integer.valueOf(parts[3]), Integer.valueOf(parts[4]));
-                borrower.addTransaction(searchBookById(transaction.getBookId()), transaction.getBorrowDate(),transaction.getReturnDate());
-            }
-            scanner.close();
-        }
-
-        for(Customer customer : customers) {
-            Scanner scanner = null;
-            try {
-                scanner = new Scanner(new FileInputStream("order_data_"+customer.getUserName()+".txt"));
-            } catch (FileNotFoundException e) {
-                System.out.println("can't read");
-            }
-
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] parts = line.split(",");
-                Order order = new Order(searchBookByTitle(parts[1]).getId(),Integer.valueOf(parts[2]));
-                customer.addOrder(order.getBookId(),order.getQuantity());
-            }
-            scanner.close();
-        }
-    }
+//    public static void readLibrary() {
+//        Scanner scanner1 = null;
+//        try {
+//            scanner1 = new Scanner(new FileInputStream("books_data.txt"));
+//        } catch (FileNotFoundException e) {
+//            System.out.println("can't read");
+//        }
+//
+//        while (scanner1.hasNextLine()) {
+//            String line1 = scanner1.nextLine();
+//            String[] parts1 = line1.split(",");
+////            Book book=new Book(parts1[1],parts1[2],Integer.valueOf(parts1[3]),Boolean.valueOf(parts1[4]),Integer.valueOf(parts1[5]),Integer.valueOf(parts1[6]),parts1[7]);
+//            addBook(book);
+//        }
+//        scanner1.close();
+//
+//        Scanner scanner2 = null;
+//        try {
+//            scanner2 = new Scanner(new FileInputStream("customers_data.txt"));
+//        } catch (FileNotFoundException e) {
+//            System.out.println("can't read");
+//        }
+//
+//        while (scanner2.hasNextLine()) {
+//            String line2 = scanner2.nextLine();
+//            String[] parts2 = line2.split(",");
+//            Customer customer=new Customer(parts2[1],parts2[2],parts2[3]);
+//            addCustomer(customer);
+//        }
+//        scanner2.close();
+//
+//        Scanner scanner3 = null;
+//        try {
+//            scanner3 = new Scanner(new FileInputStream("borrowers_data.txt"));
+//        } catch (FileNotFoundException e) {
+//            System.out.println("can't read");
+//        }
+//
+//        while (scanner3.hasNextLine()) {
+//            String line3 = scanner3.nextLine();
+//            String[] parts3 = line3.split(",");
+//            Borrower borrower = new Borrower(parts3[1],parts3[2],parts3[3]);
+//            addBorrower(borrower);
+//        }
+//        scanner3.close();
+//
+//        for(Borrower borrower : borrowers) {
+//            Scanner scanner = null;
+//            try {
+//                scanner = new Scanner(new FileInputStream("transaction_data_"+borrower.getUserName()+".txt"));
+//            } catch (FileNotFoundException e) {
+//                System.out.println("can't read");
+//            }
+//
+//            while (scanner.hasNextLine()) {
+//                String line = scanner.nextLine();
+//                String[] parts = line.split(",");
+//                Transaction transaction = new Transaction(searchBookByTitle(parts[1]).getId(), borrower.getId(), Integer.valueOf(parts[3]), Integer.valueOf(parts[4]));
+//                borrower.addTransaction(searchBookById(transaction.getBookId()), transaction.getBorrowDate(),transaction.getReturnDate());
+//            }
+//            scanner.close();
+//        }
+//
+//        for(Customer customer : customers) {
+//            Scanner scanner = null;
+//            try {
+//                scanner = new Scanner(new FileInputStream("order_data_"+customer.getUserName()+".txt"));
+//            } catch (FileNotFoundException e) {
+//                System.out.println("can't read");
+//            }
+//
+//            while (scanner.hasNextLine()) {
+//                String line = scanner.nextLine();
+//                String[] parts = line.split(",");
+//                Order order = new Order(searchBookByTitle(parts[1]).getId(),Integer.valueOf(parts[2]));
+//                customer.addOrder(order.getBookId(),order.getQuantity());
+//            }
+//            scanner.close();
+//        }
+//    }
 
 }
+

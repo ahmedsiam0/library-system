@@ -70,15 +70,16 @@ public class BooksViewCard {
     public void showDetailsOfBook(ActionEvent event){
         Book book= searchBookByTitle(bookName.getText());
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("name.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("book-view.fxml"));
             Parent root = loader.load();
 
-//            clsssName objName = loader.getController();
-//            objName.method;
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene scene= new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            BookController bookc = loader.getController();
+            assert book != null;
+            bookc.setScene(book);
+
+            Scene newScene = new Scene(root);
+            MainApplication.st.setScene(newScene);
+            MainApplication.st.show();
         } catch (IOException e) {
             e.printStackTrace();
         }

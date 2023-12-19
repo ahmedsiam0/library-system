@@ -5,63 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency">
-      <change afterPath="$PROJECT_DIR$/data/covers/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/covers/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/covers/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/covers/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/covers/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/covers/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/covers/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/covers/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/covers/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-account-52.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-back-60.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-library-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-search-52.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/330px-BlackBeautyCoverFirstEd1877.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/330px-Lolita_1955.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/330px-SHE,_A_History_of_Adventure_(1st_Edition_Cover),_by_H._Rider_Haggard.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/330px-The_Catcher_in_the_Rye_(1951,_first_edition_cover).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/And_Then_There_Were_None_First_Edition_Cover_1939.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/BridgesOfMadisonCounty.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/CharlotteWeb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Cien_años_de_soledad_(book_cover,_1967).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/DaVinciCode.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/GingerMan.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Harry_Potter_and_the_Chamber_of_Secrets.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Harry_Potter_and_the_Deathly_Hallows.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Harry_Potter_and_the_Goblet_of_Fire_cover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Harry_Potter_and_the_Half-Blood_Prince_cover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Harry_Potter_and_the_Order_of_the_Phoenix.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Harry_Potter_and_the_Philosopher's_Stone_Book_Cover.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Littleprince.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Montgomery_Anne_of_Green_Gables.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Richard_Adams_WatershipDown.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Spyri_Heidi_Cover_1887.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/Tales_serial.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/TheAlchemist.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/TheEagleHasLanded.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/TheHobbit_FirstEdition.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/The_Common_Sense_Book_of_Baby_and_Child_Care_(hardcover).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/The_Name_of_the_Rose.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/1_star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/2_stars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/3_stars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/4_stars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/5_stars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/fiveStarsRate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/fourStarsRate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/oneStarRate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/threeStarsRate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Rating_icons/twoStarsRate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Status_icons/addToCartButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Status_icons/notifyMeButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/Status_icons/outOfStock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bookSceneAssets/user-profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Categories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/book-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/covers/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/covers/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/AllBooksCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/AllBooksCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/BooksViewCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/BooksViewCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MyBooksBorrowerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MyBooksBorrowerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MyBooksCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MyBooksCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/All-Books-Customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/All-Books-Customer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/Book-View-Card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/Book-View-Card.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/My-Books-Borrower.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/My-Books-Borrower.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/My-Books-Customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/My-Books-Customer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +41,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -94,6 +64,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-win.jar!/javafx/fxml/FXMLLoader.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -113,24 +86,12 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/ibrahem/oop/progect1/library-system/src/main/resources/com/asu/librarysystem&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programming/Repos/library-system&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\ibrahem\oop\progect1\library-system\src\main\resources\com\asu\librarysystem" />
-      <recent name="E:\ibrahem\oop\progect1\library-system\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\ibrahem\oop\progect1\library-system\src\main\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.asu.librarysystem" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -240,5 +201,16 @@
     <MESSAGE value="fixed some potential bugs, decreased redundancy in the code, better efficiency" />
     <MESSAGE value="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainController.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
