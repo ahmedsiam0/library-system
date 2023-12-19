@@ -7,13 +7,18 @@ public abstract class Account {
     private String Password;
     private String phoneNumber;
 
+
+
+
     public Account(String userName, String password, String phoneNumber) {
         this.userName = userName;
         this.id = ++idCounter;
         this.Password = password;
         this.phoneNumber = phoneNumber;
+
+
     }
-    
+
     public void setPassword(String password) {
         Password = password;
     }
@@ -33,7 +38,7 @@ public abstract class Account {
     public String getUserName() {
         return userName;
     }
-    
+
     public String getPassword() {
         return Password;
     }

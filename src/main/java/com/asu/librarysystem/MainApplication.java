@@ -20,6 +20,18 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+
+        /** Login
+         
+
+        
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+         */
+
 //        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("hello-view.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load());
 //        Image icon =new Image("E:\\ibrahem\\oop\\project2\\library-system\\src\\main\\resources\\icon\\icons8-library-64.png");
@@ -89,7 +101,22 @@ public class MainApplication extends Application {
         borrower.addTransaction(book5,2020,2022);
         borrower.addTransaction(book9,2020,2022);
 
+ 
+        /* Login
+         Borrower B = new Borrower("Hossam", "123456", "123456");
+        Book b = new Book("", "", 0, true, 1500, 4, "Any");
+        Library.addBook(b);
+        Book BB = new Book("", "", 0, true, 1500, 4, "Any");
+        Library.addBook(BB);
+        B.addTransaction(BB, 15, 20);
+        B.addTransaction(b, 10, 15);
+        Library.addBorrower(B);
+        System.out.println(B.getNoOfBooks());
+//       Library.logInByUserName("Ahmad" , "1234");
 
+
+        launch();
+         */
 
         //books.add(book100);
 //        Library.addBorrower(new Borrower("arsany", "123", "01277535814"));

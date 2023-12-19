@@ -10,7 +10,7 @@ public class Library {
     protected static ArrayList<Customer> customers = new ArrayList();
     protected static ArrayList<Borrower> borrowers = new ArrayList();
     private static Account activeAccount;
-    private static Admin admin ;
+    private static Admin admin  = new Admin("Ahmad" , "1234" ,"01030243591") ;
     private static ReviewHandler reviewHandler = new ReviewHandler();
     private static Stack<Book> previousBooks = new Stack<Book>();
     
@@ -145,7 +145,6 @@ public class Library {
         }
         return -1;
     }
-
     public static boolean updateBorrowerName(int id, String newName) {
         int index = getBorrowerIndex(id);
         if (index != -1) {
@@ -173,6 +172,15 @@ public class Library {
         return null;
     }
 
+    public static Borrower searchBorrwerByID(int id) {
+        for (Borrower b : borrowers) {
+            if (b.getId()==id) {
+                return b;
+            }
+        }
+        return null;
+    }
+    
     public static Borrower searchBorrwerByUserName(String userName) {
         for (Borrower b : borrowers) {
             if (b.getUserName().equals(userName)) {
@@ -215,6 +223,15 @@ public class Library {
         return false;
     }
 
+    public static Customer searchCustomerByID(int id) {
+        for (Customer b : customers) {
+            if (b.getId()==id) {
+                return b;
+            }
+        }
+        return null;
+    }
+
     public static Customer searchCustomerByUserName(String userName) {
         for (Customer b : customers) {
             if (b.getUserName().equals(userName)) {
@@ -249,7 +266,7 @@ public class Library {
         activeAccount = null;
     }
 
-    public static boolean logInByUserName(String userName, String password) {
+    public static Boolean logInByUserName(String userName, String password) {
         if (searchBorrwerByUserName(userName) != null) {
             if (searchBorrwerByUserName(userName).getPassword().equals(password)) {
                 activeAccount = searchBorrwerByUserName(userName);
@@ -301,6 +318,7 @@ public class Library {
     public static Account getActiveAccount() {
         return activeAccount;
     }
+
 
 
     public static ArrayList<Book> copyElementOfArrayList() {
@@ -512,4 +530,3 @@ public class Library {
 //    }
 
 }
-
