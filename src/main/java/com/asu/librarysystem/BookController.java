@@ -40,7 +40,7 @@ public class BookController implements Initializable {
     @FXML
     ImageView bookCover, statusImage, oneStarIcon, twoStarsIcon, threeStarsIcon, fourStarsIcon, fiveStarsIcon, notifyMe;
     @FXML
-    Label name, author, releaseDate, price, description, countRatings, totalRating, textAreaCharCount, categories;
+    Label name, author, releaseDate, price, description, countRatings, totalRating, textAreaCharCount, categories, userName;
     @FXML
     Text warningMessage;
     @FXML
@@ -68,6 +68,7 @@ public class BookController implements Initializable {
     }
 
     public void setScene(Book book) throws IOException {
+        displayUserName();
         currentBook = book;
         setCover(book.getCoverPath());
 
@@ -426,6 +427,17 @@ public class BookController implements Initializable {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    private void displayUserName(){
+        Account account = Library.getActiveAccount();
+        if (account instanceof Customer) {
+            Customer customer =(Customer) account;
+            userName.setText(customer.getUserName());
+        }
+        else if(account instanceof Borrower){
+            Borrower borrower =(Borrower) account;
+            userName.setText(borrower.getUserName());
         }
     }
 }

@@ -308,7 +308,7 @@ public class Library {
     }
 
     public static ArrayList<Book> searchInArrayListBookByTitle(String word , ArrayList<Book> arr) {
-        ArrayList<Book> fondBooks = new ArrayList();
+        ArrayList<Book> foundBooks = new ArrayList();
         for (int i = 0; i < arr.size(); i++) {
             String fullTitle = arr.get(i).getTitle().toLowerCase();
             for (int j = 0; j < fullTitle.length() - word.length(); j++) {
@@ -321,16 +321,16 @@ public class Library {
                 }
 
                 if (counter == word.length()) {
-                    fondBooks.add(arr.get(i));
+                    foundBooks.add(arr.get(i));
                     break;
                 }
             }
         }
-        return fondBooks;
+        return foundBooks;
     }
 
     public static ArrayList<Book> searchInArrayListBookByAuthor(String word , ArrayList<Book> arr) {
-        ArrayList<Book> fondBooks = new ArrayList();
+        ArrayList<Book> foundBooks = new ArrayList();
         for (int i = 0; i < arr.size(); i++) {
             String authorName = arr.get(i).getAuthor().toLowerCase();
             for (int j = 0; j < authorName.length() - word.length(); j++) {
@@ -343,12 +343,12 @@ public class Library {
                 }
 
                 if (counter == word.length()) {
-                    fondBooks.add(arr.get(i));
+                    foundBooks.add(arr.get(i));
                     break;
                 }
             }
         }
-        return fondBooks;
+        return foundBooks;
     }
 
     public static ArrayList<Book> searchBookByTitleInArray(String word) {
@@ -359,76 +359,76 @@ public class Library {
         return searchInArrayListBookByAuthor(word, books);
     }
 
-    public static void writeLibrary() {
-        try {
-            FileOutputStream write1=new FileOutputStream("books_data.txt");
-            for (Book obj : books) {
-                write1.write((obj.getId()+","+obj.getTitle()+","+obj.getAuthor()+","+obj.getPublicationYear()+","+obj.isStatus()+","+obj.getPrice()+","+obj.getCoverPath()+"\n").getBytes());
-            }
-            write1.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("can't write");
-        } catch (IOException e) {
-            System.out.println("can't write");
-        }
-
-        try {
-            FileOutputStream write2=new FileOutputStream("customers_data.txt");
-            for (Customer obj : customers) {
-                write2.write((obj.getId()+","+obj.getUserName()+","+obj.getPassword()+","+obj.getPhoneNumber()+"\n").getBytes());
-            }
-            write2.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("can't write");
-        } catch (IOException e) {
-            System.out.println("can't write");
-        }
-        try {
-            FileOutputStream write3=new FileOutputStream("borrowers_data.txt");
-            for (Borrower obj : borrowers) {
-                write3.write((obj.getId()+","+obj.getUserName()+","+obj.getPassword()+","+obj.getPhoneNumber()+"\n").getBytes());
-            }
-            write3.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("can't write");
-        } catch (IOException e) {
-            System.out.println("can't write");
-        }
-
-        for(Borrower borrower : borrowers){
-            ArrayList<Transaction> transactions =borrower.copyElementOfArrayList();
-            try {
-                FileOutputStream write=new FileOutputStream("transaction_data_"+borrower.getUserName()+".txt");
-                for (Transaction obj : transactions ) {
-                    String bookName=searchBookById(obj.getBookId()).getTitle();
-                    write.write((obj.getTransactionId()+","+bookName+","+obj.getBorrowerId()+","+obj.getBorrowDate()+","+obj.getReturnDate()+"\n").getBytes());
-                }
-                write.close();
-            } catch (FileNotFoundException e) {
-                System.out.println("can't write");
-            } catch (IOException e) {
-                System.out.println("can't write");
-            }
-
-        }
-
-        for(Customer customer : customers){
-            ArrayList<Order> orders =customer.copyElementOfArrayList();
-            try {
-                FileOutputStream write=new FileOutputStream("order_data_"+customer.getUserName()+".txt");
-                for (Order obj : orders ) {
-                    String bookName=searchBookById(obj.getBookId()).getTitle();
-                    write.write((obj.getId()+","+bookName+","+obj.getQuantity()+"\n").getBytes());
-                }
-                write.close();
-            } catch (FileNotFoundException e) {
-                System.out.println("can't write");
-            } catch (IOException e) {
-                System.out.println("can't write");
-            }
-
-        }
-    }
+//    public static void writeLibrary() {
+//        try {
+//            FileOutputStream write1=new FileOutputStream("books_data.txt");
+//            for (Book obj : books) {
+//                write1.write((obj.getId()+","+obj.getTitle()+","+obj.getAuthor()+","+obj.getPublicationYear()+","+obj.isStatus()+","+obj.getPrice()+","+obj.getCoverPath()+"\n").getBytes());
+//            }
+//            write1.close();
+//        } catch (FileNotFoundException e) {
+//            System.out.println("can't write");
+//        } catch (IOException e) {
+//            System.out.println("can't write");
+//        }
+//
+//        try {
+//            FileOutputStream write2=new FileOutputStream("customers_data.txt");
+//            for (Customer obj : customers) {
+//                write2.write((obj.getId()+","+obj.getUserName()+","+obj.getPassword()+","+obj.getPhoneNumber()+"\n").getBytes());
+//            }
+//            write2.close();
+//        } catch (FileNotFoundException e) {
+//            System.out.println("can't write");
+//        } catch (IOException e) {
+//            System.out.println("can't write");
+//        }
+//        try {
+//            FileOutputStream write3=new FileOutputStream("borrowers_data.txt");
+//            for (Borrower obj : borrowers) {
+//                write3.write((obj.getId()+","+obj.getUserName()+","+obj.getPassword()+","+obj.getPhoneNumber()+"\n").getBytes());
+//            }
+//            write3.close();
+//        } catch (FileNotFoundException e) {
+//            System.out.println("can't write");
+//        } catch (IOException e) {
+//            System.out.println("can't write");
+//        }
+//
+//        for(Borrower borrower : borrowers){
+//            ArrayList<Transaction> transactions =borrower.copyElementOfArrayList();
+//            try {
+//                FileOutputStream write=new FileOutputStream("transaction_data_"+borrower.getUserName()+".txt");
+//                for (Transaction obj : transactions ) {
+//                    String bookName=searchBookById(obj.getBookId()).getTitle();
+//                    write.write((obj.getTransactionId()+","+bookName+","+obj.getBorrowerId()+","+obj.getBorrowDate()+","+obj.getReturnDate()+"\n").getBytes());
+//                }
+//                write.close();
+//            } catch (FileNotFoundException e) {
+//                System.out.println("can't write");
+//            } catch (IOException e) {
+//                System.out.println("can't write");
+//            }
+//
+//        }
+//
+//        for(Customer customer : customers){
+//            ArrayList<Order> orders =customer.copyElementOfArrayList();
+//            try {
+//                FileOutputStream write=new FileOutputStream("order_data_"+customer.getUserName()+".txt");
+//                for (Order obj : orders ) {
+//                    String bookName=searchBookById(obj.getBookId()).getTitle();
+//                    write.write((obj.getId()+","+bookName+","+obj.getQuantity()+"\n").getBytes());
+//                }
+//                write.close();
+//            } catch (FileNotFoundException e) {
+//                System.out.println("can't write");
+//            } catch (IOException e) {
+//                System.out.println("can't write");
+//            }
+//
+//        }
+//    }
 
 //    public static void readLibrary() {
 //        Scanner scanner1 = null;
