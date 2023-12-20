@@ -6,7 +6,4 @@ public class Admin extends Account {
         super( adminName, Password, PhoneNumber);
     }
 
-    public void manageBooksAvailablePurchase (){
-
-    }
 }
