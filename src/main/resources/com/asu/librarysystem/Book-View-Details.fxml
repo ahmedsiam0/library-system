@@ -112,7 +112,7 @@
                                                 <Insets left="10.0" />
                                              </padding>
                                           </Label>
-                                          <Label text="Categories: Horror, Drama, Adventure" textFill="WHITE">
+                                          <Label fx:id="categories" text="Categories: Horror, Drama, Adventure" textFill="WHITE">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>

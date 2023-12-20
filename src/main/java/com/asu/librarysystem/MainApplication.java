@@ -60,7 +60,7 @@ public class MainApplication extends Application {
         Book book5 = new Book("The Little Prince ","Antoine de Saint-ExupÃ©ry",2020,true,200,3,"A very interesting book", "src/main/resources/image/330px-BlackBeautyCoverFirstEd1877.jpeg", new Category[]{Category.ADVENTURE});
         Book book6 = new Book("Harry Potter and the Philosopher's Stone","J. K. Rowling",2021,true,200,2,"A very interesting book", "src/main/resources/image/330px-BlackBeautyCoverFirstEd1877.jpeg", new Category[]{Category.ADVENTURE});
         Book book7 = new Book("And Then There Were None","Agatha Christie",2023,true,200,4,"A very interesting book", "src/main/resources/image/330px-BlackBeautyCoverFirstEd1877.jpeg", new Category[]{Category.ADVENTURE});
-        Book book8 = new Book("The Hobbit","J. R. R. Tolkien",2020,true,200,3,"A very interesting book", "src/main/resources/image/330px-BlackBeautyCoverFirstEd1877.jpeg", new Category[]{Category.ADVENTURE});
+        Book book8 = new Book("The Hobbit","J. R. R. Tolkien",2020,true,200,3,"A very interesting book", "src/main/resources/image/330px-BlackBeautyCoverFirstEd1877.jpeg", new Category[]{Category.ADVENTURE, Category.HORROR});
         Book book9 = new Book("She: A History of Adventure","H. Rider Haggard",2021,true,200,2,"A very interesting book", "src/main/resources/image/330px-BlackBeautyCoverFirstEd1877.jpeg", new Category[]{Category.ADVENTURE});
         Book book10 = new Book("The Da Vinci Code","Dan Brown",2021,true,200,2,"A very interesting book", "src/main/resources/image/330px-BlackBeautyCoverFirstEd1877.jpeg", new Category[]{Category.ADVENTURE});
         Library.addBook(book1);

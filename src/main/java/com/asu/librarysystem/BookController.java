@@ -40,7 +40,7 @@ public class BookController implements Initializable {
     @FXML
     ImageView bookCover, statusImage, oneStarIcon, twoStarsIcon, threeStarsIcon, fourStarsIcon, fiveStarsIcon, notifyMe;
     @FXML
-    Label name, author, releaseDate, price, description, countRatings, totalRating, textAreaCharCount;
+    Label name, author, releaseDate, price, description, countRatings, totalRating, textAreaCharCount, categories;
     @FXML
     Text warningMessage;
     @FXML
@@ -135,6 +135,14 @@ public class BookController implements Initializable {
         Label authorAttribute = new Label("Author");
         authorAttribute.setStyle("-fx-font-weight: bold;");
         this.author.setText(authorAttribute.getText() + ": " + author);
+        
+        String categoriesText = new String();
+        String category;
+        for (Category cat : currentBook.getCategories()){
+            category = cat.toString();
+            categoriesText += category.substring(0, 1) + category.substring(1).toLowerCase() + ", ";
+        }
+        categories.setText("Categories: " + categoriesText.substring(0, categoriesText.length() - 2));
 
         Label releaseDateAttribute = new Label("Release Date");
         releaseDateAttribute.setStyle("-fx-font-weight: bold;");
@@ -143,6 +151,7 @@ public class BookController implements Initializable {
         Label priceAttribute = new Label("Price");
         priceAttribute.setStyle("-fx-font-weight: bold;");
         this.price.setText(priceAttribute.getText() + ": " + formatPrice(price) + "$");
+
 
         this.description.setText(description);
 
