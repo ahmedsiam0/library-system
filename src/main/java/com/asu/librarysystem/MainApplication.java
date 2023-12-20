@@ -88,11 +88,11 @@ public class MainApplication extends Application {
         Library.addBook(book8);
         Library.addBook(book9);
         Library.addBook(book10);
-        Customer customer=new Customer("Ibrahem","123","111");
+        Customer customer=new Customer("Ibrahem1","123","111");
         Library.addCustomer(customer);
         Borrower borrower = new Borrower("Ibrahem","111","111");
         Library.addBorrower(borrower);
-        Library.logInByUserName("Ibrahem","111");
+        Library.logInByUserName("Ibrahem1","123");
 
         customer.addOrder(book1.getId(),2);
         customer.addOrder(book2.getId(),2);
