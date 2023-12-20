@@ -10,6 +10,9 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.AccessibleRole;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -19,6 +22,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -27,6 +31,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Stack;
 
 public class BookController implements Initializable {
 
@@ -109,9 +114,13 @@ public class BookController implements Initializable {
 
 
     private void setCover(String path) {
-
-        Image cover = new Image(path);
-        bookCover.setImage(cover);
+        try {
+            InputStream inputs = new FileInputStream(path);
+            Image cover = new Image(inputs);
+            bookCover.setImage(cover);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -307,9 +316,6 @@ public class BookController implements Initializable {
 
 
 
-
-
-
     private void showComments(ArrayList<Review> comments) throws FileNotFoundException {
         commentSection.getChildren().clear();
 
@@ -329,24 +335,26 @@ public class BookController implements Initializable {
 
         for (var comment : comments){
             VBox container = new VBox();
-            container.setSpacing(40d);
+            container.setSpacing(20d);
             container.setMaxWidth(1214);
             container.setAlignment(Pos.CENTER_LEFT);
 
 
             HBox innerContainer = new HBox();
-            innerContainer.setSpacing(40d);
+            innerContainer.setSpacing(20d);
             innerContainer.setMaxWidth(1214);
             innerContainer.setAlignment(Pos.CENTER_LEFT);
 
 
             Label username = new Label();
             username.setText(Integer.toString(comment.getReviewerId()));
-            username.setStyle("-fx-font-weight: 500;");
-            username.setStyle("-fx-font-size: 48px;");
+            username.setStyle("-fx-font-weight: 200;");
+            username.setStyle("-fx-font-size: 20px;");
 
 
             ImageView rate = new ImageView();
+            rate.setFitWidth(228);
+            rate.setFitHeight(50);
             if (comment.getRating() == 1){
                 rate.setImage(oneStar);
             } else if (comment.getRating() == 2){
@@ -362,7 +370,7 @@ public class BookController implements Initializable {
             ImageView user = new ImageView(userIcon);
 
             Label text = new Label();
-            text.setStyle("-fx-font-size: 36px;");
+            text.setStyle("-fx-font-size: 15px;");
             text.setText(comment.getText());
 
             innerContainer.getChildren().addAll(user, username, rate);
@@ -372,5 +380,43 @@ public class BookController implements Initializable {
         }
     }
 
+    
+    public void backButton(ActionEvent event){
+        try {
+            Stack<Book> previousBooks = Library.getPreviousBooks();
+            previousBooks.pop();
 
+            FXMLLoader loader;
+            Parent root;
+            
+            if (previousBooks.isEmpty()) {
+                if (Library.getLastViewer().equals("AllBooks")) {
+                    loader = new FXMLLoader(getClass().getResource("All-Books.fxml"));
+                    root = loader.load();
+     
+                    AllBooksController sceneController = loader.getController();
+                    sceneController.startAllBooksController();
+                } else {
+                    loader = new FXMLLoader(getClass().getResource("My-Books.fxml"));
+                    root = loader.load();
+     
+                    MyBooksController sceneController = loader.getController();
+                    sceneController.startMyBooksController();
+                }
+            } else {
+                loader = new FXMLLoader(getClass().getResource("Book-View-Details.fxml"));
+                root = loader.load();
+                BookController sceneController = loader.getController();
+                sceneController.setScene(previousBooks.peek());
+            }
+
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            Scene scene= new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

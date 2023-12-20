@@ -3,6 +3,7 @@ package com.asu.librarysystem;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Library {
     protected static ArrayList<Book> books = new ArrayList();
@@ -11,6 +12,23 @@ public class Library {
     private static Account activeAccount;
     private static Admin admin ;
     private static ReviewHandler reviewHandler = new ReviewHandler();
+    private static Stack<Book> previousBooks = new Stack<Book>();
+    
+    private static String lastViewer;
+
+    public static String getLastViewer() {
+        return lastViewer;
+    }
+
+
+    public static void setLastViewer(String lastViewer) {
+        Library.lastViewer = new String(lastViewer);
+    }
+
+
+    public static Stack<Book> getPreviousBooks() {
+        return previousBooks;
+    }
 
     //########################## Start for book #########################//
     public static void addBook(Book book) {
@@ -111,54 +129,6 @@ public class Library {
             }
         }
         return null;
-    }
-
-    public static ArrayList<Book> searchBookByTitleInArray(String word) {
-        ArrayList<Book> fondBooks = new ArrayList();
-        int exist = 0;
-        for (int i = 0; i < books.size(); i++) {
-
-            for (int j = 0; j < books.get(i).getTitle().length(); j++) {
-                int counter = 0;
-                for (int k = 0; k < word.length(); k++) {
-                    if (word.toLowerCase().charAt(k) == books.get(i).getTitle().toLowerCase().charAt(k + j))
-                        counter++;
-                    else
-                        break;
-                }
-
-                if (counter == word.length()) {
-                    exist++;
-                    fondBooks.add(books.get(i));
-                    break;
-                }
-            }
-        }
-        return fondBooks;
-    }
-
-    public static ArrayList<Book> searchBookByAuthorInArray(String word) {
-        ArrayList<Book> fondBooks = new ArrayList();
-        int exist = 0;
-        for (int i = 0; i < books.size(); i++) {
-
-            for (int j = 0; j < books.get(i).getAuthor().length(); j++) {
-                int counter = 0;
-                for (int k = 0; k < word.length(); k++) {
-                    if (word.toLowerCase().charAt(k) == books.get(i).getAuthor().toLowerCase().charAt(k + j))
-                        counter++;
-                    else
-                        break;
-                }
-
-                if (counter == word.length()) {
-                    exist++;
-                    fondBooks.add(books.get(i));
-                    break;
-                }
-            }
-        }
-        return fondBooks;
     }
 
     //################ End of Books ###################//
@@ -339,20 +309,18 @@ public class Library {
 
     public static ArrayList<Book> searchInArrayListBookByTitle(String word , ArrayList<Book> arr) {
         ArrayList<Book> fondBooks = new ArrayList();
-        int exist = 0;
         for (int i = 0; i < arr.size(); i++) {
-
-            for (int j = 0; j < arr.get(i).getTitle().length(); j++) {
+            String fullTitle = arr.get(i).getTitle().toLowerCase();
+            for (int j = 0; j < fullTitle.length() - word.length(); j++) {
                 int counter = 0;
                 for (int k = 0; k < word.length(); k++) {
-                    if (word.toLowerCase().charAt(k) == arr.get(i).getTitle().toLowerCase().charAt(k + j))
+                    if (word.toLowerCase().charAt(k) == fullTitle.charAt(k + j))
                         counter++;
                     else
                         break;
                 }
 
                 if (counter == word.length()) {
-                    exist++;
                     fondBooks.add(arr.get(i));
                     break;
                 }
@@ -363,26 +331,32 @@ public class Library {
 
     public static ArrayList<Book> searchInArrayListBookByAuthor(String word , ArrayList<Book> arr) {
         ArrayList<Book> fondBooks = new ArrayList();
-        int exist = 0;
         for (int i = 0; i < arr.size(); i++) {
-
-            for (int j = 0; j < arr.get(i).getAuthor().length(); j++) {
+            String authorName = arr.get(i).getAuthor().toLowerCase();
+            for (int j = 0; j < authorName.length() - word.length(); j++) {
                 int counter = 0;
                 for (int k = 0; k < word.length(); k++) {
-                    if (word.toLowerCase().charAt(k) == arr.get(i).getAuthor().toLowerCase().charAt(k + j))
+                    if (word.toLowerCase().charAt(k) == authorName.charAt(k + j))
                         counter++;
                     else
                         break;
                 }
 
                 if (counter == word.length()) {
-                    exist++;
                     fondBooks.add(arr.get(i));
                     break;
                 }
             }
         }
         return fondBooks;
+    }
+
+    public static ArrayList<Book> searchBookByTitleInArray(String word) {
+        return searchInArrayListBookByTitle(word, books);
+    }
+
+    public static ArrayList<Book> searchBookByAuthorInArray(String word) {
+        return searchInArrayListBookByAuthor(word, books);
     }
 
     public static void writeLibrary() {
