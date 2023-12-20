@@ -33,7 +33,7 @@ public class MainApplication  extends Application {
         borrower2.addTransaction(book);
         borrower2.addTransaction(book1);
         borrower.addTransaction(book3);
-        BorrowerController.setCurrentBorrower(borrower2);
+        BorrowerController.setCurrentBorrower(borrower);
         launch(args);
     }
 
@@ -41,11 +41,11 @@ public class MainApplication  extends Application {
     public void start(Stage primaryStage) throws Exception {
         try{
             Parent root =FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
-            Scene scene = new Scene(root);
-            primaryStage.setHeight(720);
-            primaryStage.setWidth(1280);
+            Parent child = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SideBar.fxml")));
+            Scene rootscene = new Scene(root);
+            Scene childscene = new Scene(child);
+            primaryStage.setScene(childscene);
             primaryStage.setResizable(false);
-            primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e){
             e.printStackTrace();

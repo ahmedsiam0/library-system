@@ -1,32 +1,35 @@
 package com.asu.librarysystem;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.event.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.concurrent.Callable;
 
-public class BorrowerController implements Initializable{
-    private Stage primaryStage;
+public class BorrowerController implements Initializable {
+    private Stage primaryStage = new Stage();
     private Scene scene;
     private static Borrower currentBorrower = new Borrower("","","");
-
+    @FXML
+    private Label Back;
     @FXML
     private Label currentUserName;
 
@@ -49,50 +52,10 @@ public class BorrowerController implements Initializable{
         BorrowerController.currentBorrower = currentBorrower;
     }
 
-    public Borrower getCurrentBorrower() {
+    public static Borrower getCurrentBorrower() {
         return currentBorrower;
     }
 
-    public void goToTransactionsScene (ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
-        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        System.out.println(1);
-    }
-    public void goToMyBooksScene (ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
-        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        System.out.println(2);
-    }
-    public void goToShoppingScene (ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
-        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        System.out.println(3);
-    }
-    public void goToManageProfileScene (ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
-        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        System.out.println(4);
-    }
-    public void goToLogoutScene (ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
-        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        System.out.println(5);
-    }
     ObservableList<Transaction> list = FXCollections.observableArrayList();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -103,5 +66,16 @@ public class BorrowerController implements Initializable{
         TransactionIdColumn.setCellValueFactory(new PropertyValueFactory<Transaction, Integer>("transactionId"));
         list.addAll(currentBorrower.getBorrowerTransactions());
         TransactionTableView.setItems(list);
+        Back.setOnMouseClicked(mouseEvent -> {
+            try {
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SideBar.fxml")));
+                primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                primaryStage.setScene(scene);
+                primaryStage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }
