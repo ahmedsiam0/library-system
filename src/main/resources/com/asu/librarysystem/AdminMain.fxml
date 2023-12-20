@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.AdminController">
+   <children>
+      <Label layoutX="514.0" layoutY="39.0" text="Welcome admin!" textFill="#00adb5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <VBox layoutX="75.0" layoutY="150.0" prefHeight="370.0" prefWidth="507.0" spacing="125.0">
+         <children>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToManagingBooks" style="-fx-background-color: #F4EEE0;" text="managing books" textFill="#00adb5">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#switchToManagingBorrowers" prefHeight="100.0" prefWidth="507.0" style="-fx-background-color: #F4EEE0;" text="managing borrowers" textFill="#00adb5">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#switchToManagingProfile" prefHeight="100.0" prefWidth="529.0" style="-fx-background-color: #F4EEE0;" text="managing profile" textFill="#00adb5">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+         </children>
+      </VBox>
+      <VBox layoutX="645.0" layoutY="150.0" prefHeight="370.0" prefWidth="507.0" spacing="125.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#switchToManagingDiscounts" prefHeight="100.0" prefWidth="570.0" style="-fx-background-color: #F4EEE0;" text="managing discounts" textFill="#00adb5">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#switchToManagingOrderHistory" prefHeight="100.0" prefWidth="507.0" style="-fx-background-color: #F4EEE0;" text="order history" textFill="#00adb5">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="529.0" style="-fx-background-color: #F4EEE0;" text="logout" textFill="#00adb5">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
