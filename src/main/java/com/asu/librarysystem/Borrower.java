@@ -1,63 +1,116 @@
 package com.asu.librarysystem;
 
-import javafx.beans.value.ObservableValue;
-import javafx.scene.control.TableColumn;
-import javafx.util.Callback;
-
 import java.util.ArrayList;
 
-public class Borrower extends Account{
+public class Borrower extends Account {
     private double borrowerFines = 0;
     private ArrayList<Transaction> borrowerTransactions;
+    public boolean assignBefore;
+    private int noOfBooks;
+    private boolean isAdmin = false;
 
-    public Borrower( String borrower_name, String Password, String Phone_Number)
-    {
-        super( borrower_name, Password, Phone_Number);
+
+    public Borrower(String borrowerName, String password, String PhoneNumber) {
+        super(borrowerName, password, PhoneNumber);
         borrowerTransactions = new ArrayList<>();
-    }
-    public void addTransaction (Book book) {
-        try{
-            borrowerTransactions.add(new Transaction(book.getId(), getId(), java.time.LocalDate.now(), java.time.LocalDate.now().plusMonths(1)));
-        }
-        catch (NullPointerException e){
-            System.out.println("Can't find the book called \"" + book.getTitle() + "\" in our Library");
-            System.out.println("Please add the Book to the Library and try again");
-        }
+        assignBefore = false;
     }
 
-    public void deleteTransaction (int transactionId) {
+    public void addTransaction(Book book, int borrowDate, int returnDate) {
+        borrowerTransactions.add(new Transaction(book.getId(), getId(), borrowDate, returnDate));
+    }
+
+    public boolean deleteTransaction(int transactionId) {
         try {
             borrowerTransactions.remove(transactionId);
-        }
-        catch (IndexOutOfBoundsException e)
-        {
-            System.out.println("cant delete because the index is out of bound");
-        }
-    }
-
-    public Transaction searchTransaction (int transactionId) {
-        try {
-            return borrowerTransactions.get(transactionId);
-        }
-        catch (IndexOutOfBoundsException e)
-        {
-            System.out.println("cant search because the index is out of bound");
-            return null;
+            return true;
+        } catch (IndexOutOfBoundsException e) {
+            //System.out.println("cant delete because the index is out of bound");
+            return false;
         }
     }
 
+    public int searchTransactions(int transactionId) {
+        for (int i = 0; i < borrowerTransactions.size(); i++) {
+            if (borrowerTransactions.get(i).getTransactionId() == transactionId) {
+                return borrowerTransactions.get(i).getBorrowerId();
+            }
+        }
+        return -1;
+    }
 
-    public double finesIfLate ()
-    {
+    public double finesIfLate() {
         for (Transaction borrowerTransaction : borrowerTransactions) {
-            if (borrowerTransaction.getBorrowerId() == getId() && borrowerTransaction.getFines() >= 0) {
+            if (borrowerTransaction.getBorrowerId() == this.getId() && borrowerTransaction.getFines() >= 0) {
                 borrowerFines += borrowerTransaction.getFines();
             }
         }
         return borrowerFines;
     }
 
+    public void setAssignBefore(boolean assignBefore) {
+        if (!assignBefore)
+            this.assignBefore = true;
+        else
+            this.assignBefore = false;
+    }
+
+
     public ArrayList<Transaction> getBorrowerTransactions() {
         return borrowerTransactions;
     }
+
+    public int getNoOfBooks() {
+        this.noOfBooks = this.getBorrowerTransactions().size();
+        return noOfBooks;
+    }
+
+    public boolean getAdmin() {
+        return isAdmin;
+    }
+    public void setAdmin(boolean admin) {
+         this.isAdmin = admin;
+    }
+    public ArrayList<Transaction> copyElementOfArrayList(){
+        return borrowerTransactions;
+    }
+
+    public  ArrayList<Book> arrayOFTransactionBooks(){
+        ArrayList<Book> transactionBooksArrayList=new ArrayList<Book>();
+        for(int i=0;i<borrowerTransactions.size();i++) {
+            transactionBooksArrayList.add(Library.searchBookById(borrowerTransactions.get(i).getBookId()));
+        }
+        return transactionBooksArrayList;
+    }
+//    public void writeTransaction(){
+//        try {
+//            FileOutputStream write=new FileOutputStream("transaction_data.txt");
+//            for (Transaction obj : borrowerTransactions ) {
+//                String bookName=searchBookById(obj.getBookId()).getTitle();
+//                write.write((obj.getTransactionId()+","+bookName+","+obj.getBorrowerId()+","+obj.getBorrowDate()+","+obj.getReturnDate()+"\n").getBytes());
+//            }
+//            write.close();
+//        } catch (FileNotFoundException e) {
+//            System.out.println("can't write");
+//        } catch (IOException e) {
+//            System.out.println("can't write");
+//        }
+//    }
+
+//    public void readTransaction(){
+//        Scanner scanner = null;
+//        try {
+//            scanner = new Scanner(new FileInputStream("transaction_data.txt"));
+//        } catch (FileNotFoundException e) {
+//            System.out.println("can't read");
+//        }
+//
+//        while (scanner.hasNextLine()) {
+//            String line = scanner.nextLine();
+//            String[] parts = line.split(",");
+//            Transaction transaction =new Transaction(searchBookByTitle(parts[1]).getId(),getId(),Integer.valueOf(parts[3]),Integer.valueOf(parts[4]));
+//        }
+//        scanner1.close();
+//
+//    }
 }

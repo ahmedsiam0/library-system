@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1243.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <VBox fx:id="mainContainer" alignment="CENTER" prefWidth="1240.0" spacing="50.0" styleClass="color3" stylesheets="@../../../css/styles.css">
+         <children>
+            <HBox alignment="CENTER" prefHeight="373.0" prefWidth="1236.0" stylesheets="@../../../css/styles.css">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="361.0" prefWidth="922.0" spacing="70.0" style="-fx-background-radius: 20;" styleClass="color2">
+                     <children>
+                        <ImageView fx:id="bookCover" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../data/covers/1.jpg" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="344.0" prefWidth="510.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="name" text="Title:jane eyre" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="author" text="Author: arsany adel kostandy tawadrouse" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Categories: Horror, Drama, Adventure" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="releaseDate" text="Relase date: " textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="price" text="Price: 199.99$" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <HBox fx:id="propertiesButtons" alignment="CENTER" prefHeight="0.0" prefWidth="680.0" spacing="80.0">
+                                 <children>
+                                    <ImageView fx:id="statusImage" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="200.0" onMouseClicked="#addToCart" pickOnBounds="true" preserveRatio="true">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <image>
+                                          <Image url="@../../../../../../data/bookSceneAssets/Status_icons/addToCartButton.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="notifyMe" accessibleRole="BUTTON" fitHeight="42.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <image>
+                                          <Image url="@../../../../../../data/bookSceneAssets/Status_icons/notifyMeButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <Line endX="1114.69287109375" endY="-40.6121711730957" startX="-114.14215087890625" startY="-41.31937789916992" stroke="#393e46" strokeWidth="2.0" />
+            <HBox alignment="CENTER" prefHeight="326.0" prefWidth="1146.0" spacing="10.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" maxWidth="1214.0" prefHeight="326.0" prefWidth="650.0" spacing="5.0" style="-fx-background-radius: 15;" styleClass="color4">
+                     <children>
+                        <Label text="Description:">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="description" alignment="TOP_LEFT" prefHeight="320.0" prefWidth="696.0" text="In Paradise, God’s favored new creations—Adam and Eve—live in bliss, untainted by sin. In another realm, Satan and his banished rebel angels collude to destroy God’s tranquil new design. Into this idyll called Earth, and the confidence of Adam and Eve, Satan will instigate the fall of man.At the heart of this complex, audacious epic poem is a drama driven by the most recognizable human flaws. More than a story from Genesis, it is the extraordinary expression of Milton’s search for personal truth and the meaning of existence, written to “justify the ways of God to men.”AmazonClassics brings you timeless works from the masters of storytelling. Ideal for anyone who wants to read a great work for the first time or rediscover an old favorite, these new editions open the door to literature’s most unforgettable characters and beloved worlds." wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="305.0" prefWidth="0.0" styleClass="color2" stylesheets="@../../../css/styles.css" />
+                  <HBox alignment="CENTER" prefHeight="327.0" prefWidth="573.0" style="-fx-background-radius: 15;" styleClass="color4">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="326.0" prefWidth="122.0">
+                           <children>
+                              <Label fx:id="totalRating" alignment="CENTER" prefHeight="102.0" prefWidth="134.0" text="4.8" textFill="#393e46">
+                                 <font>
+                                    <Font name="Arial Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="countRatings" alignment="CENTER" opacity="0.7" prefHeight="41.0" prefWidth="134.0" text="1,800 RATINGS" textFill="#393e46" />
+                           </children>
+                        </VBox>
+                        <HBox prefHeight="200.0" prefWidth="357.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="295.0" prefWidth="354.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <ImageView fx:id="fiveStarsIcon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../data/bookSceneAssets/Rating_icons/5_stars.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ProgressBar fx:id="fiveStarsBar" prefHeight="30.0" prefWidth="300.0" progress="0.2" style="-fx-background-color: fcedd2; -fx-background-radius: 10;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <ImageView fx:id="fourStarsIcon" fitHeight="400.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../data/bookSceneAssets/Rating_icons/4_stars.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ProgressBar fx:id="fourStarsBar" prefHeight="30.0" prefWidth="300.0" progress="0.2" style="-fx-background-color: fcedd2; -fx-background-radius: 10;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <ImageView fx:id="threeStarsIcon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../data/bookSceneAssets/Rating_icons/3_stars.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ProgressBar fx:id="threeStarsBar" prefHeight="30.0" prefWidth="300.0" progress="0.2" style="-fx-background-color: fcedd2; -fx-background-radius: 10;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <ImageView fx:id="twoStarsIcon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../data/bookSceneAssets/Rating_icons/2_stars.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ProgressBar fx:id="twoStarsBar" prefHeight="30.0" prefWidth="300.0" progress="0.2" style="-fx-background-radius: 10; -fx-background-color: fcedd2;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <ImageView fx:id="oneStarIcon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../../data/bookSceneAssets/Rating_icons/1_star.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ProgressBar fx:id="oneStarBar" prefHeight="30.0" prefWidth="300.0" progress="0.2" style="-fx-background-color: fcedd2; -fx-background-radius: 10;" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </HBox>
+            <Line endX="1114.69287109375" endY="-40.6121711730957" startX="-114.14215087890625" startY="-41.31937789916992" stroke="#393e46" strokeWidth="2.0" />
+            <VBox fillWidth="false" spacing="10.0">
+               <children>
+                  <Label text="Recommendations:">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane prefHeight="355.0" prefWidth="1219.0" style="-fx-background-radius: 15;" styleClass="color4" stylesheets="@../../../css/styles.css">
+                     <content>
+                        <GridPane fx:id="recommendations" maxWidth="1214.0" prefHeight="350.0">
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </VBox>
+            <Line endX="1114.69287109375" endY="-40.6121711730957" startX="-114.14215087890625" startY="-41.31937789916992" stroke="#393e46" strokeWidth="2.0" />
+            <VBox maxWidth="1221.0" prefHeight="500.0" prefWidth="1221.0" spacing="30.0">
+               <children>
+                  <Label text="Reviews:">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="411.0" prefWidth="1191.0" spacing="20.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="561.0" prefWidth="595.0">
+                           <children>
+                              <GridPane alignment="CENTER" prefHeight="346.0" prefWidth="513.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1090.7333374023438" minWidth="10.0" prefWidth="374.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1090.7333374023438" minWidth="10.0" prefWidth="106.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="605.4000244140625" minWidth="10.0" prefWidth="244.0" />
+                                    <ColumnConstraints />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints percentHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="285.0" minHeight="10.0" percentHeight="0.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="268.0" minHeight="0.0" percentHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Comment">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="reviewTextArea" onKeyTyped="#setTypedCharacter" prefHeight="214.0" prefWidth="594.0" promptText="Optional" style="-fx-border-color: #808080; -fx-background-radius: 15;" wrapText="true" GridPane.columnSpan="4" GridPane.rowIndex="1" />
+                                    <Button fx:id="reviewSubmitButton" mnemonicParsing="false" onAction="#submitReview" prefHeight="47.0" prefWidth="118.0" style="-fx-background-radius: 15;" styleClass="color2" text="Submit" textFill="#eeeeee" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Text fx:id="warningMessage" fill="DARKRED" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <ComboBox fx:id="ratingOptions" prefHeight="28.0" prefWidth="268.0" promptText="Choose your rating" GridPane.columnIndex="2" />
+                                    <Label fx:id="textAreaCharCount" graphicTextGap="0.0" opacity="0.5" text="300" textFill="#222831" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </VBox>
+                        <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="479.0" prefWidth="0.0" styleClass="color2" stylesheets="@../../../css/styles.css" />
+                        <VBox fx:id="commentSection" alignment="TOP_CENTER" maxWidth="1214.0" prefHeight="504.0" prefWidth="595.0" spacing="80.0" style="-fx-background-radius: 15;" styleClass="color4">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="20.0" left="2.0" right="2.0" top="20.0" />
+         </padding>
+      </VBox>
+   </content>
+</ScrollPane>

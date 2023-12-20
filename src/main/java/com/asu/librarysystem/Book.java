@@ -2,6 +2,8 @@ package com.asu.librarysystem;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Book {
     private static int idCounter = 0;
@@ -11,18 +13,27 @@ public class Book {
     private int publicationYear;
     private boolean status;
     private int price;
-    private int rating;
+    private int quantity;
+    private String descreption;
     private File cover;
+    private ArrayList<Category> categories;
 
-    public Book(String title, String author, int publicationYear, boolean status, int price, int rating, String coverPath) {
+
+
+    public Book(String title, String author, int publicationYear, boolean status, int price, int quantity
+            , String descreption, String coverPath, Category[] categories) {
         this.id = ++idCounter;
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
         this.status = status;
         this.price = price;
-        this.rating = rating;
+        this.quantity = quantity;
+        this.descreption = descreption;
+
         setCover(coverPath);
+
+        this.categories = new ArrayList<Category>(Arrays.asList(categories));
     }
 
     public int getId() {
@@ -49,10 +60,6 @@ public class Book {
         return price;
     }
 
-    public int getRating() {
-        return rating;
-    }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -73,6 +80,14 @@ public class Book {
         this.price = price;
     }
 
+    public void setQuantity(int quantity) { this.quantity =  quantity; }
+
+    public int getQuantity() { return quantity; }
+
+    public boolean isAvailable() { return quantity > 0; }
+
+    public String getDescreption() { return descreption; }
+
     public void setCover(String path) {
         File newCover = new File(path);
 
@@ -92,4 +107,10 @@ public class Book {
     public String getCoverPath() {
         return cover.getAbsolutePath();
     }
+
+    public ArrayList<Category> getCategories(){
+        return this.categories;
+    }
+
+
 }

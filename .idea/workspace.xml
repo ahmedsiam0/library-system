@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="added exception handling">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Notifications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/SideBarController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/7124209_menu_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/book.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/money-transfer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/shopping-cart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Icons/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/SideBar.fxml" afterDir="false" />
+    <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="fixed the bug of null pointer exception in adding a new book and editing an existing book">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/ManagingAdminProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/ManagingAdminProfile.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/BorrowerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/BorrowerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/BorrowerTransactions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/BorrowerTransactions.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/covers/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/covers/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/CRUDBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/CRUDBooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/ManagingCustomerProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/ManagingCustomerProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/AdminMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/AdminMain.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/CRUDBooks.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/CRUDBooks.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/CustomerMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/CustomerMain.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/ManagingCustomerProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/ManagingCustomerProfile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +26,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -46,48 +50,53 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="4b170fae-7a53-4d68-a7d4-1a589dda4637" />
-        <option name="url" value="https://github.com/HosTheRockJohnson/library-system.git" />
+        <option name="accountId" value="b4fd41cd-63fc-4bd8-84fa-7fa52482814c" />
+        <option name="url" value="https://github.com/ahmedsiam0/library-system.git" />
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Review.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2YriMpRLbAb6y6MCexWWGf4GDL1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "C:/Users/Legion/IdeaProjects/library-system/src/main/java/com/asu/librarysystem",
-    "last_opened_file_path": "C:/Users/Legion/IdeaProjects/library-system/src/main/resources/Icons",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.JavaFX"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GUI__elements&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PROJECTS/CRUDtableview&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Legion\IdeaProjects\library-system\src\main\resources\Icons" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Legion\IdeaProjects\library-system\src\main\resources\com\asu\librarysystem" />
-      <recent name="C:\Users\Legion\IdeaProjects\library-system\src\main\java\com\asu\librarysystem" />
-    </key>
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-8336523bb0d9-657b72ed" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -186,51 +195,37 @@
       <option name="project" value="LOCAL" />
       <updated>1701611695053</updated>
     </task>
-    <task id="LOCAL-00012" summary="added exception handling">
+    <task id="LOCAL-00012" summary="finished the skeleton of the scenes but i can't switch to CRUD when i run + added qunatity field to Books">
       <option name="closed" value="true" />
-      <created>1701611989962</created>
+      <created>1702510638848</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1701611989962</updated>
+      <updated>1702510638848</updated>
     </task>
-    <task id="LOCAL-00013" summary="added exception handling">
+    <task id="LOCAL-00013" summary="fixed the bug of null pointer exception in adding a new book and editing an existing book">
       <option name="closed" value="true" />
-      <created>1702515084239</created>
+      <created>1702924602230</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1702515084239</updated>
+      <updated>1702924602230</updated>
     </task>
-    <task id="LOCAL-00014" summary="added exception handling">
-      <option name="closed" value="true" />
-      <created>1702515115496</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1702515115496</updated>
-    </task>
-    <task id="LOCAL-00015" summary="added exception handling">
-      <option name="closed" value="true" />
-      <created>1702516696366</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1702516696366</updated>
-    </task>
-    <task id="LOCAL-00016" summary="added exception handling">
-      <option name="closed" value="true" />
-      <created>1702928016596</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1702928016596</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Merge pull request #7 from ahmed-khaled-1/patch-1&#10;&#10;Transaction" />
     <MESSAGE value="added borrower class, added transaction id, fixed some bugs" />
     <MESSAGE value="some optimizations" />
@@ -238,11 +233,19 @@
     <MESSAGE value="fixed some potential bugs, decreased redundancy in the code" />
     <MESSAGE value="fixed some potential bugs, decreased redundancy in the code, better efficiency" />
     <MESSAGE value="fixed a lot of potential bugs in transactions and borrower classes, decreased redundancy in the code, better efficiency" />
-    <MESSAGE value="added exception handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="added exception handling" />
+    <MESSAGE value="finished the skeleton of the scenes but i can't switch to CRUD when i run + added qunatity field to Books" />
+    <MESSAGE value="fixed the bug of null pointer exception in adding a new book and editing an existing book" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the bug of null pointer exception in adding a new book and editing an existing book" />
   </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainController.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
