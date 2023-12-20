@@ -19,76 +19,53 @@ public class AdminController {
     private Parent adminViewNodes;
 
     @FXML
-    public void switchToManagingBooks(ActionEvent event)throws IOException {
-
-        try {
-            adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("CRUDBooks.fxml"));
-            adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            adminScene =new Scene(adminViewNodes);
-            adminStage.setScene(adminScene);
-            adminStage.show();
-
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+    public void switchToManagingBooks(ActionEvent event) throws IOException {
+        adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("CRUDBooks.fxml"));
+        adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        adminScene =new Scene(adminViewNodes);
+        adminStage.setScene(adminScene);
+        adminStage.show();
+    }
+    @FXML
+    public void switchToManagingBorrowers(ActionEvent event) throws IOException {
+        adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("CRUD_Borrower-view.fxml"));
+        adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        adminScene =new Scene(adminViewNodes);
+        adminStage.setScene(adminScene);
+        adminStage.show();
+    }
+    @FXML
+    public void switchToManagingProfile(ActionEvent event) throws IOException {
+        adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("ManagingAdminProfile.fxml"));
+        adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        adminScene =new Scene(adminViewNodes);
+        adminStage.setScene(adminScene);
+        adminStage.show();
+    }
+    @FXML
+    public void switchToManagingDiscounts(ActionEvent event) throws IOException {
+        adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("discounts-view.fxml"));
+        adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        adminScene =new Scene(adminViewNodes);
+        adminStage.setScene(adminScene);
+        adminStage.show();
+    }
+    @FXML
+    public void switchToManagingOrderHistory(ActionEvent event) throws IOException {
+        adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("orders-for-admin-view.fxml"));
+        adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        adminScene =new Scene(adminViewNodes);
+        adminStage.setScene(adminScene);
+        adminStage.show();
 
     }
     @FXML
-    public void switchToManagingBorrowers(ActionEvent event)throws IOException {
-
-        try {
-            adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("ManagingBorrowers.fxml"));
+    void logout(ActionEvent event) throws IOException {
+            adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("Login.fxml"));
             adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             adminScene =new Scene(adminViewNodes);
             adminStage.setScene(adminScene);
             adminStage.show();
-
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-
-    }
-    @FXML
-    public void switchToManagingProfile(ActionEvent event)throws IOException {
-
-        try {
-            adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("ManagingAdminProfile.fxml"));
-            adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            adminScene =new Scene(adminViewNodes);
-            adminStage.setScene(adminScene);
-            adminStage.show();
-
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
-    @FXML
-    public void switchToManagingDiscounts(ActionEvent event)throws IOException {
-        try {
-            adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("ManagingDiscounts.fxml"));
-            adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            adminScene =new Scene(adminViewNodes);
-            adminStage.setScene(adminScene);
-            adminStage.show();
-
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-
-    }
-    @FXML
-    public void switchToManagingOrderHistory(ActionEvent event)throws IOException {
-        try {
-            adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("OrderHistory.fxml"));
-            adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            adminScene =new Scene(adminViewNodes);
-            adminStage.setScene(adminScene);
-            adminStage.show();
-
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-
     }
 
 }
