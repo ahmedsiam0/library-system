@@ -55,7 +55,6 @@ public class Borrower extends Account {
             this.assignBefore = false;
     }
 
-
     public ArrayList<Transaction> getBorrowerTransactions() {
         return borrowerTransactions;
     }
@@ -71,46 +70,4 @@ public class Borrower extends Account {
     public void setAdmin(boolean admin) {
          this.isAdmin = admin;
     }
-    public ArrayList<Transaction> copyElementOfArrayList(){
-        return borrowerTransactions;
-    }
-
-    public  ArrayList<Book> arrayOFTransactionBooks(){
-        ArrayList<Book> transactionBooksArrayList=new ArrayList<Book>();
-        for(int i=0;i<borrowerTransactions.size();i++) {
-            transactionBooksArrayList.add(Library.searchBookById(borrowerTransactions.get(i).getBookId()));
-        }
-        return transactionBooksArrayList;
-    }
-//    public void writeTransaction(){
-//        try {
-//            FileOutputStream write=new FileOutputStream("transaction_data.txt");
-//            for (Transaction obj : borrowerTransactions ) {
-//                String bookName=searchBookById(obj.getBookId()).getTitle();
-//                write.write((obj.getTransactionId()+","+bookName+","+obj.getBorrowerId()+","+obj.getBorrowDate()+","+obj.getReturnDate()+"\n").getBytes());
-//            }
-//            write.close();
-//        } catch (FileNotFoundException e) {
-//            System.out.println("can't write");
-//        } catch (IOException e) {
-//            System.out.println("can't write");
-//        }
-//    }
-
-//    public void readTransaction(){
-//        Scanner scanner = null;
-//        try {
-//            scanner = new Scanner(new FileInputStream("transaction_data.txt"));
-//        } catch (FileNotFoundException e) {
-//            System.out.println("can't read");
-//        }
-//
-//        while (scanner.hasNextLine()) {
-//            String line = scanner.nextLine();
-//            String[] parts = line.split(",");
-//            Transaction transaction =new Transaction(searchBookByTitle(parts[1]).getId(),getId(),Integer.valueOf(parts[3]),Integer.valueOf(parts[4]));
-//        }
-//        scanner1.close();
-//
-//    }
 }
