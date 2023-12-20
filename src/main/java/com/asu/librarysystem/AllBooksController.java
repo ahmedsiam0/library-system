@@ -44,14 +44,30 @@ public class AllBooksController {
 
     public void backButton(ActionEvent event){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("name.fxml"));
-            Parent root = loader.load();
+            Account account = Library.getActiveAccount();
+            if (account instanceof Customer) {
+                Customer customer =(Customer) account;
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("name of.fxml"));
+                Parent root = loader.load();
 //            clsssName objName = loader.getController();
 //            objName.method;
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene scene= new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                Scene scene= new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+            else if(account instanceof Borrower){
+                Borrower borrower =(Borrower) account;
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("name.fxml"));
+                Parent root = loader.load();
+//            clsssName objName = loader.getController();
+//            objName.method;
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                Scene scene= new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -102,7 +118,7 @@ public class AllBooksController {
         }
         return foundBooks;
     }
-    public void searshBook(){
+    public void searchBook(){
         String word = searshText.getText();
         ArrayList<Book>foundBooks=arrayReadyToSearch(word);
         int colm=0;
@@ -139,10 +155,10 @@ public class AllBooksController {
         }
     }
     public void searshBookByKey(KeyEvent event){
-        searshBook();
+        searchBook();
     }
     public void searshBookByAction(ActionEvent event){
-        searshBook();
+        searchBook();
     }
 
 }
