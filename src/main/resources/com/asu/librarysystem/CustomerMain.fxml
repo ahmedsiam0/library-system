@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.CustomerController">
+   <children>
+      <Label layoutX="544.0" layoutY="90.0" text="welcome Customer!">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <VBox layoutX="184.0" layoutY="188.0" prefHeight="322.0" prefWidth="401.0" spacing="220.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#switchToMyBooks" prefHeight="53.0" prefWidth="402.0" text="my books">
+               <font>
+                  <Font name="Georgia" size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#switchToShopping" prefHeight="53.0" prefWidth="402.0" text="shopping">
+               <font>
+                  <Font name="Georgia" size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox layoutX="700.0" layoutY="188.0" prefHeight="322.0" prefWidth="401.0" spacing="220.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#switchToManagingCustomerProfile" prefHeight="53.0" prefWidth="402.0" text="managing profile">
+               <font>
+                  <Font name="Georgia" size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="53.0" prefWidth="402.0" text="logout">
+               <font>
+                  <Font name="Georgia" size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
