@@ -2,6 +2,8 @@ package com.asu.librarysystem;
 
 import java.util.ArrayList;
 
+import java.util.Date;
+
 public class Borrower extends Account {
     private double borrowerFines = 0;
     private ArrayList<Transaction> borrowerTransactions;
@@ -16,8 +18,8 @@ public class Borrower extends Account {
         assignBefore = false;
     }
 
-    public void addTransaction(Book book, int borrowDate, int returnDate) {
-        borrowerTransactions.add(new Transaction(book.getId(), getId(), borrowDate, returnDate));
+    public void addTransaction(Book book) {
+        borrowerTransactions.add(new Transaction(book, getId()));
     }
 
     public boolean deleteTransaction(int transactionId) {

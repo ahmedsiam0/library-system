@@ -18,9 +18,9 @@ import javafx.scene.paint.*;
 public class MainApplication  extends Application {
 
     public static void main(String[] args) {
-        Book book = new Book("The river", "Hossam", 2020, true,50, 5, "");
-        Book book1 = new Book("The Sea", "Hossam", 2021, true, 120,5,"");
-        Book book3 = new Book("The Land", "Hossam", 2021, true, 120,5,"");
+        Book book = new Book("The river", "Hossam", 2020, true,50, 5, "","",new Category[]{Category.HORROR});
+        Book book1 = new Book("The Sea", "Hossam", 2021, true, 120,5,"","",new Category[]{Category.HORROR});
+        Book book3 = new Book("The Land", "Hossam", 2021, true, 120,5,"","",new Category[]{Category.HORROR});
         Library.addBook(book);
         Library.addBook(book1);
         Library.addBook(book3);

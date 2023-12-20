@@ -15,12 +15,12 @@ public class Transaction
     private LocalDate borrowDate;
     private LocalDate returnDate;
 
-    public Transaction(int bookId ,int borrowerId ,LocalDate borrowDate ,LocalDate returnDate)
+    public Transaction(Book book, int borrowerId)
     {
-        this.bookId=bookId;
+        this.bookId=book.getId();
         this.borrowerId=borrowerId;
-        this.borrowDate=borrowDate;
-        this.returnDate=returnDate;
+        this.borrowDate=java.time.LocalDate.now();
+        this.returnDate=java.time.LocalDate.now().plusMonths(1);
         this.bookName = Library.searchBookById(bookId).getTitle();
         this.transactionId = ++transactionCount;
     }
