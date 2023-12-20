@@ -1,23 +1,26 @@
 package com.asu.librarysystem;
 
-import static com.asu.librarysystem.Library.searchBookById;
-
 public class Order {
     
     static private int idCounter = 0;
     final private int id;
     private int bookId;
     private int quantity;
+    private String discountCode;
 
     public Order(int bookId, int quantity) {
-        id = ++idCounter;
+        this.id = ++idCounter;
         this.bookId = bookId;
         this.quantity = quantity;
+        this.discountCode = "";
     }
-
 
     public int getId() {
         return id; 
+    }
+
+    public String getBook() {
+        return Library.searchBookById(bookId).getTitle();
     }
 
     public int getBookId() {
@@ -28,15 +31,28 @@ public class Order {
         return quantity;
     }
 
-    public int getPrice() {
-        return searchBookById(bookId).getPrice() * quantity;
+    public double getPrice() {
+        double price = Library.searchBookById(bookId).getPrice() * quantity;
+        if (discountCode != "") {
+            price -= Library.getDiscountHandler().getDiscount(discountCode) * price / 100.0;
+        }
+        return price;
     }
     
-    public void setBookId(int bookId) {
+    public void setBook(int bookId) {
         this.bookId = bookId;
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public void setDiscountCode(String discountCode) {
+        if (Library.getDiscountHandler().getDiscount(discountCode) != -1.0)
+            this.discountCode = discountCode;
+    }
+
+    public String getDiscountCode() {
+        return discountCode;
     }
 }
