@@ -3,7 +3,7 @@ package com.asu.librarysystem;
 public class Transaction
 {
     private static int transactionCount = 0;
-    private int transactionId;
+    private final int  transactionId;
     private int bookId;
     private int borrowerId;
     private int borrowDate;

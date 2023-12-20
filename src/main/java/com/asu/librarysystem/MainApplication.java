@@ -37,16 +37,19 @@ public class MainApplication extends Application {
 //        Image icon =new Image("E:\\ibrahem\\oop\\project2\\library-system\\src\\main\\resources\\icon\\icons8-library-64.png");
 //        stage.getIcons().add(icon);
 //
-//        stage.setTitle("library");
+//
 //        stage.setScene(scene);
 //        stage.show();
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load(),1280,720);
+//        Image icon =new Image("");
+//        stage.getIcons().add(icon);
+        stage.setTitle("library");
 
 
         stage.setScene(scene);
+        stage.setResizable(false);
         st = stage;
         stage.show();
 

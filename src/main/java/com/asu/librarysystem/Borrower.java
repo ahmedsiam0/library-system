@@ -71,9 +71,6 @@ public class Borrower extends Account {
     public void setAdmin(boolean admin) {
          this.isAdmin = admin;
     }
-    public ArrayList<Transaction> copyElementOfArrayList(){
-        return borrowerTransactions;
-    }
 
     public  ArrayList<Book> arrayOFTransactionBooks(){
         ArrayList<Book> transactionBooksArrayList=new ArrayList<Book>();
