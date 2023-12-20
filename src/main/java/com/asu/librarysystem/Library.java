@@ -12,7 +12,9 @@ public class Library {
     private static Account activeAccount;
     private static Admin admin  = new Admin("Ahmad" , "1234" ,"01030243591") ;
     private static ReviewHandler reviewHandler = new ReviewHandler();
+    private static DiscountHandler discountHandler = new DiscountHandler();
     private static Stack<Book> previousBooks = new Stack<Book>();
+    private static ShoppingCart shoppingCart = new ShoppingCart();
     
     private static String lastViewer;
 
@@ -314,12 +316,17 @@ public class Library {
         return reviewHandler;
     }
 
+    public static DiscountHandler getDiscountHandler() {
+        return discountHandler;
+    }
 
     public static Account getActiveAccount() {
         return activeAccount;
     }
 
-
+    public static ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
 
     public static ArrayList<Book> copyElementOfArrayList() {
         return books;

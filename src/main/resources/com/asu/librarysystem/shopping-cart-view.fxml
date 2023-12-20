@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.ShoppingCartController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="70.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="NEVER" minWidth="10.0" percentWidth="30.0" prefWidth="200.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="118.93332328796387" minHeight="10.0" percentHeight="15.0" prefHeight="90.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="128.46663665771484" minHeight="10.0" prefHeight="90.0" vgrow="NEVER" />
+    <RowConstraints minHeight="10.0" prefHeight="90.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="90.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="90.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#back" text="BACK" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Monospaced Regular" size="23.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+      </Button>
+      <Label text="Shopping Cart" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <TableView fx:id="mainTable" editable="true" prefHeight="720.0" prefWidth="680.0" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
+         <columns>
+            <TableColumn fx:id="bookColumn" editable="false" maxWidth="342.4000663757324" minWidth="100.0" prefWidth="342.4000663757324" text="Book" />
+            <TableColumn fx:id="quantityColumn" maxWidth="238.40003967285156" minWidth="27.999969482421875" prefWidth="92.800048828125" text="Quantity" />
+            <TableColumn fx:id="priceColumn" editable="false" maxWidth="219.20001220703125" minWidth="0.79998779296875" prefWidth="170.39996337890625" text="Price" />
+         </columns>
+         <GridPane.margin>
+            <Insets right="20.0" />
+         </GridPane.margin>
+      </TableView>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#delete" text="DELETE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Monospaced Regular" size="23.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+      </Button>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#proceed" text="PROCEED TO BUY" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="Monospaced Regular" size="23.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+      </Button>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" />
+   </padding>
+</GridPane>

@@ -48,7 +48,6 @@ public class Customer extends Account {
         }
     }
 
-
     public void setAssignBefore(boolean assignBefore) {
         if (!assignBefore)
             this.assignBefore = true;
@@ -62,5 +61,8 @@ public class Customer extends Account {
             orderBooksArrayList.add(Library.searchBookById(orders.get(i).getBookId()));
         }
         return orderBooksArrayList;
+    }
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
 }
