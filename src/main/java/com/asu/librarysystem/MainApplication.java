@@ -41,7 +41,7 @@ public class MainApplication extends Application {
 //        stage.setScene(scene);
 //        stage.show();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("SideBar.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),1280,720);
 //        Image icon =new Image("");
 //        stage.getIcons().add(icon);
@@ -100,11 +100,9 @@ public class MainApplication extends Application {
         customer.addOrder(book5.getId(),2);
         customer.addOrder(book7.getId(),2);
 
-        borrower.addTransaction(book3,2020,2022);
-        borrower.addTransaction(book5,2020,2022);
-        borrower.addTransaction(book9,2020,2022);
-
- 
+        borrower.addTransaction(book3);
+        borrower.addTransaction(book5);
+        borrower.addTransaction(book9);
         /* Login
          Borrower B = new Borrower("Hossam", "123456", "123456");
         Book b = new Book("", "", 0, true, 1500, 4, "Any");

@@ -15,7 +15,7 @@ public class Library {
     private static DiscountHandler discountHandler = new DiscountHandler();
     private static Stack<Book> previousBooks = new Stack<Book>();
     private static ShoppingCart shoppingCart = new ShoppingCart();
-    
+
     private static String lastViewer;
 
     public static String getLastViewer() {

@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
@@ -65,6 +66,10 @@ public class BookController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ratingOptions.setItems(optionsList);
+        notifyMe.setOnMouseClicked(mouseEvent -> {
+            Notifications notifications = new Notifications();
+            notifications.reservationConfirmation(currentBook);
+        });
     }
 
     public void setScene(Book book) throws IOException {
