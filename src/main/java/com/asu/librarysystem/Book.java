@@ -20,8 +20,19 @@ public class Book {
 
 
 
-    public Book(String title, String author, int publicationYear, boolean status, int price, int quantity
-            , String descreption, String coverPath, Category[] categories) {
+    public Book(int id,String title, String author, int publicationYear, boolean status, int price, int quantity, String descreption, String coverPath, ArrayList<Category> categories){
+        this.id=id;
+        this.title = title;
+        this.author = author;
+        this.publicationYear = publicationYear;
+        this.status = status;
+        this.price = price;
+        this.quantity = quantity;
+        this.descreption = descreption;
+        setCover(coverPath);
+        this.categories=categories;
+    }
+    public Book(String title, String author, int publicationYear, boolean status, int price, int quantity, String descreption, String coverPath){
         this.id = ++idCounter;
         this.title = title;
         this.author = author;
@@ -30,10 +41,16 @@ public class Book {
         this.price = price;
         this.quantity = quantity;
         this.descreption = descreption;
-
         setCover(coverPath);
+    }
 
+    public Book(String title, String author, int publicationYear, boolean status, int price, int quantity, String descreption, String coverPath, Category[] categories) {
+        this( title,  author,  publicationYear,  status,  price,  quantity,  descreption,  coverPath);
         this.categories = new ArrayList<Category>(Arrays.asList(categories));
+    }
+
+    public int getIdCounter() {
+        return idCounter;
     }
 
     public int getId() {
@@ -58,6 +75,10 @@ public class Book {
 
     public int getPrice() {
         return price;
+    }
+
+    public void setIdCounter(int idCounter) {
+        this.idCounter = idCounter;
     }
 
     public void setTitle(String title) {

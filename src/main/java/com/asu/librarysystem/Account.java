@@ -15,9 +15,15 @@ public abstract class Account {
         this.id = ++idCounter;
         this.Password = password;
         this.phoneNumber = phoneNumber;
-
-
     }
+
+    public Account(int id, String userName, String password, String phoneNumber) {
+        this.id=id;
+        this.userName = userName;
+        this.Password = password;
+        this.phoneNumber = phoneNumber;
+    }
+
 
     public void setPassword(String password) {
         Password = password;
@@ -30,6 +36,14 @@ public abstract class Account {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public void setIdCounter(int idCounter) {
+        this.idCounter=idCounter;
+    }
+    public int getIdCounter(){
+        return idCounter;
+    }
+
 
     public int getId() {
         return id;

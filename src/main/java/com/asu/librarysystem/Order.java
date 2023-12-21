@@ -14,7 +14,19 @@ public class Order {
         this.quantity = quantity;
         this.discountCode = "";
     }
+    public Order(int id,int bookId, int quantity) {
+        this.id = id;
+        this.bookId = bookId;
+        this.quantity = quantity;
+        this.discountCode = "";
+    }
 
+    public int getIdCounter(){
+        return idCounter;
+    }
+    public void setIdCounter(int idCounter){
+        this.idCounter= idCounter;
+    }
     public int getId() {
         return id; 
     }

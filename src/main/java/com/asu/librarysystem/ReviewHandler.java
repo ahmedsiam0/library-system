@@ -1,10 +1,15 @@
 package com.asu.librarysystem;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class ReviewHandler {
-    private ArrayList<Review> reviews;
+    private static ArrayList<Review> reviews;
     private HashMap<Integer, ArrayList<Integer>> bookRatings;
 
     public ReviewHandler() {
@@ -99,5 +104,40 @@ public class ReviewHandler {
             return (new Review(-1, -1, -1, ""));
         else
             return reviews.get(index);
+    }
+    public void addReview(Review review) {
+        addReview(review.getId(),review.getBookId(),review.getRating(),review.getText());
+    }
+
+    public static void writeReviews(){
+        try {
+            FileOutputStream write1=new FileOutputStream("data/datafiles/reviews_data.txt");
+            for (Review obj : reviews) {
+                write1.write((obj.getIdCounter()+",,,"+ obj.getId()+",,,"+ obj.getReviewerId()+",,,"+obj.getBookId()+",,,"+obj.getRating()+",,,"+obj.getText()+"\n").getBytes());
+            }
+            write1.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("can't write");
+        } catch (IOException e) {
+            System.out.println("can't write");
+        }
+    }
+
+    public static void readReviews(){
+        Scanner scanner1 = null;
+        try {
+            scanner1 = new Scanner(new FileInputStream("data/datafiles/reviews_data.txt"));
+        } catch (FileNotFoundException e) {
+            System.out.println("can't read");
+        }
+
+        while (scanner1.hasNextLine()) {
+            String line1 = scanner1.nextLine();
+            String[] parts1 = line1.split(",,,");
+            Review review =new Review(Integer.valueOf(parts1[1]),Integer.valueOf(parts1[2]),Integer.valueOf(parts1[3]),Integer.valueOf(parts1[4]),parts1[5]);
+            review.setIdCounter(Integer.valueOf(parts1[0]));
+            addReview(review);
+        }
+        scanner1.close();
     }
 }

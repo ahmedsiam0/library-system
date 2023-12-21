@@ -14,6 +14,11 @@ public class Customer extends Account {
         assignBefore = false;
     }
 
+    Customer(int id ,String userName, String password, String phoneNumber) {
+        super(id,userName, password, phoneNumber);
+        orders = new ArrayList<Order>();
+        assignBefore = false;
+    }
     private int findOrder(int orderId) {
         for (int i = 0; i < orders.size(); i++) {
             if (orders.get(i).getId() == orderId) {

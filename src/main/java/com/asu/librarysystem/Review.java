@@ -15,6 +15,13 @@ public class Review {
         setRating(rating);
         this.text = text;
     }
+    public Review(int id, int reviewerId, int bookId, int rating, String text) {
+        this.id = id;
+        this.reviewerId = reviewerId;
+        this.bookId = bookId;
+        setRating(rating);
+        this.text = text;
+    }
     public Review(Review review) {
         this.id = review.id;
         this.reviewerId = review.reviewerId;
@@ -33,6 +40,9 @@ public class Review {
     public int getRating() {
         return rating;
     }
+    public int getIdCounter(){
+        return idCounter;
+    }
     public int getId() {
         return id;
     }
@@ -44,6 +54,9 @@ public class Review {
     }
     public String getText() {
         return text;
+    }
+    public void setIdCounter(int idCounter){
+        this.idCounter=idCounter;
     }
     public void setText(String text) {
         this.text = text;

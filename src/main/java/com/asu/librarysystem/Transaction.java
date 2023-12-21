@@ -17,10 +17,25 @@ public class Transaction
         this.returnDate=returnDate;
         this.transactionId = ++transactionCount;
     }
+    public Transaction(int transactionId,int bookId ,int borrowerId ,int borrowDate ,int returnDate)
+    {
+        this.bookId=bookId;
+        this.borrowerId=borrowerId;
+        this.borrowDate=borrowDate;
+        this.returnDate=returnDate;
+        this.transactionId = transactionId;
+    }
 
     public int getTransactionId() 
     { 
         return transactionId; 
+    }
+
+    public int getTransactionCount(){
+        return transactionCount;
+    }
+    public void setTransactionCount(int transactionCount){
+        this.transactionCount=transactionCount;
     }
 
     public int getBookId()

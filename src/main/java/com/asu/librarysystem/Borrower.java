@@ -16,6 +16,12 @@ public class Borrower extends Account {
         assignBefore = false;
     }
 
+    public Borrower(int id,String borrowerName, String password, String PhoneNumber) {
+        super(id,borrowerName, password, PhoneNumber);
+        borrowerTransactions = new ArrayList<>();
+        assignBefore = false;
+    }
+
     public void addTransaction(Book book, int borrowDate, int returnDate) {
         borrowerTransactions.add(new Transaction(book.getId(), getId(), borrowDate, returnDate));
     }
