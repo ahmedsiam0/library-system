@@ -3,10 +3,12 @@ package com.asu.librarysystem;
 import java.util.ArrayList;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Borrower extends Account {
     private double borrowerFines = 0;
     private ArrayList<Transaction> borrowerTransactions;
+    private ArrayList<Book> reservedBooks = new ArrayList<>();
     public boolean assignBefore;
     private int noOfBooks;
     private boolean isAdmin = false;
@@ -18,8 +20,28 @@ public class Borrower extends Account {
         assignBefore = false;
     }
 
+    public void addReservation(Book book)
+    {
+        reservedBooks.add(book);
+    }
+
+    public ArrayList<Book> getReservedBooks() {
+        return reservedBooks;
+    }
+
     public void addTransaction(Book book) {
         borrowerTransactions.add(new Transaction(book, getId()));
+        book.setQuantity(book.getQuantity() - 1);
+        boolean bool = false;
+        for (int i = 0; i < getReservedBooks().size(); i++) {
+            if (getReservedBooks().get(i).getId() == book.getId()) {
+                bool = true;
+                break;
+            }
+        }
+        if (bool) {
+            getReservedBooks().remove(book);
+        }
     }
 
     public boolean deleteTransaction(int transactionId) {
