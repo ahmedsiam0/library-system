@@ -100,4 +100,10 @@ public class ReviewHandler {
         else
             return reviews.get(index);
     }
+    public void addReview(Review review) {
+        addReview(review.getId(),review.getBookId(),review.getRating(),review.getText());
+    }
+    public ArrayList<Review> getReviews(){
+        return reviews;
+    }
 }

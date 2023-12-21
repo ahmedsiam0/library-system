@@ -18,6 +18,18 @@ public abstract class Account {
 
 
     }
+    public Account(int id, String userName, String password, String phoneNumber) {
+        this.id=id;
+        this.userName = userName;
+        this.Password = password;
+        this.phoneNumber = phoneNumber;
+    }
+    public void setIdCounter(int idCounter) {
+        this.idCounter=idCounter;
+    }
+    public int getIdCounter(){
+        return idCounter;
+    }
 
     public void setPassword(String password) {
         Password = password;
