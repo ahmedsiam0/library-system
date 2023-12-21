@@ -59,6 +59,6 @@
                 <Font name="Georgia" size="18.0" />
             </font>
         </Text>
-        <Button layoutX="25.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToManagingAdminMain" style="-fx-background-color: #F4EEE0;" text="Back" textFill="#00adb5" />
+        <Button layoutX="25.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMain" style="-fx-background-color: #F4EEE0;" text="Back" textFill="#00adb5" />
     </children>
 </AnchorPane>

@@ -14,14 +14,15 @@ public class Book {
     private boolean status;
     private int price;
     private int quantity;
-    private String descreption;
+    private String description;
     private File cover;
     private ArrayList<Category> categories;
 
 
 
+
     public Book(String title, String author, int publicationYear, boolean status, int price, int quantity
-            , String descreption, String coverPath, Category[] categories) {
+            , String description, String coverPath, Category[] categories) {
         this.id = ++idCounter;
         this.title = title;
         this.author = author;
@@ -29,7 +30,7 @@ public class Book {
         this.status = status;
         this.price = price;
         this.quantity = quantity;
-        this.descreption = descreption;
+        this.description = description;
 
         setCover(coverPath);
 
@@ -86,7 +87,11 @@ public class Book {
 
     public boolean isAvailable() { return quantity > 0; }
 
-    public String getDescreption() { return descreption; }
+    public String getDescription() { return description; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 
     public void setCover(String path) {
         File newCover = new File(path);
@@ -108,8 +113,11 @@ public class Book {
         return cover.getAbsolutePath();
     }
 
-    public ArrayList<Category> getCategories(){
+    public ArrayList<Category> getCategories() {
         return this.categories;
+    }
+    public void setCategories(ArrayList<Category> categories) {
+        this.categories = categories;
     }
 
 

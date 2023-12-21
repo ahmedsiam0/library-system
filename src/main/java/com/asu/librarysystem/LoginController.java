@@ -66,7 +66,7 @@ public class LoginController {
             if(Library.getActiveAccount() instanceof Admin)
             scene(event, "AdminMain.fxml");//Admin Main fxml file
             else if (Library.getActiveAccount() instanceof Borrower) {
-                scene(event, "All-Books.fxml");//Borrower Main fxml file
+                scene(event, "borrower-main-view.fxml");//Borrower Main fxml file
 
             } else if (Library.getActiveAccount() instanceof Customer) {
                 scene(event, "CustomerMain.fxml");//Customer Main fxml file

@@ -16,18 +16,21 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ManagingProfileController implements Initializable{
-    private Stage customerStage;
-    private Scene customerScene;
-    private Parent customerViewNodes;
-
     @FXML
-    public void switchToManagingAdminMain(ActionEvent event)throws IOException {
+    public void switchToMain(ActionEvent event)throws IOException {
         try {
-            customerViewNodes= FXMLLoader.load(MainApplication.class.getResource("AdminMain.fxml"));
-            customerStage= (Stage)((Node)event.getSource()).getScene().getWindow();
-            customerScene =new Scene(customerViewNodes);
-            customerStage.setScene(customerScene);
-            customerStage.show();
+            Parent root;
+            if (Library.getActiveAccount() instanceof Admin) {
+                root = FXMLLoader.load(MainApplication.class.getResource("AdminMain.fxml"));
+            } else if (Library.getActiveAccount() instanceof Customer) {
+                root = FXMLLoader.load(MainApplication.class.getResource("CustomerMain.fxml"));
+            } else {
+                root = FXMLLoader.load(MainApplication.class.getResource("borrower-main-view.fxml"));
+            }
+            Stage stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene =new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         }catch (Exception switchingScenesException){
             System.out.println(switchingScenesException.getMessage());
         }

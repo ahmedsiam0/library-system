@@ -6,9 +6,9 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class Library {
-    protected static ArrayList<Book> books = new ArrayList();
-    protected static ArrayList<Customer> customers = new ArrayList();
-    protected static ArrayList<Borrower> borrowers = new ArrayList();
+    private static ArrayList<Book> books = new ArrayList();
+    private static ArrayList<Customer> customers = new ArrayList();
+    private static ArrayList<Borrower> borrowers = new ArrayList();
     private static Account activeAccount;
     private static Admin admin  = new Admin("Ahmad" , "1234" ,"01030243591") ;
     private static ReviewHandler reviewHandler = new ReviewHandler();
@@ -387,6 +387,13 @@ public class Library {
     public static ArrayList<Book> searchBookByAuthorInArray(String word) {
         return searchInArrayListBookByAuthor(word, books);
     }
+    public static ArrayList<Book> getBooks() {
+        return books;
+    }
+    public static ArrayList<Borrower> getBorrowers() {
+        return borrowers;
+    }
+
 
 //    public static void writeLibrary() {
 //        try {

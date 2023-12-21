@@ -14,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -69,6 +70,9 @@ public class BookController implements Initializable {
         notifyMe.setOnMouseClicked(mouseEvent -> {
             Notifications notifications = new Notifications();
             notifications.reservationConfirmation(currentBook);
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setContentText("You will be notified when book is available.");
+            alert.show();
         });
     }
 
@@ -78,7 +82,7 @@ public class BookController implements Initializable {
         setCover(book.getCoverPath());
 
         setProperties(book.getTitle(), book.getAuthor(), Integer.toString(book.getPublicationYear())
-                      , book.getDescreption(), book.getPrice(), book.getQuantity());
+                      , book.getDescription(), book.getPrice(), book.getQuantity());
 
          Library.getReviewHandler().addReview(1, book.getId(), 3, "I don't love this book");
         ArrayList<Integer> ratings = Library.getReviewHandler().getBookRatings(book.getId());
@@ -163,7 +167,13 @@ public class BookController implements Initializable {
 
         if (quantity > 0){
             try {
-                InputStream imageLocation = new FileInputStream("data/bookSceneAssets/Status_icons/addToCartButton.png");
+                InputStream imageLocation;
+                if (Library.getActiveAccount() instanceof Customer) {
+                    imageLocation = new FileInputStream("data/bookSceneAssets/Status_icons/addToCartButton.png");
+                } else {
+                    imageLocation = new FileInputStream("data/bookSceneAssets/Status_icons/borrowButton.png");
+                }
+                
                 Image available = new Image(imageLocation);
 
                 statusImage.setImage(available);
@@ -182,10 +192,11 @@ public class BookController implements Initializable {
                 statusImage.setImage(outOfStock);
                 statusImage.setCursor(Cursor.DEFAULT);
                 statusImage.setOnMouseClicked(null);
-
-                InputStream notifyMeImage = new FileInputStream("data/bookSceneAssets/Status_icons/notifyMeButton.png");
-                Image notifyMe = new Image(notifyMeImage);
-                this.notifyMe.setImage(notifyMe);
+                if (Library.getActiveAccount() instanceof Borrower) {
+                    InputStream notifyMeImage = new FileInputStream("data/bookSceneAssets/Status_icons/notifyMeButton.png");
+                    Image notifyMe = new Image(notifyMeImage);
+                    this.notifyMe.setImage(notifyMe);
+                }
 
 
             } catch (FileNotFoundException e) {
@@ -195,7 +206,18 @@ public class BookController implements Initializable {
     }
 
     public void addToCart(MouseEvent e) {
-        System.out.println("Hello");
+        if (Library.getActiveAccount() instanceof Customer) {
+            Library.getShoppingCart().addBook(currentBook.getId());
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setContentText("Added to Shopping Cart.");
+            alert.show();
+        } else {
+            Borrower account = (Borrower)Library.getActiveAccount();
+            account.addTransaction(currentBook);
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setContentText("You have borrowed this book successfully!\nEnjoy Reading.");
+            alert.show();
+        }
     }
 
     private String formatPrice(int price){
