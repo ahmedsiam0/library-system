@@ -24,10 +24,10 @@ import java.time.LocalDate;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class BorrowerController implements Initializable {
+public class TransactionsForBorrowersController implements Initializable {
     private Stage primaryStage = new Stage();
     private Scene scene;
-    private static Borrower currentBorrower = new Borrower("","","");
+    private static Borrower currentBorrower = (Borrower)Library.getActiveAccount();
     @FXML
     private Label Back;
     @FXML
@@ -47,10 +47,10 @@ public class BorrowerController implements Initializable {
 
     @FXML
     private TableColumn<Transaction, Integer> TransactionIdColumn;
-
+/*
     public static void setCurrentBorrower(Borrower currentBorrower) {
-        BorrowerController.currentBorrower = currentBorrower;
-    }
+        TransactionsForBorrowersController.currentBorrower = currentBorrower;
+    }*/
 
     public static Borrower getCurrentBorrower() {
         return currentBorrower;
@@ -68,7 +68,7 @@ public class BorrowerController implements Initializable {
         TransactionTableView.setItems(list);
         Back.setOnMouseClicked(mouseEvent -> {
             try {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SideBar.fxml")));
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("borrower-main-view.fxml")));
                 primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 primaryStage.setScene(scene);

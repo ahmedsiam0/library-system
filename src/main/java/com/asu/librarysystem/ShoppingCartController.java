@@ -70,8 +70,15 @@ public class ShoppingCartController implements Initializable {
     }
     
     public void back(ActionEvent event) {
-        stage = (Stage)root.getScene().getWindow();
-        stage.close();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("CustomerMain.fxml"));
+            Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void delete(ActionEvent event) {

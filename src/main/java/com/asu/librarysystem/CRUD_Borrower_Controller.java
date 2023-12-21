@@ -72,7 +72,7 @@ public class CRUD_Borrower_Controller implements Initializable {
 
 
     public void switch_To_Main(ActionEvent event) throws IOException {
-        scene(event, "Update.fxml");//Admin Main fxml file
+        scene(event, "AdminMain.fxml");//Admin Main fxml file
     }
 
     public void switch_To_Delete_view(ActionEvent event) throws IOException {
@@ -84,7 +84,7 @@ public class CRUD_Borrower_Controller implements Initializable {
 //        return
     }
 
-    ObservableList<Borrower> List = FXCollections.observableArrayList(Library.borrowers);
+    ObservableList<Borrower> List = FXCollections.observableArrayList(Library.getBorrowers());
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -92,7 +92,7 @@ public class CRUD_Borrower_Controller implements Initializable {
         borrowerName.setCellValueFactory(new PropertyValueFactory<Borrower, String>("userName"));
         borrowerNumberofBooks.setCellValueFactory(new PropertyValueFactory<Borrower, Integer>("noOfBooks"));
         borrowerPhoneNumber.setCellValueFactory(new PropertyValueFactory<Borrower, String>("phoneNumber"));
-        System.out.println(Library.borrowers);
+        //System.out.println(Library.borrowers);
 //        List.addAll(Arrays.asList(Library.borrowers));
         borrowersTable.setItems(List);
     }

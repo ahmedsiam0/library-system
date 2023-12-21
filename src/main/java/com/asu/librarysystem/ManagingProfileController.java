@@ -15,26 +15,28 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ManagingCustomerProfile implements Initializable {
-    private Stage customerStage;
-    private Scene customerScene;
-    private Parent customerViewNodes;
-
+public class ManagingProfileController implements Initializable{
     @FXML
-    public void switchToManagingCustomerMain(ActionEvent event)throws IOException {
-
+    public void switchToMain(ActionEvent event)throws IOException {
         try {
-            customerViewNodes= FXMLLoader.load(MainApplication.class.getResource("CustomerMain.fxml"));
-            customerStage= (Stage)((Node)event.getSource()).getScene().getWindow();
-            customerScene =new Scene(customerViewNodes);
-            customerStage.setScene(customerScene);
-            customerStage.show();
+            Parent root;
+            if (Library.getActiveAccount() instanceof Admin) {
+                root = FXMLLoader.load(MainApplication.class.getResource("AdminMain.fxml"));
+            } else if (Library.getActiveAccount() instanceof Customer) {
+                root = FXMLLoader.load(MainApplication.class.getResource("CustomerMain.fxml"));
+            } else {
+                root = FXMLLoader.load(MainApplication.class.getResource("borrower-main-view.fxml"));
+            }
+            Stage stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene =new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         }catch (Exception switchingScenesException){
             System.out.println(switchingScenesException.getMessage());
         }
     }
 
-    Account customer = new Customer("ahmed khaled","12345678","01026428077");
+    private Account account = Library.getActiveAccount();
 
     @FXML
     private TextField acountNameTextField;
@@ -53,9 +55,9 @@ public class ManagingCustomerProfile implements Initializable {
     private void editProfile(){
 
         if(PasswordTextField.getText().equals(confiremingPasswordTextField.getText()) && !(PasswordTextField.getText().isEmpty())){
-            customer.setPassword(PasswordTextField.getText());
-            customer.setUserName(acountNameTextField.getText());
-            customer.setPhoneNumber(phoneNumberTextField.getText());
+            account.setPassword(PasswordTextField.getText());
+            account.setUserName(acountNameTextField.getText());
+            account.setPhoneNumber(phoneNumberTextField.getText());
 
             acountNameText.setText(acountNameTextField.getText());
             phoneNumberText.setText(phoneNumberTextField.getText());
@@ -66,9 +68,9 @@ public class ManagingCustomerProfile implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        acountNameText.setText(customer.getUserName());
-        phoneNumberText.setText(customer.getPhoneNumber());
-        acountNameTextField.setText(customer.getUserName());
-        phoneNumberTextField.setText(customer.getPhoneNumber());
+        acountNameText.setText(account.getUserName());
+        phoneNumberText.setText(account.getPhoneNumber());
+        acountNameTextField.setText(account.getUserName());
+        phoneNumberTextField.setText(account.getPhoneNumber());
     }
 }

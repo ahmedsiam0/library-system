@@ -30,7 +30,7 @@ import java.util.EventObject;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class SideBarController implements Initializable {
+public class BorrowerMainController implements Initializable {
     private Stage primaryStage;
     private Scene scene;
 
@@ -71,9 +71,9 @@ public class SideBarController implements Initializable {
     private Label Transactions;
     public void reservationConfirmationNotification()
     {
-        for (int i = 0; i < BorrowerController.getCurrentBorrower().getReservedBooks().size(); i++)
+        for (int i = 0; i < TransactionsForBorrowersController.getCurrentBorrower().getReservedBooks().size(); i++)
         {
-            Label label = new Label("You Have Successfully reserved \"" + BorrowerController.getCurrentBorrower().getReservedBooks().get(i).getTitle() + "\"");
+            Label label = new Label("You Have Successfully reserved \"" + TransactionsForBorrowersController.getCurrentBorrower().getReservedBooks().get(i).getTitle() + "\"");
             label.setFont(Font.font(30));
             label.setTextFill(Color.WHITE);
             label.setPrefWidth(1280);
@@ -89,8 +89,8 @@ public class SideBarController implements Initializable {
     {
         Notifications notifications = new Notifications();
         if (notifications.availableForPickup()) {
-            for (int i = 0; i < BorrowerController.getCurrentBorrower().getReservedBooks().size(); i++) {
-                Label label = new Label("\"" + BorrowerController.getCurrentBorrower().getReservedBooks().get(i).getTitle() + "\"" + " is Available for Pickup");
+            for (int i = 0; i < TransactionsForBorrowersController.getCurrentBorrower().getReservedBooks().size(); i++) {
+                Label label = new Label("\"" + TransactionsForBorrowersController.getCurrentBorrower().getReservedBooks().get(i).getTitle() + "\"" + " is Available for Pickup");
                 label.setFont(Font.font(30));
                 label.setTextFill(Color.WHITE);
                 label.setPrefWidth(1280);
@@ -121,7 +121,7 @@ public class SideBarController implements Initializable {
         }
 
         for (int i = 0; i < Notifications.booksDueDateIn3Days().size(); i++) {
-            Label label = new Label("Your Borrowed Book \"" + BorrowerController.getCurrentBorrower().getBorrowerTransactions().get(Notifications.booksDueDateIn3Days().get(i)).getBookName() +"\" is due in " + ChronoUnit.DAYS.between(LocalDate.now(),BorrowerController.getCurrentBorrower().getBorrowerTransactions().get(Notifications.booksDueDateIn3Days().get(i)).getReturnDate())+" days");
+            Label label = new Label("Your Borrowed Book \"" + TransactionsForBorrowersController.getCurrentBorrower().getBorrowerTransactions().get(Notifications.booksDueDateIn3Days().get(i)).getBookName() +"\" is due in " + ChronoUnit.DAYS.between(LocalDate.now(),TransactionsForBorrowersController.getCurrentBorrower().getBorrowerTransactions().get(Notifications.booksDueDateIn3Days().get(i)).getReturnDate())+" days");
             label.setFont(Font.font(30));
             label.setTextFill(Color.WHITE);
             label.setPrefWidth(1280);
@@ -134,7 +134,7 @@ public class SideBarController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Welcome.setText("Welcome, "+BorrowerController.getCurrentBorrower().getUserName());
+        Welcome.setText("Welcome, "+TransactionsForBorrowersController.getCurrentBorrower().getUserName());
         Slider.setTranslateX(-278);
         MiddlePane.setTranslateX(-278);
         CheckNotifications();
@@ -188,7 +188,7 @@ public class SideBarController implements Initializable {
         });
         Transactions.setOnMouseClicked(mouseEvent -> {
             try {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("borrower-transactions-view.fxml")));
                 primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 primaryStage.setScene(scene);
@@ -200,7 +200,11 @@ public class SideBarController implements Initializable {
         });
         MyBooks.setOnMouseClicked(mouseEvent -> {
             try {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
+                Parent root;
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("My-Books.fxml"));
+                root = loader.load();
+                MyBooksController sceneController = loader.getController();
+                sceneController.startMyBooksController();
                 primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 primaryStage.setScene(scene);
@@ -212,7 +216,11 @@ public class SideBarController implements Initializable {
         });
         Shopping.setOnMouseClicked(mouseEvent -> {
             try {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
+                Parent root;
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("All-Books.fxml"));
+                root = loader.load();
+                AllBooksController sceneController = loader.getController();
+                sceneController.startAllBooksController();
                 primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 primaryStage.setScene(scene);
@@ -224,7 +232,7 @@ public class SideBarController implements Initializable {
         });
         ManageProfile.setOnMouseClicked(mouseEvent -> {
             try {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("managing-profile-view.fxml")));
                 primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 primaryStage.setScene(scene);
@@ -236,7 +244,8 @@ public class SideBarController implements Initializable {
         });
         Logout.setOnMouseClicked(mouseEvent -> {
             try {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BorrowerTransactions.fxml")));
+                Library.logOut();
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Login.fxml")));
                 primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 primaryStage.setScene(scene);

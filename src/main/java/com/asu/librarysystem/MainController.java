@@ -38,11 +38,11 @@ public class MainController {
         // }
 
        try {
-           FXMLLoader loader = new FXMLLoader(getClass().getResource("All-Books.fxml"));
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
            root = loader.load();
-
+/*
            AllBooksController sceneController = loader.getController();
-           sceneController.startAllBooksController();
+           sceneController.startAllBooksController();*/
            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
            scene= new Scene(root);
            stage.setScene(scene);

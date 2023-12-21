@@ -13,8 +13,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.io.File;
 
@@ -50,13 +56,29 @@ public class CRUDBooks implements Initializable {
     @FXML
     private TextField  quantityField;
     @FXML
-    private CheckBox statusCheckBox;
-    @FXML
     private ImageView coverImageView;
     @FXML
     private Image coverImage ;
     @FXML
     private ObservableList<Book> bookList = FXCollections.observableArrayList();
+    @FXML
+    private TextField categoriesField;
+    @FXML
+    private TextArea descriptionBox;;
+
+    @FXML
+    private CheckBox dramaBox;
+
+    @FXML
+    private CheckBox horrorBox;
+
+    @FXML
+    private CheckBox novelBox;
+    @FXML
+    private CheckBox selfDevBox;
+    @FXML
+    private CheckBox adventureBox;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -65,6 +87,12 @@ public class CRUDBooks implements Initializable {
         publicationYearColumn.setCellValueFactory(new PropertyValueFactory<>("publicationYear"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+
+        ArrayList<Book> books = Library.getBooks();
+
+        for (var book : books) {
+            bookList.add(book);
+        }
 
         booksTable.setItems(bookList);
 
@@ -75,9 +103,38 @@ public class CRUDBooks implements Initializable {
         publicationYearField.clear();
         priceField.clear();
         quantityField.clear();
-        statusCheckBox.setSelected(false);
         coverPathField.clear();
+        descriptionBox.clear();
+        adventureBox.setSelected(false);
+        dramaBox.setSelected(false);
+        horrorBox.setSelected(false);
+        novelBox.setSelected(false);
+        selfDevBox.setSelected(false);
     }
+
+    private Category[] checkedCategories() {
+        ArrayList<Category> checkedCategories = new ArrayList<>();
+
+        if (dramaBox.isSelected()) {
+            checkedCategories.add(Category.DRAMA);
+        }
+        if (adventureBox.isSelected()) {
+            checkedCategories.add(Category.ADVENTURE);
+        }
+        if (selfDevBox.isSelected()) {
+            checkedCategories.add(Category.SELFDEVELOPMENT);
+        }
+        if (horrorBox.isSelected()) {
+            checkedCategories.add(Category.HORROR);
+        }
+        if (novelBox.isSelected()) {
+            checkedCategories.add(Category.NOVEL);
+        }
+        Category[] cat = new Category[checkedCategories.size()];
+        cat = checkedCategories.toArray(cat);
+        return cat;
+    }
+
     @FXML
     private void AddBook() {
         try {
@@ -87,17 +144,25 @@ public class CRUDBooks implements Initializable {
             int price = Integer.parseInt(priceField.getText());
             int quantity = Integer.parseInt(quantityField.getText());
             String coverPath = coverPathField.getText();
-
-            coverImage = new Image(coverPath);
-            coverImageView.setImage(coverImage);
-
-        Book newBook = new Book(title, author, year, true, price, quantity,
-                                "",coverPath, new Category[]{Category.HORROR});
+            String description = descriptionBox.getText();
+            
+            Book newBook = new Book(title, author, year, true, price, quantity,
+                                description,coverPath, checkedCategories());
         
+            InputStream fileLocation;
+            try {
+                fileLocation = new FileInputStream(coverPathField.getText());
+                coverImage = new Image(fileLocation);
+                coverImageView.setImage(coverImage);
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
             bookList.add(newBook);
+            Library.addBook(newBook);
 
             clearFields();
-
+            booksTable.refresh();
         }catch (Exception addingBookException){
             System.out.println(addingBookException.getCause());
         }
@@ -117,11 +182,38 @@ public class CRUDBooks implements Initializable {
             publicationYearField.setText(String.valueOf(selectedBook.getPublicationYear()));
             priceField.setText(String.valueOf(selectedBook.getPrice()));
             quantityField.setText(String.valueOf(selectedBook.getQuantity()));
-            statusCheckBox.setSelected(selectedBook.isAvailable());
             coverPathField.setText(selectedBook.getCoverPath());
+            descriptionBox.setText(selectedBook.getDescription());
 
-            coverImage = new Image(coverPathField.getText());
-            coverImageView.setImage(coverImage);
+
+            adventureBox.setSelected(false);
+            dramaBox.setSelected(false);
+            horrorBox.setSelected(false);
+            novelBox.setSelected(false);
+            selfDevBox.setSelected(false);
+
+            for (Category cat : selectedBook.getCategories()) {
+                if (cat == Category.ADVENTURE) {
+                    adventureBox.setSelected(true);
+                } else if (cat == Category.DRAMA) {
+                    dramaBox.setSelected(true);
+                } else if (cat == Category.HORROR) {
+                    horrorBox.setSelected(true);
+                } else if (cat == Category.NOVEL) {
+                    novelBox.setSelected(true);
+                } else if (cat == Category.SELFDEVELOPMENT) {
+                    selfDevBox.setSelected(true);
+                }
+            }
+
+            InputStream fileLocation;
+            try {
+                fileLocation = new FileInputStream(coverPathField.getText());
+                coverImage = new Image(fileLocation);
+                coverImageView.setImage(coverImage);
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
     @FXML
@@ -136,8 +228,18 @@ public class CRUDBooks implements Initializable {
                 selectedBook.setPrice(Integer.parseInt(priceField.getText()));
                 selectedBook.setQuantity(Integer.parseInt(quantityField.getText()));
                 selectedBook.setCover(coverPathField.getText());
-                coverImage = new Image(coverPathField.getText());
-                coverImageView.setImage(coverImage);
+                selectedBook.setDescription(descriptionBox.getText());
+                ArrayList<Category> al = new ArrayList<Category>(Arrays.asList(checkedCategories()));
+                selectedBook.setCategories(al);
+
+                InputStream fileLocation;
+                try {
+                    fileLocation = new FileInputStream(coverPathField.getText());
+                    coverImage = new Image(fileLocation);
+                    coverImageView.setImage(coverImage);
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
 
                 // Refresh TableView
                 // I made a similar CRUD as a practice and Update wasn't working and I asked chatGPT it recommended this statement
@@ -156,6 +258,7 @@ public class CRUDBooks implements Initializable {
         if (selectedBook != null) {
 
             bookList.remove(selectedBook);
+            Library.removeBook(selectedBook);
 
             clearFields();
         }

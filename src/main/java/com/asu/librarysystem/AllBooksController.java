@@ -47,7 +47,7 @@ public class AllBooksController {
             Account account = Library.getActiveAccount();
             if (account instanceof Customer) {
                 Customer customer =(Customer) account;
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("name of.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerMain.fxml"));
                 Parent root = loader.load();
 //            clsssName objName = loader.getController();
 //            objName.method;
@@ -58,7 +58,7 @@ public class AllBooksController {
             }
             else if(account instanceof Borrower){
                 Borrower borrower =(Borrower) account;
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("name.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("borrower-main-view.fxml"));
                 Parent root = loader.load();
 //            clsssName objName = loader.getController();
 //            objName.method;

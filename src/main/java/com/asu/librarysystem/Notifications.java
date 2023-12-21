@@ -5,7 +5,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Notifications {
-    private static final Borrower currentBorrower = BorrowerController.getCurrentBorrower();
+    private static final Borrower currentBorrower = TransactionsForBorrowersController.getCurrentBorrower();
     public static ArrayList<Integer> booksDueDateIn3Days() {
         ArrayList<Integer> transactionsDueIn3DaysIds = new ArrayList<>();
         for(int i = 0; i < currentBorrower.getBorrowerTransactions().size(); i++) {
@@ -20,8 +20,8 @@ public class Notifications {
     public static ArrayList<String> booksOverDueDate() {
         ArrayList<String> booksOverDueDateIds= new ArrayList<>();
         for(int i = 0; i < currentBorrower.getBorrowerTransactions().size(); i++) {
-            if(ChronoUnit.DAYS.between(LocalDate.now(), BorrowerController.getCurrentBorrower().getBorrowerTransactions().get(0).getReturnDate()) <= 0) {
-                booksOverDueDateIds.add(BorrowerController.getCurrentBorrower().getBorrowerTransactions().get(i).getBookName());
+            if(ChronoUnit.DAYS.between(LocalDate.now(), TransactionsForBorrowersController.getCurrentBorrower().getBorrowerTransactions().get(0).getReturnDate()) <= 0) {
+                booksOverDueDateIds.add(TransactionsForBorrowersController.getCurrentBorrower().getBorrowerTransactions().get(i).getBookName());
             }
         }
         return booksOverDueDateIds;

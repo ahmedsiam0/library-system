@@ -64,12 +64,12 @@ public class LoginController {
 
         else if (Library.logInByUserName(username.getText(), password.getText())){
             if(Library.getActiveAccount() instanceof Admin)
-            scene(event, "Delete-view.fxml");//Admin Main fxml file
+            scene(event, "AdminMain.fxml");//Admin Main fxml file
             else if (Library.getActiveAccount() instanceof Borrower) {
-                scene(event, "Update.fxml");//Borrower Main fxml file
+                scene(event, "borrower-main-view.fxml");//Borrower Main fxml file
 
             } else if (Library.getActiveAccount() instanceof Customer) {
-                scene(event, "CRUD_Borrower-view.fxml");//Customer Main fxml file
+                scene(event, "CustomerMain.fxml");//Customer Main fxml file
 
             }
         }

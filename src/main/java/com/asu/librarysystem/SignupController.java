@@ -58,11 +58,11 @@ public class SignupController {
 
         if (customerRadio.isSelected()) {
             Customer C = new Customer(userName, Password, phoneNumber);
-            Library.customers.add(C);
+            Library.getCustomers().add(C);
             System.out.println("Customer");
         } else if (borrowerRadio.isSelected()) {
             Borrower B = new Borrower(userName, Password, phoneNumber);
-            Library.borrowers.add(B);
+            Library.getBorrowers().add(B);
             System.out.println("Borrower");
         }
     }

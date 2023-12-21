@@ -1,5 +1,6 @@
 package com.asu.librarysystem;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -8,8 +9,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -39,8 +43,15 @@ public class OrdersForAdminController implements Initializable {
 
     @FXML
     void back(ActionEvent event) {
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.close();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("AdminMain.fxml"));
+            Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -51,12 +62,14 @@ public class OrdersForAdminController implements Initializable {
         priceColumn.setCellValueFactory(new PropertyValueFactory<OrderRow, Double>("price"));
         discountColumn.setCellValueFactory(new PropertyValueFactory<OrderRow, String>("discountCode"));
         
-        Customer activeAccount = (Customer)Library.getActiveAccount();
+        ArrayList<Customer> customers = Library.getCustomers();
+        ArrayList<Order> orders;
 
-        ArrayList<Order> orders = activeAccount.getOrders();
-
-        for (var order : orders) {
-            tableData.add(new OrderRow(order, activeAccount.getUserName()));
+        for (var customer : customers) {
+            orders = customer.getOrders();
+            for (var order : orders) {
+                tableData.add(new OrderRow(order, customer.getUserName()));
+            }
         }
 
         mainTable.setItems(tableData);

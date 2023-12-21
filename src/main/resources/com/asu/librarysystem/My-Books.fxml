@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="MyBooks" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.MyBooksController">
+<BorderPane fx:id="MyBooks" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.MyBooksController">
     <top>
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" styleClass="color1" stylesheets="@../../../css/styles.css" BorderPane.alignment="CENTER">
             <children>
@@ -93,7 +93,7 @@
                   <Insets left="20.0" right="20.0" />
                </padding>
             </HBox>
-                <ScrollPane onKeyTyped="#searshBook" prefHeight="610.0" prefWidth="1240.0" styleClass="color4" stylesheets="@../../../css/styles.css" VBox.vgrow="ALWAYS">
+                <ScrollPane prefHeight="610.0" prefWidth="1240.0" styleClass="color4" stylesheets="@../../../css/styles.css" VBox.vgrow="ALWAYS">
                     <content>
                         <GridPane fx:id="bookContenerCustomer" prefHeight="2.0" prefWidth="0.0" styleClass="color4" stylesheets="@../../../css/styles.css">
                             <rowConstraints>

@@ -39,7 +39,7 @@
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="529.0" style="-fx-background-color: #F4EEE0;" text="logout" textFill="#00adb5">
+            <Button mnemonicParsing="false" onAction="#logout" prefHeight="100.0" prefWidth="529.0" style="-fx-background-color: #F4EEE0;" text="logout" textFill="#00adb5">
                <font>
                   <Font size="18.0" />
                </font></Button>
