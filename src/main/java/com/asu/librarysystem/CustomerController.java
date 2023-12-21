@@ -58,6 +58,19 @@ public class CustomerController {
 
     }
     @FXML
+    void switchToOrders(ActionEvent event) {
+        try {
+            customerViewNodes= FXMLLoader.load(MainApplication.class.getResource("orders-for-customer-view.fxml"));
+            customerStage= (Stage)((Node)event.getSource()).getScene().getWindow();
+            customerScene =new Scene(customerViewNodes);
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }catch (Exception switchingScenesException){
+            System.out.println(switchingScenesException.getMessage());
+        }
+    }
+
+    @FXML
     void switchToCart(ActionEvent event) {
         try {
             customerViewNodes= FXMLLoader.load(MainApplication.class.getResource("shopping-cart-view.fxml"));
