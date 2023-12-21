@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf65a335-ff51-4f13-b4a9-876fef130b56" name="Changes" comment="fixed the bug of null pointer exception in adding a new book and editing an existing book">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_12_2023_6_34_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_12_2023_6_34_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/covers/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/covers/11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/covers/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/covers/12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datafiles/borrowers_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/datafiles/borrowers_data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datafiles/customers_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/datafiles/customers_data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datafiles/discount_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/datafiles/discount_data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datafiles/reviews_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/datafiles/reviews_data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datafiles/transaction_data_user2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/datafiles/transaction_data_user2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Borrower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/DiscountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/DiscountHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Review.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/ReviewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/ReviewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/asu/librarysystem/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/CustomerMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/asu/librarysystem/CustomerMain.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,6 +270,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/asu/librarysystem/ReviewHandler.java</url>
           <line>68</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/asu/librarysystem/ReviewHandler.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

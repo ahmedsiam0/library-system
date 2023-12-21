@@ -103,8 +103,8 @@ public class MainApplication extends Application {
 //        borrower.addTransaction(book3);
 //        borrower.addTransaction(book5);
 //        borrower.addTransaction(book9);
-//
-//        Library.writeLibrary();
+
+      // Library.writeLibrary();
 
         Library.readLibrary();
  

@@ -85,8 +85,9 @@ public class BookController implements Initializable {
         setProperties(book.getTitle(), book.getAuthor(), Integer.toString(book.getPublicationYear())
                       , book.getDescription(), book.getPrice(), book.getQuantity());
 
-  //       Library.getReviewHandler().addReview(2, book.getId(), 3, "I don't love this book");
-//   c
+         Library.getReviewHandler().addReview(2, book.getId(), 1, "I don't love this book");
+        ArrayList<Integer> ratings = Library.getReviewHandler().getBookRatings(book.getId());
+        setRatings(ratings);
 
         InputStream stream1 = new FileInputStream("data/bookSceneAssets/Rating_icons/1_star.png");
         InputStream stream2 = new FileInputStream("data/bookSceneAssets/Rating_icons/2_stars.png");
@@ -387,7 +388,7 @@ public class BookController implements Initializable {
 
 
             Label username = new Label();
-            String name=null ;
+
 
 //            ArrayList<Borrower> borrowers = Library.getBorrowers();
 //            ArrayList<Customer> customers = Library.getCustomers();
@@ -398,9 +399,9 @@ public class BookController implements Initializable {
 //                name= Library.searchCustomerByID(comment.getReviewerId()).getUserName();
 //            }
 
-          //  name=Library.searchAccountById(comment.getReviewerId()).getUserName();
+            String name=Library.searchAccountById(comment.getReviewerId()).getUserName();
 
-            username.setText(String.valueOf(comment.getReviewerId()));//String.valueOf(comment.getReviewerId())
+            username.setText(name);//String.valueOf(comment.getReviewerId())
             username.setStyle("-fx-font-weight: 200;");
             username.setStyle("-fx-font-size: 20px;");
 
