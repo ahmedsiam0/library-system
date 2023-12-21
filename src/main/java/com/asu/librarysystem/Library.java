@@ -331,6 +331,10 @@ public class Library {
     public static ArrayList<Book> copyElementOfArrayList() {
         return books;
     }
+    public static ArrayList<Customer> getCustomers() {
+        return customers;
+    }
+
 
     public static ArrayList<Book> searchInArrayListBookByTitle(String word , ArrayList<Book> arr) {
         ArrayList<Book> foundBooks = new ArrayList();
@@ -535,5 +539,4 @@ public class Library {
 //            scanner.close();
 //        }
 //    }
-
 }

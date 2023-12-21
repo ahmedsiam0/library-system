@@ -72,7 +72,7 @@ public class CRUD_Borrower_Controller implements Initializable {
 
 
     public void switch_To_Main(ActionEvent event) throws IOException {
-        scene(event, "Update.fxml");//Admin Main fxml file
+        scene(event, "AdminMain.fxml");//Admin Main fxml file
     }
 
     public void switch_To_Delete_view(ActionEvent event) throws IOException {

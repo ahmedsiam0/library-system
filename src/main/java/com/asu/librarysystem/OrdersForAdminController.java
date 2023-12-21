@@ -51,12 +51,14 @@ public class OrdersForAdminController implements Initializable {
         priceColumn.setCellValueFactory(new PropertyValueFactory<OrderRow, Double>("price"));
         discountColumn.setCellValueFactory(new PropertyValueFactory<OrderRow, String>("discountCode"));
         
-        Customer activeAccount = (Customer)Library.getActiveAccount();
+        ArrayList<Customer> customers = Library.getCustomers();
+        ArrayList<Order> orders;
 
-        ArrayList<Order> orders = activeAccount.getOrders();
-
-        for (var order : orders) {
-            tableData.add(new OrderRow(order, activeAccount.getUserName()));
+        for (var customer : customers) {
+            orders = customer.getOrders();
+            for (var order : orders) {
+                tableData.add(new OrderRow(order, customer.getUserName()));
+            }
         }
 
         mainTable.setItems(tableData);

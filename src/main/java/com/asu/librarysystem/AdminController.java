@@ -36,7 +36,7 @@ public class AdminController {
     }
     @FXML
     public void switchToManagingProfile(ActionEvent event) throws IOException {
-        adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("ManagingAdminProfile.fxml"));
+        adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("managing-profile-view.fxml"));
         adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         adminScene =new Scene(adminViewNodes);
         adminStage.setScene(adminScene);
@@ -61,11 +61,12 @@ public class AdminController {
     }
     @FXML
     void logout(ActionEvent event) throws IOException {
-            adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("Login.fxml"));
-            adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            adminScene =new Scene(adminViewNodes);
-            adminStage.setScene(adminScene);
-            adminStage.show();
+        Library.logOut();
+        adminViewNodes= FXMLLoader.load(MainApplication.class.getResource("Login.fxml"));
+        adminStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        adminScene =new Scene(adminViewNodes);
+        adminStage.setScene(adminScene);
+        adminStage.show();
     }
 
 }
