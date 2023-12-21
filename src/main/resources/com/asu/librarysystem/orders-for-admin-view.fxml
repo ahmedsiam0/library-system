@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asu.librarysystem.OrdersForAdminController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1168.800048828125" minWidth="10.0" prefWidth="640.8001098632812" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="762.3998413085938" minWidth="10.0" prefWidth="639.1998901367188" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="135.00000610351563" minHeight="10.0" prefHeight="65.6000015258789" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="210.3999801635742" minHeight="10.0" prefHeight="183.1999984741211" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="231.1999694824218" minHeight="10.0" prefHeight="176.7999450683593" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="150.99997558593753" minHeight="10.0" prefHeight="125.60005493164067" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#back" prefHeight="135.0" prefWidth="261.0" text="Back" GridPane.hgrow="ALWAYS">
+         <font>
+            <Font name="Monospaced Regular" size="30.0" />
+         </font>
+      </Button>
+      <Label text="Orders History" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Monospaced Regular" size="30.0" />
+         </font>
+      </Label>
+      <TableView fx:id="mainTable" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="ownerColumn" prefWidth="264.80023193359375" text="Owner" />
+          <TableColumn fx:id="bookColumn" prefWidth="490.39995497465134" text="Book" />
+          <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="96.79998397827148" text="Quantity" />
+            <TableColumn fx:id="priceColumn" prefWidth="148.0" text="Price" />
+            <TableColumn fx:id="discountColumn" prefWidth="140.0" text="Discount" />
+        </columns>
+         <GridPane.margin>
+            <Insets top="30.0" />
+         </GridPane.margin>
+      </TableView>
+   </children>
+</GridPane>

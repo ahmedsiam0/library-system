@@ -23,14 +23,6 @@ public class Customer extends Account {
         return -1;
     }
 
-    public void viewItem(int bookId) {
-        System.out.println("Title = ");
-        System.out.println("Author = ");
-        System.out.println("Release Date = ");
-        System.out.println("Availability = ");
-        System.out.println("Price = ");
-        System.out.println("Rating = ");
-    }
 
     public void addOrder(int bookId, int quantity) {
         orders.add(new Order(bookId, quantity));
@@ -56,7 +48,6 @@ public class Customer extends Account {
         }
     }
 
-
     public void setAssignBefore(boolean assignBefore) {
         if (!assignBefore)
             this.assignBefore = true;
@@ -64,14 +55,14 @@ public class Customer extends Account {
             this.assignBefore = true;
     }
 
-    public ArrayList<Order> copyElementOfArrayList(){
-        return orders;
-    }
     public  ArrayList<Book> arrayOFOrderBooks(){
         ArrayList<Book> orderBooksArrayList=new ArrayList<Book>();
         for(int i=0;i<orders.size();i++) {
             orderBooksArrayList.add(Library.searchBookById(orders.get(i).getBookId()));
         }
         return orderBooksArrayList;
+    }
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
 }
