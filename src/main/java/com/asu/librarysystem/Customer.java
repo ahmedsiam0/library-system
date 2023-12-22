@@ -13,6 +13,11 @@ public class Customer extends Account {
         orders = new ArrayList<Order>();
         assignBefore = false;
     }
+    Customer(int id ,String userName, String password, String phoneNumber) {
+        super(id,userName, password, phoneNumber);
+        orders = new ArrayList<Order>();
+        assignBefore = false;
+    }
 
     private int findOrder(int orderId) {
         for (int i = 0; i < orders.size(); i++) {
@@ -26,6 +31,10 @@ public class Customer extends Account {
 
     public void addOrder(int bookId, int quantity) {
         orders.add(new Order(bookId, quantity));
+    }
+
+    public void addOrder(Order order){
+        addOrder(order.getBookId(),order.getQuantity());
     }
 
     public void deleteOrder(int orderId) {

@@ -1,5 +1,6 @@
 package com.asu.librarysystem;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import java.util.Date;
@@ -16,6 +17,12 @@ public class Borrower extends Account {
 
     public Borrower(String borrowerName, String password, String PhoneNumber) {
         super(borrowerName, password, PhoneNumber);
+        borrowerTransactions = new ArrayList<>();
+        assignBefore = false;
+    }
+
+    public Borrower(int id,String borrowerName, String password, String PhoneNumber) {
+        super(id,borrowerName, password, PhoneNumber);
         borrowerTransactions = new ArrayList<>();
         assignBefore = false;
     }
@@ -42,6 +49,12 @@ public class Borrower extends Account {
         if (bool) {
             getReservedBooks().remove(book);
         }
+    }
+    public void addTransaction(int bookId, int borrowerId, LocalDate borrowDate, LocalDate returnDate) {
+        borrowerTransactions.add(new Transaction(bookId,borrowerId, getId(), borrowDate, returnDate));
+    }
+    public void addTransaction(Transaction transaction){
+        addTransaction(transaction.getBookId(),transaction.getBorrowerId(),transaction.getBorrowDate(),transaction.getReturnDate());
     }
 
     public boolean deleteTransaction(int transactionId) {

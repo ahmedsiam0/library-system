@@ -15,13 +15,24 @@ public class Review {
         setRating(rating);
         this.text = text;
     }
-    public Review(Review review) {
-        this.id = review.id;
-        this.reviewerId = review.reviewerId;
-        this.bookId = review.bookId;
-        this.rating = review.rating;
-        this.text = review.text;
+    public Review(int id, int reviewerId, int bookId, int rating, String text) {
+        this.id = id;
+        this.reviewerId = reviewerId;
+        this.bookId = bookId;
+        setRating(rating);
+        this.text = text;
     }
+    public Review(Review review) {
+        this(review.getId(), review.getReviewerId(), review.getBookId(),review.getRating(),review.getText());
+    }
+
+    public int getIdCounter(){
+        return idCounter;
+    }
+    public void setIdCounter(int idCounter){
+        this.idCounter=idCounter;
+    }
+
     public void setRating(int rating) {
         if (rating > 5)
             this.rating = 5;

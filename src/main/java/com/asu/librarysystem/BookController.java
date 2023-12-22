@@ -22,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -84,7 +85,7 @@ public class BookController implements Initializable {
         setProperties(book.getTitle(), book.getAuthor(), Integer.toString(book.getPublicationYear())
                       , book.getDescription(), book.getPrice(), book.getQuantity());
 
-         Library.getReviewHandler().addReview(1, book.getId(), 3, "I don't love this book");
+         Library.getReviewHandler().addReview(2, book.getId(), 1, "I don't love this book");
         ArrayList<Integer> ratings = Library.getReviewHandler().getBookRatings(book.getId());
         setRatings(ratings);
 
@@ -270,7 +271,7 @@ public class BookController implements Initializable {
         for (Book book : availableBooks){
             if (counter == 6) break;
 
-            if (findingCommonCategories(book)){
+            if (findingCommonCategories(book) && book.getId() != currentBook.getId() && book.isAvailable()){
                 FXMLLoader fxmlLoader=new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("Book-View-Card.fxml"));
 
@@ -333,6 +334,9 @@ public class BookController implements Initializable {
             Account activeUser = Library.getActiveAccount();
             Library.getReviewHandler().addReview(activeUser.getId(), currentBook.getId(),
                     ratingOptions.getValue(), reviewTextArea.getText());
+            reviewTextArea.setText("");
+            warningMessage.setFill(Color.GREEN);
+            warningMessage.setText("Review added successfully");
             System.out.println("review added");
 
             showComments(Library.getReviewHandler().getBookReviews(currentBook.getId()));
@@ -384,13 +388,26 @@ public class BookController implements Initializable {
 
 
             Label username = new Label();
-            username.setText(Integer.toString(comment.getReviewerId()));
+
+
+//            ArrayList<Borrower> borrowers = Library.getBorrowers();
+//            ArrayList<Customer> customers = Library.getCustomers();
+//            if(Library.searchCustomerByID(comment.getReviewerId())==null){
+//                name= Library.searchBorrwerByID(comment.getReviewerId()).getUserName();
+//            }
+//            else {
+//                name= Library.searchCustomerByID(comment.getReviewerId()).getUserName();
+//            }
+
+            String name=Library.searchAccountById(comment.getReviewerId()).getUserName();
+
+            username.setText(name);//String.valueOf(comment.getReviewerId())
             username.setStyle("-fx-font-weight: 200;");
             username.setStyle("-fx-font-size: 20px;");
 
 
             ImageView rate = new ImageView();
-            rate.setFitWidth(228);
+            rate.setFitWidth(190);//228
             rate.setFitHeight(50);
             if (comment.getRating() == 1){
                 rate.setImage(oneStar);

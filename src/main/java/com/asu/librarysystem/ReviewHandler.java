@@ -100,4 +100,26 @@ public class ReviewHandler {
         else
             return reviews.get(index);
     }
+    public void addReview(int id, int reviewerId, int bookId, int rating, String text) {
+        Review review = findReview(reviewerId, bookId);
+        if (review.getReviewerId() != -1) {
+            updateReview(reviewerId, bookId, rating, text);
+            return;
+        }
+        review = new Review(id,reviewerId, bookId, rating, text);
+
+        reviews.add(review);
+        if (!bookRatings.containsKey(bookId)) {
+            bookRatings.put(bookId, new ArrayList<Integer>());
+            for (int i = 0; i < 6; i++)
+                bookRatings.get(bookId).add(0);
+        }
+        addBookRating(bookId, review.getRating());
+    }
+    public void addReview(Review review) {
+        addReview(review.getId(),review.getReviewerId(),review.getBookId(),review.getRating(),review.getText());
+    }
+    public ArrayList<Review> getReviews(){
+        return reviews;
+    }
 }

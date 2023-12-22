@@ -24,6 +24,28 @@ public class Transaction
         this.bookName = Library.searchBookById(bookId).getTitle();
         this.transactionId = ++transactionCount;
     }
+    public Transaction(int id,int bookId,int borrowerId, LocalDate borrowDate,LocalDate returnDate)
+    {
+        this.bookId=bookId;
+        this.borrowerId=borrowerId;
+        this.borrowDate=borrowDate;
+        this.returnDate=returnDate;
+        this.bookName = bookName;
+        this.transactionId = id;
+    }
+    public Transaction(int bookId,int borrowerId, LocalDate borrowDate,LocalDate returnDate)
+    {
+        this.bookId=bookId;
+        this.borrowerId=borrowerId;
+        this.borrowDate=borrowDate;
+        this.returnDate=returnDate;
+        this.bookName = bookName;
+        this.transactionId = ++transactionCount;
+    }
+
+    public void setTransactionCount(int transactionCount){
+        this.transactionCount=transactionCount;
+    }
 
     public String getBookName() {
         return bookName;

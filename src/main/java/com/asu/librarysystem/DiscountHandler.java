@@ -41,4 +41,8 @@ public class DiscountHandler {
         }
         return -1;
     }
+    public void addDiscount(Discount discount){
+        addDiscount(discount.getCode(),discount.getDiscount());
+    }
+
 }
