@@ -21,11 +21,9 @@ public class ReviewHandler {
         review = new Review(reviewerId, bookId, rating, text);
 
         reviews.add(review);
-        if (!bookRatings.containsKey(bookId)) {
-            bookRatings.put(bookId, new ArrayList<Integer>());
-            for (int i = 0; i < 6; i++)
-                bookRatings.get(bookId).add(0);
-        }
+
+        initializeBookRating(bookId);
+
         addBookRating(bookId, review.getRating());
     }
 
@@ -66,6 +64,8 @@ public class ReviewHandler {
      * where the index is the rating and the value is the number of reviewers who gave this rating.
      */
     public ArrayList<Integer> getBookRatings(int bookId) {
+        initializeBookRating(bookId);
+        
         return (new ArrayList<Integer>(bookRatings.get(bookId)));
     }
 
@@ -121,5 +121,12 @@ public class ReviewHandler {
     }
     public ArrayList<Review> getReviews(){
         return reviews;
+    }
+    private void initializeBookRating(int bookId) {
+        if (!bookRatings.containsKey(bookId)) {
+            bookRatings.put(bookId, new ArrayList<Integer>());
+            for (int i = 0; i < 6; i++)
+                bookRatings.get(bookId).add(0);
+        }
     }
 }

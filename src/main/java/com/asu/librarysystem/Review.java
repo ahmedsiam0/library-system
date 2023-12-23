@@ -29,8 +29,8 @@ public class Review {
     public int getIdCounter(){
         return idCounter;
     }
-    public void setIdCounter(int idCounter){
-        this.idCounter=idCounter;
+    public static void setIdCounter(int idCounter){
+        Review.idCounter=idCounter;
     }
 
     public void setRating(int rating) {

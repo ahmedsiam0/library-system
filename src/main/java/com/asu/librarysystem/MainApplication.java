@@ -7,9 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
 import java.io.IOException;
-
-
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class MainApplication extends Application {
@@ -43,8 +43,9 @@ public class MainApplication extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),1280,720);
-//        Image icon =new Image("");
-//        stage.getIcons().add(icon);
+        InputStream stream = new FileInputStream("data/bookSceneAssets/library_icon.png");
+        Image icon = new Image(stream);
+        stage.getIcons().add(icon);
         stage.setTitle("library");
 
 
