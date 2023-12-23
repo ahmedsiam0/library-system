@@ -85,7 +85,7 @@ public class BookController implements Initializable {
         setProperties(book.getTitle(), book.getAuthor(), Integer.toString(book.getPublicationYear())
                       , book.getDescription(), book.getPrice(), book.getQuantity());
 
-         Library.getReviewHandler().addReview(2, book.getId(), 1, "I don't love this book");
+        // Library.getReviewHandler().addReview(2, book.getId(), 1, "I don't love this book");
         ArrayList<Integer> ratings = Library.getReviewHandler().getBookRatings(book.getId());
         setRatings(ratings);
 
@@ -148,12 +148,16 @@ public class BookController implements Initializable {
         this.author.setText(authorAttribute.getText() + ": " + author);
         
         String categoriesText = new String();
-        String category;
+        String category = new String();
         for (Category cat : currentBook.getCategories()){
             category = cat.toString();
             categoriesText += category.substring(0, 1) + category.substring(1).toLowerCase() + ", ";
         }
-        categories.setText("Categories: " + categoriesText.substring(0, categoriesText.length() - 2));
+        if (categoriesText.length() > 3) {
+            categories.setText("Categories: " + categoriesText.substring(0, categoriesText.length() - 2));
+        } else {
+            categories.setText("Categories: None");
+        }
 
         Label releaseDateAttribute = new Label("Release Date");
         releaseDateAttribute.setStyle("-fx-font-weight: bold;");

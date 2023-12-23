@@ -5,6 +5,8 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javafx.scene.shape.Path;
+
 public class Book {
     private static int idCounter = 0;
     private final int id;
@@ -114,11 +116,14 @@ public class Book {
 
     public void setCover(String path) {
         File newCover = new File(path);
+        cover = new File("data/covers/" + id + ".jpg");
 
         if (!newCover.exists()) {
             System.out.println("Can't find file with path: " + path);
+            System.out.println("Book title: " + title);
+            System.out.println("Book id: " + id);
+            return;
         }
-        cover = new File("data/covers/" + id + ".jpg");
         try {
             if (!newCover.toPath().equals(cover.toPath()))
                 Files.copy(newCover.toPath(), cover.toPath(), StandardCopyOption.REPLACE_EXISTING);
@@ -129,7 +134,9 @@ public class Book {
         }
     }
     public String getCoverPath() {
-        return cover.getAbsolutePath();
+        String rootPath = System.getProperty("user.dir");
+        String relativePath = cover.getAbsolutePath().substring(rootPath.length() + 1);
+        return relativePath;
     }
 
     public ArrayList<Category> getCategories() {

@@ -628,9 +628,8 @@ public class Library {
             while (scanner4.hasNextLine()) {
                 String line1 = scanner4.nextLine();
                 String[] parts1 = line1.split(",,,");
-                Review review = new Review(Integer.valueOf(parts1[1]), Integer.valueOf(parts1[2]), Integer.valueOf(parts1[3]), Integer.valueOf(parts1[4]), parts1[5]);
-                review.setIdCounter(Integer.valueOf(parts1[0]));
-                reviewHandler.addReview(review);
+                Review.setIdCounter(Integer.valueOf(parts1[0]));
+                reviewHandler.addReview(Integer.valueOf(parts1[1]), Integer.valueOf(parts1[2]), Integer.valueOf(parts1[3]), Integer.valueOf(parts1[4]), parts1[5]);
             }
 
             scanner4.close();
