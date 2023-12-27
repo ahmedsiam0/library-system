@@ -612,7 +612,7 @@ public class Library {
                     String line = scanner.nextLine();
                     String[] parts = line.split(",,,");
                     Order order = new Order(Integer.valueOf(parts[1]), Integer.valueOf(parts[2]), Integer.valueOf(parts[3]));
-                    customer.setIdCounter(Integer.valueOf(parts[0]));
+                    order.setIdCounter(Integer.valueOf(parts[0]));
                     customer.addOrder(order);
                 }
                 scanner.close();
